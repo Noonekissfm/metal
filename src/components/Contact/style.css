@@ -1,0 +1,14 @@
+.contact {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.contact img {
+    margin-right: 10px;
+}
+
+.contact p {
+    font-weight: bold;
+    font-size: 1.2rem;
+}

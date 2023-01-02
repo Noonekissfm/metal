@@ -1,0 +1,17 @@
+.navbar {
+    background-color: #e5e5e5;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+li {
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    
+}

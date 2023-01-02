@@ -1,0 +1,14 @@
+.contacts {
+    display: flex;
+    flex-flow: column;
+}
+
+.contacts h1 {
+    text-transform: uppercase;
+}
+
+.contacts ol {
+    display: flex;
+    flex-flow: column;
+    list-style: circle;
+}
