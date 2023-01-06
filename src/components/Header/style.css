@@ -1,7 +1,12 @@
+.section_header {
+    background-color: #fff;
+}
+
 .header {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 
     height: fit-content;
+    background-color: #fff;
 }

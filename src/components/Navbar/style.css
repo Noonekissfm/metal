@@ -1,16 +1,22 @@
-.navbar {
+.section_navbar {
     background-color: #e5e5e5;
 }
 
-ul {
+.navbar a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar ul {
     display: flex;
     list-style: none;
     margin-block-start: 0;
     margin-block-end: 0;
+    padding: 0 0 4px 0;
 }
 
-li {
-    margin: 0 10px;
+.navbar li {
+    margin-left: 20px;
     cursor: pointer;
     font-size: 1.2rem;
     

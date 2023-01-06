@@ -5,24 +5,23 @@ import { NavbarListItem } from './components/Navbar/NavbarListItem';
 import './index.css'
 
 import json from './data/data.json'
-import { Breadcrumbs } from './components/Breadcrumbs';
 import { Route, Routes } from 'react-router-dom';
 import { ContactsPage } from './components/Pages/Contacts';
+import { utils } from './data/contacts';
 
 function App() {
     return (
-        <div className='wrapper'>
+        <div>
             <Header />
             <Navbar>
                 <NavbarListItem name="Каталог" path='/catalog'/>
-                <NavbarListItem name="О Компании" path='/about'/>
+                {/* <NavbarListItem name="О Компании" path='/about'/> */}
                 <NavbarListItem name="Контакты" path='/contacts'/>
             </Navbar>
-            <Breadcrumbs />
             
             <Routes>
                 <Route path='/catalog' element={<Catalog data={json}/>}/>
-                <Route path='/contacts' element={<ContactsPage />} />
+                <Route path='/contacts' element={<ContactsPage phone={utils.phone} workTime={utils.workTime}/>} />
             </Routes>
         </div>
     );

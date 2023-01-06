@@ -1,20 +1,26 @@
-import React from 'react'
-import './style.css'
+import { FC } from 'react';
+import './style.css';
 
-export const ContactsPage = () => {
-    return (
-        <div className='contacts'>
-            <h1>мет-с</h1>
-            <ol>
-                <li>Телефон: +7 (812) 602-77-67</li>
-                <li>E-mail: sale@metall-piter.ru</li>
-                <li>Режим работы офиса: ПН-ПТ 9:00-19:00</li>
-                <li>Адрес офиса: г. Санкт-Петербург, Гражданский пр-т, дом 22, офис 711</li>
-                <li>Режим работы складов: ПН-СБ 9:00-20:00</li>
-                <li>Металлобаза «Север»: Территория Парнас, 2-й Верхний пер., 8 Лит.2</li>
-                <li>Металлобаза «ЮГ»: ул. Возрождения 34</li>
-                <li>Металлобаза «Сосново»: Приозерский р-н, п. Сосново, ул. Механизаторов 11</li>
-            </ol>
-        </div>
-    )
+interface IProps {
+    phone: string,
+    workTime: string,
 }
+
+export const ContactsPage: FC<IProps> = ({phone, workTime}) => {
+    return (
+        <div className="wrapper">
+            <div className="contacts">
+                <h1 className='company'>МЕТ-С</h1>
+                <ol>
+                    <li>Телефон: {phone}</li>
+                    {/* <li>E-mail: </li> */}
+                    <li>Режим работы офиса: {workTime}</li>
+                    <li>
+                        Адрес офиса: г. Санкт-Петербург, вн.тер. г. Муниципальный Округ Народный, пер. Челиева, дом 17, литера А, помещение 3-Н, офис
+                        317
+                    </li>
+                </ol>
+            </div>
+        </div>
+    );
+};

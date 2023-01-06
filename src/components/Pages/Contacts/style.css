@@ -1,14 +1,20 @@
 .contacts {
     display: flex;
     flex-flow: column;
+    margin-top: 50px;
 }
 
 .contacts h1 {
     text-transform: uppercase;
+    text-align: center;
 }
 
 .contacts ol {
     display: flex;
     flex-flow: column;
     list-style: circle;
+}
+
+.contacts li {
+    cursor: auto;
 }

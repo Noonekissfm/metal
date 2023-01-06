@@ -1,19 +1,29 @@
-import React, { FC, useMemo } from 'react';
-import './style.css'
-
+import React, { FC, useMemo, useState } from 'react';
+import './style.css';
 
 interface IProps {
-    data: any,
+    data: any;
 }
 
-export const Catalog: FC<IProps> = ({data}) => {
-    const titlesArray = [];
-    for (let key in data) {
-        titlesArray.push(key)
-    }
+export const Catalog: FC<IProps> = ({ data }) => {
+    const renderData = useMemo(
+        () =>
+            Object.keys(data).map((key) => ({
+                category: data[key]._meta,
+                subCategories: Object.keys(data[key]),
+                meta: data[key]._meta,
+            })),
+        [data]
+    );
+
+    
     return (
-        <ul className='catalog'>
-            {titlesArray.map(item => <li className='catalog_item'>{item}</li>)}
-        </ul>
-    )
-}
+        <div className="wrapper">
+            <ul className="catalog">
+                {renderData.map(item => (
+                    <li className='catalog_item'>{item.category?.title}</li>
+                ))}
+            </ul>
+        </div>
+    );
+};
