@@ -27,6 +27,12 @@
     border: none;
 }
 
+.submenu_item {
+    list-style: none;
+    padding: 3px 0 3px 30px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
 .menu_item:hover {
     background-color: #e5e5e5;
     transition: all 0.1s linear;

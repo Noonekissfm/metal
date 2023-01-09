@@ -22,10 +22,6 @@ export const Catalog: FC<IProps> = ({ data }) => {
         }));
     }, [data]);
 
-
-    console.log(renderData)
-
-
     return (
         <div className="wrapper">
             <ul className="catalog">
