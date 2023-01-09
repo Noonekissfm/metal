@@ -8,6 +8,8 @@ import json from './data/data.json'
 import { Route, Routes } from 'react-router-dom';
 import { ContactsPage } from './components/Pages/Contacts';
 import { utils } from './data/contacts';
+import { SingleCategoryPage } from './components/Pages/SingleCategoryPage';
+import { MultiCategoryPage } from './components/Pages/MultiCategoryPage';
 
 function App() {
     return (
@@ -21,7 +23,9 @@ function App() {
             
             <Routes>
                 <Route path='/catalog' element={<Catalog data={json}/>}/>
-                <Route path='/contacts' element={<ContactsPage phone={utils.phone} workTime={utils.workTime}/>} />
+                <Route path='/catalog/:category' element={<SingleCategoryPage data={json}/>} />
+                <Route path='/catalog/:category/:subCategory' element={<MultiCategoryPage data={json}/>} />
+                <Route path='/contacts' element={<ContactsPage phone={utils.phone} workTime={utils.workTime} company={utils.companyName}/>} />
             </Routes>
         </div>
     );

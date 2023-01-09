@@ -4,13 +4,14 @@ import './style.css';
 interface IProps {
     phone: string,
     workTime: string,
+    company: string,
 }
 
-export const ContactsPage: FC<IProps> = ({phone, workTime}) => {
+export const ContactsPage: FC<IProps> = ({phone, workTime, company}) => {
     return (
         <div className="wrapper">
             <div className="contacts">
-                <h1 className='company'>МЕТ-С</h1>
+                <h1 className='company'>{company}</h1>
                 <ol>
                     <li>Телефон: {phone}</li>
                     {/* <li>E-mail: </li> */}

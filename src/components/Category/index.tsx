@@ -1,54 +1,46 @@
-import React, { FC, useState } from "react";
+import React, { FC, useRef, useState } from 'react';
+import './style.css';
 
-import { TCategory } from "../../models/menu";
+import { TCategory } from '../../models/menu';
+import { Link } from 'react-router-dom';
 
 interface IProps {
-  data: TCategory;
+    data: TCategory;
 }
 
 export const Category: FC<IProps> = ({ data }) => {
-  const [show, setShow] = useState<boolean>(false);
+    const [show, setShow] = useState<boolean>(false);
 
-  const handleMouseEnter = () => {
-    setShow(true);
-    console.log("mouse enter");
-  };
+    const catalogRef = useRef<HTMLLIElement>(null);
+    const _width = catalogRef.current?.offsetWidth
 
-  const handleMouseLeave = () => {
-    setTimeout(() => {
-      setShow(false);
-    }, 200);
-    console.log("mouse leave");
-  };
+    const handleMouseEnter = (multilevel: boolean) => {
+        multilevel? setShow(true): setShow(false)
+    };
 
-  const handleChooseProduct = (subKey: string) => {
-    // route
-    console.log(data.key, subKey);
-  };
+    const handleMouseLeave = () => {
+        setShow(false);
+    };
 
-  return (
-    <>
-      <li
-        className="catalog_item"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        {data.name}
-      </li>
-      {show && !!data.subCategories && (
-        <ul
-          style={{
-            position: "absolute",
-            transform: `translate(700px)`,
-          }}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          {data.subCategories.map((item) => (
-            <li onClick={() => handleChooseProduct(item.key)}>{item.name}</li>
-          ))}
-        </ul>
-      )}
-    </>
-  );
+    return (
+        <>
+            <li 
+            ref={catalogRef}
+            className="menu_item" 
+            onMouseEnter={()=>{handleMouseEnter(data.multilevel)}} 
+            onMouseLeave={handleMouseLeave}
+            >
+                {!data.multilevel? <Link to={`${data.key}`}>{data.name}</Link> : data.name}
+                {show && !!data.subCategories && (
+                    <ul className="subCategory" style={{left: `${_width}px`}}>
+                        {data.subCategories.map((item) => (
+                            <li key={item.key} className="menu_item">
+                                <Link to={`${data.key}/${item.key}`}>{item.name}</Link>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </li>
+        </>
+    );
 };

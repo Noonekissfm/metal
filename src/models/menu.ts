@@ -6,5 +6,10 @@ export type SubCategory = {
 export type TCategory = {
   key: string;
   name: string;
+  multilevel: boolean;
   subCategories: SubCategory[];
 };
+
+export type SingleCategory = {
+  category: string;
+}

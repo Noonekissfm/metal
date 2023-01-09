@@ -1,5 +1,8 @@
 .section_navbar {
     background-color: #e5e5e5;
+    box-shadow: 0 0 10px #a0a0a0;
+    padding: 4px 0;
+    margin-bottom: 30px;
 }
 
 .navbar a {

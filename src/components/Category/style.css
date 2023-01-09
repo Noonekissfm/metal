@@ -1,0 +1,33 @@
+.subCategory {
+    position: absolute;
+    width: max-content;
+    top: 0;
+    cursor: pointer;
+    padding-left: 0;
+    box-shadow: 0 0 10px #e7e7e7;
+}
+
+.category_item:hover {
+    background-color: #e5e5e5;
+}
+
+.menu_item {
+    position: relative;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    list-style: none;
+    border-bottom: 1px solid #e8e8e8;
+
+    cursor: pointer;
+    margin: 0;
+}
+
+.menu_item:last-child {
+    border: none;
+}
+
+.menu_item:hover {
+    background-color: #e5e5e5;
+    transition: all 0.1s linear;
+}
