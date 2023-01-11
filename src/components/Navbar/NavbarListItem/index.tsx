@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './style.css';
 
 interface IProps {
@@ -8,5 +8,5 @@ interface IProps {
 }
 
 export const NavbarListItem: FC<IProps> = ({ name, path }) => {
-    return <Link to={`${path}`}><li className="navbarListItem">{name}</li></Link>
+    return <li className="navbarListItem"><NavLink to={`${path}`}>{name}</NavLink></li>
 };

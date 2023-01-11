@@ -1,9 +1,6 @@
-import React, { FC, useMemo } from 'react';
-
-import { TCategory } from '../../../models/menu';
-import { getSubCategories } from '../../../utils/utils';
+import React, { FC } from 'react';
+import { useParams } from 'react-router-dom';
 import { Category } from '../../Category';
-
 import './style.css';
 
 interface IProps {
@@ -11,24 +8,13 @@ interface IProps {
 }
 
 export const Catalog: FC<IProps> = ({ data }) => {
-    const renderData: TCategory[] = useMemo(() => {
-        const keys = Object.keys(data).filter((key) => key !== '_meta');
 
-        return keys.map((key) => ({
-            key,
-            name: data[key]._meta.title,
-            multilevel: data[key]._meta.subCategory,
-            subCategories: getSubCategories(data, key),
-        }));
-    }, [data]);
+    const renderData = data[0].subCategory
+
 
     return (
         <div className="wrapper">
-            <ul className="catalog">
-                {renderData.map((item) => (
-                    <Category key={item.key} data={item} />
-                ))}
-            </ul>
+            {renderData.map((item: any) => <Category key={item.key} categoryKey={item.key} title={item.title}/>)}
         </div>
     );
 };
