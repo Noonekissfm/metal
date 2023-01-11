@@ -11,7 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f8f8f8;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 code {
@@ -26,4 +26,12 @@ code {
 
 .border4 {
   border-radius: 4px;
+}
+
+.margin-bottom-30 {
+  margin-bottom: 30px;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
 }

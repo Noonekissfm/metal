@@ -2,6 +2,16 @@
 
 }
 
+.item_card__price_section {
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+}
+
+.item_price {
+    font-weight: 500;
+}
+
 .item_card_img {
     width: 150px;
     height: 150px;
@@ -9,7 +19,14 @@
     padding-top: 40px;
 }
 
+.item_card_img > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
 .item_card__head {
+    align-items: end;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #e8e8e8;
