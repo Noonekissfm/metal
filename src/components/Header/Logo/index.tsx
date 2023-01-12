@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../../assets/logo.png"
+import { utils } from '../../../data/contacts';
 import './style.css'
 
 interface IProps {
@@ -9,8 +10,10 @@ interface IProps {
 
 export const Logo: FC<IProps> = ({size}) => {
     return (
-        <Link to={'/'} className="logo">
-            <img src={logo} alt="Logo"  height={size}/>
-        </Link>
+        <div className='logo'>
+            <Link to={'/'} >
+                <img src={logo} alt={utils.companyName}/>
+            </Link>
+        </div>
     );
 };

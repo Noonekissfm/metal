@@ -9,6 +9,6 @@ interface IProps {
 
 export const Category: FC<IProps> = ({ categoryKey, title }) => {
     return (
-        <li className="menu_item"><Link to={`${categoryKey}`} >{title}</Link></li>
+        <li className="menu_item"><Link to={`${categoryKey}`} ><span>{title}</span></Link></li>
     );
 };

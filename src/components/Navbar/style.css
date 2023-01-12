@@ -1,26 +1,52 @@
 .section_navbar {
     background-color: #e5e5e5;
-    box-shadow: 0 0 10px #a0a0a0;
+    box-shadow: 0 0 10px #b3b3b3;
     padding: 4px 0;
-    margin-bottom: 30px;
-}
-
-.navbar a {
-    color: inherit;
-    text-decoration: none;
 }
 
 .navbar ul {
     display: flex;
     list-style: none;
-    margin-block-start: 0;
-    margin-block-end: 0;
     padding: 0 0 4px 0;
 }
 
-.navbar li {
-    margin-left: 20px;
-    cursor: pointer;
-    font-size: 1.2rem;
+/* Media */
+
+/* MW-1920px */
+
+@media (min-width: 1480px) and (max-width: 1920px) {
     
+}
+
+/* MW-1480px */
+
+@media (min-width: 1200px) and (max-width: 1480px) {
+
+}
+
+/* MW-1200px */
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .section_navbar {
+        box-shadow: 0 0 10px #b3b3b3;
+        padding: 6px 0;
+    }
+}
+
+/* MW-768px */
+
+@media (min-width: 375px) and (max-width: 768px) {
+    .section_navbar {
+        box-shadow: 0 0 10px #b3b3b3;
+        padding: 4px 0;
+    }
+}
+
+/* MW-320px */
+
+@media (min-width: 320px) and (max-width: 375px) {
+    .section_navbar {
+        box-shadow: 0 0 8px #a0a0a0;
+        padding: 2px 0;
+    }
 }

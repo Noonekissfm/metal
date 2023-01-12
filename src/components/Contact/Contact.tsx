@@ -8,15 +8,14 @@ import mail from '../../assets/mail.svg'
 interface IProps {
     type: 'phone' | 'mail',
     contact: string,
-    size: number
 }
 
-export const Contact: FC<IProps> = ({type, contact, size}) => {
+export const Contact: FC<IProps> = ({type, contact}) => {
     return (
         <div className='contact'>
             {type === 'phone'? 
-                <img src={phone} alt={`${type}`} width={size} height={size} /> : 
-                <img src={mail} alt={`${type}`} width={size} height={size} /> 
+                <img src={phone} alt={`${type}`} /> : 
+                <img src={mail} alt={`${type}`} /> 
             }
             <p>{contact}</p>
         </div>

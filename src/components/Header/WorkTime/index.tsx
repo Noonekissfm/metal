@@ -5,13 +5,12 @@ import clock from '../../../assets/clock.svg'
 
 
 interface IProps {
-    size: number
 }
 
-export const WorkTime: FC<IProps> = ({size}) => {
+export const WorkTime: FC<IProps> = ({}) => {
     return (
         <div className='contact'>
-            <img src={clock} alt={"Режим работы"} width={size} height={size} />
+            <img src={clock} alt={"Режим работы"} />
             <p>ПН-ПТ: 9.00 - 17.00</p>
         </div>
     )

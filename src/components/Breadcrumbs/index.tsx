@@ -5,16 +5,15 @@ import { BcLink } from './BcLink/BcLink';
 import './style.css';
 
 interface IProps {
-    keys: any,
-    titles: any,
+    keys: any[],
+    titles: string[],
 }
 
 export const Breadcrumbs: FC<IProps> = ({keys, titles}) => {
-
     const links = getLinksObject(keys, titles)
     
     return (
-        <ul className="breadcrumbs margin-bottom-30">
+        <ul className="breadcrumbs">
             {links.map((item: any, index: number) => index === links.length - 1?
             <BcCurrentPage key={item + '-' + index} title={item.title}/>:
             <BcLink link={item._link} title={item.title} key={item + '-' + index}/>)}

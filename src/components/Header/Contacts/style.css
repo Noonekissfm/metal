@@ -1,4 +1,41 @@
 .header_contacts {
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    gap: 20px;
+    grid-auto-flow: column;
+}
+
+
+/* Media */
+
+/* MW-1480px */
+
+@media (min-width: 1200px) and (max-width: 1480px) {
+
+}
+
+/* MW-1200px */
+
+@media (max-width: 1200px) {
+    .header_contacts {
+        font-size: 0.9rem;
+        gap: 5px;
+    }
+}
+
+/* MW-768px */
+
+@media (max-width: 630px) {
+    .header_contacts {
+        gap: 3px;
+        grid-auto-flow: row;
+    }
+}
+
+/* MW-320px */
+
+@media (min-width: 320px) and (max-width: 375px) {
+    .header_contacts {
+        gap: 3px;
+        grid-auto-flow: row;
+    }
 }

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { utils } from '../../../data/contacts';
 import { Contact } from '../../Contact/Contact';
+import { WorkTime } from '../WorkTime';
 import './style.css'
 
 interface IProps {
@@ -11,8 +12,9 @@ interface IProps {
 export const Contacts: FC<IProps> = ({phone, mail}) => {
     return (
         <div className="header_contacts">
-            {phone && <Contact size={20} type='phone' contact={utils.phone}/>}
-            {/* {mail && <Contact size={20} type='mail' contact={utils.mail}/>} */}
+            {phone && <Contact type='phone' contact={utils.phone}/>}
+            {mail && <Contact type='mail' contact={utils.mail}/>}
+            <WorkTime />
         </div>
     );
 };

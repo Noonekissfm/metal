@@ -18,12 +18,12 @@ export const ItemCard: FC<IProps> = ({ data }) => {
     return (
         <div className="item_card">
             <div className="item_card__head">
-                <p>{title}</p>
-                {price ? <ItemPrice price={price} phone={utils.phone} /> : <p>Уточнить стоимость можно по телефону: {utils.phone}</p>}
+                <p className='item_card__title'>{title}</p>
+                <ItemPrice price={price} phone={utils.phone}/>
             </div>
             <CardFooter primary={primary}>
                 {!!img_link && <ItemImg src={img_link} title={img_title} primary={primary} />}
-                {!!renderDescription && (<ItemDescription data={renderDescription} primary={primary} />)}
+                {!!renderDescription && <div className='cardFooter__description'><p>Описание</p><ItemDescription data={renderDescription} primary={primary} /></div>}
             </CardFooter>
         </div>
     );

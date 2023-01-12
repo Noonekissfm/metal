@@ -1,25 +1,25 @@
 .personCard {
     display: flex;
-    padding: 15px 25px;
+    padding: 15px 20px;
     border-radius: 10px;
+    width: 280px;
+    max-width: 100%;
     background-color: #fff;
     align-items: center;
-    width: max-content;
     box-shadow: 0 0 10px 2px #e2e2e2;
-    margin: 0 20px;
 }
 
 .personCard__photo {
-    width: 100px;
     height: 100px;
+    padding: 10px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     background-color: #e2e2e2;
-    margin-right: 20px;
     box-shadow: inset 0 0 10px 1px #545454, 0 0 1px 1px #545454;
 }
 
 .personCard__info {
-    pad: 5px;
+    padding: 10px;
 }
 
 .personCard__info > p:not(:first-child) {
@@ -27,5 +27,50 @@
 }
 
 .personCard__info > p {
-    font-size: 1.3rem;
+    font-size: 1.0rem;
+}
+
+/* Media */
+
+/* MW-1920px */
+
+@media (min-width: 1480px) and (max-width: 1920px) {
+
+}
+
+/* MW-1480px */
+
+@media (max-width: 1200px) {
+
+}
+
+/* MW-1200px */
+
+@media (max-width: 900px) {
+
+}
+
+/* MW-768px */
+
+@media (max-width: 440px) {
+
+}
+
+/* MW-320px */
+
+@media (max-width: 375px) {
+    .personCard {
+        padding: 10px 10px;
+        border-radius: 10px;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .personCard__photo {
+        height: 60%;
+        margin-right: 10px;
+    }
+
+    .personCard__info {
+        padding: 0;
+    }
 }

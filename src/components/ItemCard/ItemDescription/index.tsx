@@ -10,7 +10,7 @@ export const ItemDescription: FC<IProps> = ({ data, primary }) => {
     return (
         <>
             {!primary && <p className="ItemDescription__header">Описание</p>}
-            <div className={`ItemDescription__wrapper--${primary? 'primary' : 'secondary'} margin-top-30`}>
+            <div className={`ItemDescription__wrapper--${primary? 'primary' : 'secondary'}`}>
                 {data.map((item: string, index: number) => (
                     <p key={item + '-' + index}>{item}</p>
                 ))}

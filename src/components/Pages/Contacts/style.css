@@ -2,25 +2,130 @@
     display: flex;
     flex-flow: column;
     margin-top: 50px;
+    align-items: center;
 }
 
-.contacts h1 {
+.company {
+    font-size: 4rem;
+}
+
+.contacts_title {
+    display: block;
+    padding-bottom: 20px;
     text-transform: uppercase;
     text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #e8e8e8;
 }
 
 .contacts ol {
     display: flex;
     flex-flow: column;
     list-style: circle;
+    margin-top: 20px;
 }
 
-.contacts li {
+.contacts ol > li {
     cursor: auto;
     font-size: 1.1rem;
+    padding: 5px 0;
 }
 
 .OurTeam {
-    margin: 30px 0;
+    margin-top: 30px;
     display: flex;
+    flex-direction: column;
+}
+
+.teammates {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 30px;
+    row-gap: 30px;
+    justify-content: center;
+}
+
+/* Media */
+
+/* MW-1920px */
+
+@media (min-width: 1480px) and (max-width: 1920px) {
+
+}
+
+/* MW-1480px */
+
+@media (max-width: 1200px) {
+    .contacts,
+    .OurTeam {
+        margin-top: 20px;
+    }
+    .teammates {
+        margin-top: 20px;
+    }
+}
+
+/* MW-1200px */
+
+@media (max-width: 900px) {
+    .OurTeam {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 820px) {
+    .teammates {
+        margin-top: 20px;
+        gap: 20px;
+    }
+    .contacts,
+    .OurTeam {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 732px) {
+    .teammates {
+        grid-template-columns: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .contacts {
+        margin-top: 10px;
+    }
+
+    .contacts ol {
+        margin-top: 10px;
+    }
+
+    .contacts ol > li {
+        cursor: auto;
+        font-size: 1.1rem;
+        padding: 2px;
+    }
+
+    .company {
+        font-size: 3rem;
+    }
+}
+
+/* MW-320px */
+
+@media (max-width: 375px) {
+    .contacts {
+        margin-top: 5px;
+    }
+    .contacts_title {
+        padding-bottom: 10px;
+    }
+    .company {
+        font-size: 2.5rem;
+    }
+    .teammates {
+        grid-template-columns: 90%;
+        gap: 10px;
+    }
 }

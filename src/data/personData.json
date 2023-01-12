@@ -5,11 +5,17 @@
         "phone": "+7(911)754-29-21",
         "email": null,
         "name": "Сергей Владимирович"
-},
-{
-    "photo_link": null,
-    "phone": "+7(952)213-22-12",
-    "email": null,
-    "name": "Сергей Юрьевич"
-}
+    },
+    {
+        "photo_link": null,
+        "phone": "+7(952)213-22-12",
+        "email": null,
+        "name": "Сергей Юрьевич"
+    },
+    {
+        "photo_link": null,
+        "phone": "+7(999)999-99-99",
+        "email": null,
+        "name": "Иван Иванович"
+    }
 ]}

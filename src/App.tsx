@@ -16,7 +16,7 @@ import { HomePage } from './components/Pages/HomePage';
 
 function App() {
     return (
-        <div>
+        <div style={{paddingBottom: '30px'}}>
             <Header />
             <Navbar>
                 <NavbarListItem name="Каталог" path='/index'/>
