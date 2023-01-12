@@ -10,3 +10,20 @@ export const getRenderData = (keys: any, data: any) => {
     }
     return renderData
 }
+
+export const getDescriptionData = (data: string) => {
+    return data.split('.').filter((item: any) => item !== '')
+}
+
+export const getLinksObject = (arrKeys: string[], arrHeaders: string[]) => {
+    let tempLink = '/index'
+    const obj = arrKeys.map((item: any, index: number) => {
+        console.log(arrHeaders)
+        return {
+            key: item,
+            title: arrHeaders[index + 1],
+            _link: tempLink += '/' + item
+        }
+    })
+    return obj
+}

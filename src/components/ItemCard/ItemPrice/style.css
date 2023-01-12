@@ -1,0 +1,9 @@
+.ItemPrice__wrapper {
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+}
+
+.ItemPrice__price {
+    font-weight: 500;
+}

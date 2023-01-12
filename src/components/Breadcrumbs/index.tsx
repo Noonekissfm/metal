@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { getLinksObject } from '../../utils/utils';
+import { BcCurrentPage } from './BcCurrentPage/BcCurrentPage';
+import { BcLink } from './BcLink/BcLink';
 import './style.css';
 
 interface IProps {
@@ -8,24 +10,14 @@ interface IProps {
 }
 
 export const Breadcrumbs: FC<IProps> = ({keys, titles}) => {
-    
-    let tempLink = '/index'
 
-    const links = keys.map((item: any, index: number) => {
-        return {
-            key: item,
-            title: titles[index + 1],
-            _link: tempLink += '/' + item
-        }
-    })
-
-    console.log(links)
+    const links = getLinksObject(keys, titles)
     
     return (
-        <>
-            <div className="breadcrumbs margin-bottom-30">
-                {links.map((item: any, index: number) => index === links.length - 1? <span className='breadcrumbs_item'>{item.title}</span> : <span className='breadcrumbs_item'><Link to={item._link}>{item.title}</Link></span>)}
-            </div>
-        </>
+        <ul className="breadcrumbs margin-bottom-30">
+            {links.map((item: any, index: number) => index === links.length - 1?
+            <BcCurrentPage key={item + '-' + index} title={item.title}/>:
+            <BcLink link={item._link} title={item.title} key={item + '-' + index}/>)}
+        </ul>
     );
 };

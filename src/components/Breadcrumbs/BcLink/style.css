@@ -1,0 +1,20 @@
+.BcLink {
+    position: relative;
+    margin-right: 20px;
+}
+
+.BcLink:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -4%;
+    top: 0%;
+    width: 1px;
+    height: 100%;
+    transform: rotate(26deg);
+    background-color: #6c6c6c;
+}
+
+.BcLink > a {
+    color: inherit;
+    text-decoration: none;
+}

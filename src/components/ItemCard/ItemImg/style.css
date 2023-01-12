@@ -1,0 +1,16 @@
+.ItemImg__wrapper--secondary {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.ItemImg__wrapper--primary {
+    order: 2;
+}
+
+.ItemImg__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}

@@ -1,0 +1,8 @@
+.BcCurrentPage {
+    font-weight: bold;
+    background-color: #dadada;
+    padding: 0px 6px 3px 6px;
+    border-radius: 6px;
+    border: 1px solid #acacac;
+    box-shadow: inset 0 0 2px 1px #bdbdbd;
+}
