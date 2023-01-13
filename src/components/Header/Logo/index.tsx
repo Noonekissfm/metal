@@ -5,10 +5,9 @@ import { utils } from '../../../data/contacts';
 import './style.css'
 
 interface IProps {
-    size: number,
 }
 
-export const Logo: FC<IProps> = ({size}) => {
+export const Logo: FC<IProps> = () => {
     return (
         <div className='logo'>
             <Link to={'/'} >

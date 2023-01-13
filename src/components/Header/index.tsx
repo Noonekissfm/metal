@@ -9,7 +9,7 @@ export const Header = () => {
         <section className="section_header">
             <div className="wrapper">
                 <div className="header">
-                    <Logo size={60} />
+                    <Logo />
                     <Contacts phone={true} mail={true} />
                 </div>
             </div>
