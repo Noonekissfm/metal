@@ -10,7 +10,6 @@
     padding: 0 0 4px 0;
 }
 
-/* Media */
 
 @media (max-width: 1920px) {
     .section_navbar {
@@ -19,20 +18,18 @@
     }
 }
 
-/* MW-768px */
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media (max-width: 768px) {
     .section_navbar {
         box-shadow: 0 0 10px #b3b3b3;
         padding: 4px 0;
     }
 }
 
-/* MW-320px */
-
-@media (min-width: 320px) and (max-width: 375px) {
-    .section_navbar {
-        box-shadow: 0 0 8px #a0a0a0;
-        padding: 2px 0;
+@media (max-width: 600px) {
+    .navbar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
     }
 }

@@ -32,6 +32,17 @@ export const CategoryPage: FC<IProps> = ({data}) => {
 
     let subCategory, description;
 
+    const sortData = (data: any, key: string) => {
+        let result = data.sort((a: any, b: any) => {
+            if(a[key] < b[key]) {
+                return -1
+            }
+        });
+        return result
+    }
+
+    
+
     if(!!renderData) {
         subCategory = renderData.subCategory.length > 0;
         description = renderData.description? renderData.description.split('.').filter((item: any) => item !== '') : null
@@ -43,7 +54,7 @@ export const CategoryPage: FC<IProps> = ({data}) => {
             <div className="category">
                 {keys.length > 0 ? <Breadcrumbs keys={keys} titles={renderData.menu_path} /> : <Breadcrumbs keys={['catalog']} titles={['Каталог продукции']} />}
                 {isMobile && <p className='category__goback' onClick={goBack}>Назад</p>}
-                {subCategory ? renderData.subCategory.map((item: any) => <Category categoryKey={item.key} title={item.title} key={item.key} />) : <ItemCard data={renderData}/>}
+                {subCategory ? sortData(renderData.subCategory, 'title').map((item: any) => <Category categoryKey={item.key} title={item.title} key={item.key} />) : <ItemCard data={renderData}/>}
                 {description && !!subCategory && <div className='description_section margin-top-30'>{description.length > 0 && description.map((item: any, index: number) => <p key={item + '-' + index}>{item}</p>)}</div>}
             </div>
         </div>

@@ -9,7 +9,6 @@ export const getRenderData = (keys: any, data: any) => {
         }
         return tempData
     }
-    console.log(renderData)
     return renderData
 }
 

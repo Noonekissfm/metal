@@ -22,6 +22,13 @@ code {
   width: 90%;
   margin: 0 auto;
 }
+
+.main--wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .border4 {
   border-radius: 4px;
 }

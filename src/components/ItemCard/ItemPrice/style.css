@@ -47,7 +47,10 @@
 }
 
 @media (max-width: 767px) {
-
+    .ItemPrice__wrapper--primary {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 @media (max-width: 440px) {
