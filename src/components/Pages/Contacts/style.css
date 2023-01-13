@@ -40,7 +40,7 @@
 .teammates {
     margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(3, auto);
     gap: 30px;
     row-gap: 30px;
     justify-content: center;
@@ -63,6 +63,7 @@
     }
     .teammates {
         margin-top: 20px;
+        grid-template-columns: repeat(2, auto);
     }
 }
 
@@ -90,26 +91,24 @@
     .teammates {
         grid-template-columns: auto;
     }
-}
-
-@media (max-width: 500px) {
     .contacts {
         margin-top: 10px;
     }
-
     .contacts ol {
         margin-top: 10px;
     }
-
     .contacts ol > li {
         cursor: auto;
         font-size: 1.1rem;
         padding: 2px;
     }
-
     .company {
         font-size: 3rem;
     }
+}
+
+@media (max-width: 500px) {
+
 }
 
 /* MW-320px */

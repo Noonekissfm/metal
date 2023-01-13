@@ -41,7 +41,8 @@
 
 /* MW-768px */
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
+    
     .ItemImg__img {
         margin-top: 10px;
         margin-left: 0;

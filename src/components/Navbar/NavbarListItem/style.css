@@ -14,21 +14,7 @@
 
 /* Media */
 
-/* MW-1920px */
-
-@media (min-width: 1480px) and (max-width: 1920px) {
-    
-}
-
-/* MW-1480px */
-
-@media (min-width: 1200px) and (max-width: 1480px) {
-
-}
-
-/* MW-1200px */
-
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (max-width: 1920px) {
     .navbarListItem:not(:first-child) {
         margin-left: 10px;
     }
@@ -52,7 +38,7 @@
 
 /* MW-320px */
 
-@media (min-width: 320px) and (max-width: 375px) {
+@media (max-width: 375px) {
     .navbarListItem:not(:first-child) {
         margin-left: 10px;
     }

@@ -19,7 +19,7 @@ export const ItemCard: FC<IProps> = ({ data }) => {
         <div className="item_card">
             <div className="item_card__head">
                 <p className='item_card__title'>{title}</p>
-                <ItemPrice price={price} phone={utils.phone}/>
+                <ItemPrice price={price} phone={utils.phone} primary={primary}/>
             </div>
             <CardFooter primary={primary}>
                 {!!img_link && <ItemImg src={img_link} title={img_title} primary={primary} />}

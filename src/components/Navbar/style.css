@@ -12,21 +12,7 @@
 
 /* Media */
 
-/* MW-1920px */
-
-@media (min-width: 1480px) and (max-width: 1920px) {
-    
-}
-
-/* MW-1480px */
-
-@media (min-width: 1200px) and (max-width: 1480px) {
-
-}
-
-/* MW-1200px */
-
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (max-width: 1920px) {
     .section_navbar {
         box-shadow: 0 0 10px #b3b3b3;
         padding: 6px 0;
