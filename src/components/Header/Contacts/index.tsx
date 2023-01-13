@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useWindowDimensions } from 'src/hooks';
 import { utils } from '../../../data/contacts';
 import { Contact } from '../../Contact/Contact';
 import { WorkTime } from '../WorkTime';
@@ -10,6 +11,7 @@ interface IProps {
 }
 
 export const Contacts: FC<IProps> = ({phone, mail}) => {
+
     return (
         <div className="header_contacts">
             {phone && <Contact type='phone' contact={utils.phone}/>}

@@ -7,5 +7,5 @@ interface IProps {
 }
 
 export const CurrentPage: FC<IProps> = ({title}) => {
-    return <li className='BcCurrentPage'>{title}</li>
+    return <li className='CurrentPage'>{title}</li>
 };

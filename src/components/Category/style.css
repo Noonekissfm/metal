@@ -1,6 +1,5 @@
 .menu_item {
     position: relative;
-    padding: 5px 10px;
     text-transform: uppercase;
     font-weight: bold;
     list-style: none;
@@ -13,12 +12,14 @@
 .menu_item > a {
     text-decoration: none;
     color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .menu_item > a > span {
     display: block;
-    width: 100%;
-    height: 100%;
+    padding: 5px 10px;
 }
 
 .menu_item:hover {

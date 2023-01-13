@@ -10,7 +10,7 @@ interface IProps {
 
 export const PreviousPage: FC<IProps> = ({ link, title }) => {
     return (
-        <li className='BcLink'>
+        <li className='PreviousPage'>
             <Link to={link}>{title}</Link>
         </li>
     );

@@ -8,30 +8,32 @@
     height: 20px;
 }
 
-.contact p {
+.contact > p,
+.contact > a {
     word-break: keep-all;
     white-space: nowrap;
     font-weight: bold;
     font-size: 1.2rem;
+    color: inherit;
 }
 
 /* Media */
 
 /* MW-1480px */
 
-@media (min-width: 1200px) and (max-width: 1480px) {
+@media (max-width: 1480px) {
 
 }
 
 /* MW-1200px */
 
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (max-width: 1200px) {
     
 }
 
 /* MW-768px */
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media (max-width: 768px) {
     .contact {
         display: flex;
         align-items: center;
@@ -44,7 +46,8 @@
         height: 18px;
     }
     
-    .contact p {
+    .contact > p,
+    .contact > a {
         font-weight: bold;
         font-size: 1rem;
     }
@@ -52,7 +55,7 @@
 
 /* MW-375px */
 
-@media (min-width: 320px) and (max-width: 375px) {
+@media (max-width: 375px) {
     .contact {
         display: flex;
         align-items: center;
@@ -70,7 +73,8 @@
         height: 15px;
     }
     
-    .contact p {
+    .contact > p,
+    .contact > a {
         font-weight: bold;
         font-size: 0.9rem;
     }

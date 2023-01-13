@@ -115,7 +115,7 @@
 
 @media (max-width: 375px) {
     .contacts {
-        margin-top: 5px;
+        margin: 5px 0 20px 0;
     }
     .contacts_title {
         padding-bottom: 10px;
@@ -125,6 +125,5 @@
     }
     .teammates {
         grid-template-columns: 90%;
-        gap: 10px;
     }
 }

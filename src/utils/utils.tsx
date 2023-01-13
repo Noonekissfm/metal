@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom"
 
 // Get sub Categories data
 export const getRenderData = (keys: any, data: any) => {
@@ -10,6 +9,7 @@ export const getRenderData = (keys: any, data: any) => {
         }
         return tempData
     }
+    console.log(renderData)
     return renderData
 }
 
@@ -17,8 +17,3 @@ export const getDescriptionData = (data: string) => {
     return data.split('.').filter((item: any) => item !== '')
 }
 
-export const useGoBack = () => {
-    const navigate = useNavigate();
-
-    return navigate(-1)
-}

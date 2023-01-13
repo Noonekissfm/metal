@@ -1,4 +1,4 @@
-.BcLink {
+.PreviousPage {
     position: relative;
     display: flex;
     align-items: center;
@@ -7,7 +7,7 @@
     padding-bottom: 3px;
 }
 
-.BcLink::after {
+.PreviousPage::after {
     content: '';
     position: absolute;
     right: -20px;
@@ -18,7 +18,7 @@
     background-color: #6c6c6c;
 }
 
-.BcLink > a {
+.PreviousPage > a {
     color: inherit;
     text-decoration: none;
 }
@@ -34,11 +34,11 @@
 /* MW-1200px */
 
 @media (min-width: 768px) and (max-width: 1200px) {
-    .BcLink > a {
+    .PreviousPage > a {
         font-size: 0.9rem;
     }
 
-    .BcLink::after {
+    .PreviousPage::after {
         display: none;
     }
 }
@@ -52,10 +52,10 @@
 /* MW-320px */
 
 @media (min-width: 320px) and (max-width: 375px) {
-    .BcLink {
+    .PreviousPage {
         padding-top: 1px;
     }
-    .BcLink > a {
+    .PreviousPage > a {
         margin: 0 6px;
     }
 }

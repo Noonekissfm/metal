@@ -1,8 +1,7 @@
 .personCard {
     display: flex;
-    padding: 15px 20px;
     border-radius: 10px;
-    width: 280px;
+    width: fit-content;
     max-width: 100%;
     background-color: #fff;
     align-items: center;
@@ -10,16 +9,23 @@
 }
 
 .personCard__photo {
+    overflow: hidden;
     height: 100px;
-    padding: 10px;
-    aspect-ratio: 1/1;
+    margin: 15px;
+    
     border-radius: 50%;
-    background-color: #e2e2e2;
-    box-shadow: inset 0 0 10px 1px #545454, 0 0 1px 1px #545454;
+    box-shadow: 0 0 3px 2px #545454;
+}
+
+.personCard__photo > img {
+    height: 100%;
+    transform: scale(1.5);
+    aspect-ratio: 1/1;
 }
 
 .personCard__info {
     padding: 10px;
+    margin-right: 10px;
 }
 
 .personCard__info > p:not(:first-child) {
@@ -28,6 +34,13 @@
 
 .personCard__info > p {
     font-size: 1.0rem;
+}
+
+
+/* .personCard__info__name */
+.personCard__info__phone,
+.personCard__info__email {
+    white-space: nowrap;
 }
 
 /* Media */
@@ -46,31 +59,39 @@
 
 /* MW-1200px */
 
-@media (max-width: 900px) {
-
+@media (max-width: 732px) {
+    .teammates {
+        justify-items: center;
+    }
 }
 
 /* MW-768px */
 
 @media (max-width: 440px) {
 
+    .personCard {
+        flex-direction: column;
+        padding: 15px;
+        align-items: center;
+    }
+    .personCard__photo {
+        height: 80px;
+        margin: 0;
+    }
+
+    .personCard__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0;
+        padding: 5px 0 0 0;
+        margin-top: 10px;
+        border-top: 1px solid #e2e2e2;
+    }
 }
 
 /* MW-320px */
 
 @media (max-width: 375px) {
-    .personCard {
-        padding: 10px 10px;
-        border-radius: 10px;
-        width: 80%;
-        margin: 0 auto;
-    }
-    .personCard__photo {
-        height: 60%;
-        margin-right: 10px;
-    }
 
-    .personCard__info {
-        padding: 0;
-    }
 }

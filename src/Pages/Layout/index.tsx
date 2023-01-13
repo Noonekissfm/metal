@@ -10,11 +10,11 @@ export const Layout: FC<IProps> = () => {
     return (
         <>
             <Header />
-            <Navbar>
-                <NavbarListItem name="Каталог" path="/index" />
-                {/* <NavbarListItem name="О Компании" path='/about'/> */}
-                <NavbarListItem name="Контакты" path="/contacts" />
-            </Navbar>
+                <Navbar>
+                    <NavbarListItem name="Каталог" path="/catalog" />
+                    <NavbarListItem name="Контакты" path="/contacts" />
+                    <NavbarListItem name="О Компании" path='/'/>
+                </Navbar>
             <Outlet />
         </>
     );

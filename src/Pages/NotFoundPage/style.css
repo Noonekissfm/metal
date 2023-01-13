@@ -1,7 +1,39 @@
 .not-found {
+    margin-top: 150px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
     justify-content: center;
-    
+    height: auto;
+}
+
+.not-found__goback,
+.not-found a {
+    cursor: pointer;
+    color: inherit;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.0rem;
+}
+
+
+@media (max-width: 440px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+    .not-found {
+        margin-top: 100px;
+    }
+}
+@media (max-width: 376px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+    .not-found {
+        margin-top: 80px;
+    }
+    .not-found > p {
+        font-size: 0.8rem;
+    }
 }
