@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Header } from '../../Header';
-import { Navbar } from '../../Navbar';
-import { NavbarListItem } from '../../Navbar/NavbarListItem';
+
+import { Header } from 'src/components/Header';
+import { Navbar } from 'src/components/Navbar';
+import { NavbarListItem } from 'src/components/Navbar/NavbarListItem';
 
 interface IProps {}
 export const Layout: FC<IProps> = () => {

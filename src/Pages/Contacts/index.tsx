@@ -1,5 +1,7 @@
 import { FC } from 'react';
-import { PersonCard } from './PersonCard';
+
+import { PersonCard } from 'src/Pages/Contacts/PersonCard';
+
 import './style.css';
 
 interface IProps {

@@ -1,18 +1,16 @@
-import { Header } from './components/Header';
-import { Navbar } from './components/Navbar';
-import { NavbarListItem } from './components/Navbar/NavbarListItem';
-import './index.css'
-
-import json from './data/dataV2.json'
-import personalData from './data/personData.json'
-
 import { Route, Routes } from 'react-router-dom';
-import { ContactsPage } from './components/Pages/Contacts';
-import { utils } from './data/contacts';
-import { CategoryPage } from './components/Pages/CategoryPage';
-import { NotFoundPage } from './components/Pages/NotFoundPage';
-import { HomePage } from './components/Pages/HomePage';
-import { Layout } from './components/Pages/Layout';
+
+import { CategoryPage } from 'src/Pages/CategoryPage';
+import { NotFoundPage } from 'src/Pages/NotFoundPage';
+import { ContactsPage } from 'src/Pages/Contacts';
+import { HomePage } from 'src/Pages/HomePage';
+import { Layout } from 'src/Pages/Layout';
+
+import personalData from '../data/personData.json'
+import { utils } from 'src/data/contacts';
+import json from '../data/dataV2.json'
+
+import 'src/styles.css'
 
 function App() {
     return (

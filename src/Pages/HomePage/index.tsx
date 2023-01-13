@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
-import { utils } from '../../../data/contacts';
-import logo from '../../../assets/logo.png'
+
+import { utils } from 'src/data/contacts';
+import logo from 'src/assets/logo.png'
 
 import './style.css'
 

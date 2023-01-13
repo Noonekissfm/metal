@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { useGoBack } from '../../../utils/utils';
+
+import { useGoBack } from 'src/utils/utils';
 
 import './style.css';
 

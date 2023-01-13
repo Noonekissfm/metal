@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
+
 import './style.css';
 
 interface IProps {
@@ -7,7 +8,7 @@ interface IProps {
     title: string;
 }
 
-export const BcLink: FC<IProps> = ({ link, title }) => {
+export const PreviousPage: FC<IProps> = ({ link, title }) => {
     return (
         <li className='BcLink'>
             <Link to={link}>{title}</Link>

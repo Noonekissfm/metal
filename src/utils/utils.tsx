@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 // Get sub Categories data
 export const getRenderData = (keys: any, data: any) => {
@@ -15,27 +15,6 @@ export const getRenderData = (keys: any, data: any) => {
 
 export const getDescriptionData = (data: string) => {
     return data.split('.').filter((item: any) => item !== '')
-}
-
-export const getLinksObject = (arrKeys: string[], arrHeaders: string[]) => {
-    let tempLink = '';
-
-    const obj = arrKeys.map((item: any, index: number) => {
-        return {
-            key: item,
-            title: item === 'index'? 'Каталог продукции' : arrHeaders[index],
-            _link: tempLink += '/' + item
-        }
-    })
-    return obj
-}
-
-export const useKeysFromParams = () => {
-    const keys = Object.values(useParams())
-    if(keys[0] !== 'index') {
-        keys.unshift('index')
-    }
-    return keys
 }
 
 export const useGoBack = () => {

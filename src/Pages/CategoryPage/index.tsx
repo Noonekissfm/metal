@@ -1,9 +1,12 @@
 import React, { FC, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
-import { getRenderData, useKeysFromParams } from '../../../utils/utils'
-import { Breadcrumbs } from '../../Breadcrumbs'
-import { Category } from '../../Category'
-import { ItemCard } from '../../ItemCard'
+
+import { Breadcrumbs } from 'src/components/Breadcrumbs'
+import { Category } from 'src/components/Category'
+import { ItemCard } from 'src/components/ItemCard'
+
+import { useUrlParams } from 'src/hooks'
+import { getRenderData } from 'src/utils/utils'
 
 import './style.css'
 
@@ -12,7 +15,7 @@ interface IProps {
 }
 
 export const CategoryPage: FC<IProps> = ({data}) => {
-    const keys = useKeysFromParams()
+    const keys = useUrlParams()
 
     console.log(useParams())
 

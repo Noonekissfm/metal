@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
-import { useParams } from 'react-router-dom';
-import { Category } from '../../Category';
+
+import { Category } from 'src/components/Category';
+
 import './style.css';
 
 interface IProps {
