@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 // Get sub Categories data
 export const getRenderData = (keys: any, data: any) => {
@@ -36,4 +36,10 @@ export const useKeysFromParams = () => {
         keys.unshift('index')
     }
     return keys
+}
+
+export const useGoBack = () => {
+    const navigate = useNavigate();
+
+    return navigate(-1)
 }
