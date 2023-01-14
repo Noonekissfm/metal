@@ -28,7 +28,7 @@ export const ContactsPage: FC<IProps> = ({ phone, mail, workTime, company, adres
                         <li>Режим работы офиса: {workTime}</li>
                         <li>Адрес офиса: {adress}</li>
                     </ol>
-                    <YandexMap title={company}/>
+                    <YandexMap title={`Офис ${company}`}/>
                 </div>
                 <div className="OurTeam">
                     <h1 className='contacts_title'>Наша команда</h1>

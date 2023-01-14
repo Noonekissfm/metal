@@ -1,21 +1,20 @@
 import React, { FC } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
+import { BackButton } from 'src/components/AppButtons/BackButton';
 
 import './style.css';
 
-interface IProps {
+interface IProps {}
 
-}
-
-export const NotFoundPage: FC <IProps> = () => {
-    const navigate = useNavigate();
-    const goBack = () => navigate(-1)
-    
+export const NotFoundPage: FC<IProps> = () => {
     return (
-        <div className='not-found'>
-            <h1>Страница не найдена: 404</h1>
-            <p>Вы можете вернуться <span className='not-found__goback' onClick={goBack}>Назад</span> или <Link to={'/'}>На главную</Link></p>
+        <div className="not-found">
+            <div className="not-found__text-wrapper">
+                <h1 className="not-found__title">Такой страницы не существует</h1>
+                <p className="not-found__description">
+                    Вы можете вернуться {<BackButton underlineText/>} или <Link to={'/'}>На главную</Link>
+                </p>
+            </div>
         </div>
-    )
-}
+    );
+};

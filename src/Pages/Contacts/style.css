@@ -91,6 +91,9 @@
     .OurTeam {
         margin-top: 10px;
     }
+    .contacts__companyInfo {
+        padding-left: 30px;
+    }
 }
 
 @media (max-width: 732px) {
@@ -131,5 +134,15 @@
     }
     .teammates {
         grid-template-columns: 90%;
+    }
+}
+
+@media (max-width: 375px) {
+    .contacts__companyInfo {
+        list-style: none;
+        padding-left: 0px;
+    }
+    .contacts__companyInfo > li {
+        font-size: 1rem;
     }
 }

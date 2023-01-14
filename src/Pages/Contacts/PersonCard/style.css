@@ -54,7 +54,7 @@
 /* MW-1480px */
 
 @media (max-width: 1200px) {
-
+    
 }
 
 /* MW-1200px */
@@ -62,6 +62,9 @@
 @media (max-width: 732px) {
     .teammates {
         justify-items: center;
+    }
+    .personCard {
+        width: 100%;
     }
 }
 

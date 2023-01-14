@@ -14,8 +14,8 @@ export const Contacts: FC<IProps> = ({phone, mail}) => {
 
     return (
         <div className="header_contacts">
-            {phone && <Contact type='phone' contact={utils.phone}/>}
-            {mail && <Contact type='mail' contact={utils.mail}/>}
+            {phone && <Contact icon={true} type='phone' contact={utils.phone}/>}
+            {mail && <Contact icon={true} type='mail' contact={utils.mail}/>}
             <WorkTime />
         </div>
     );

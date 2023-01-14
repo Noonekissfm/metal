@@ -17,6 +17,10 @@
     flex-direction: row;
 }
 
+.ItemPrice__order .contact {
+    margin: 0;
+}
+
 .ItemPrice__price {
     font-weight: 500;
 }

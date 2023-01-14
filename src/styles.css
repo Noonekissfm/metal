@@ -1,79 +1,87 @@
 * {
-  margin-block-start: 0;
-  margin-block-end: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f8f8;
-  min-height: 100vh;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f8f8f8;
+    min-height: 100vh;
 }
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
 }
 
 .wrapper {
-  width: 90%;
-  margin: 0 auto;
+    width: 70vw;
+    margin: 0 auto;
 }
 
 .main--wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.border4 {
-  border-radius: 4px;
-}
-
-.margin-bottom-30 {
-  margin-bottom: 30px;
-}
-
-.margin-top-30 {
-  margin-top: 30px;
-}
-
-.align-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
+html {
+    font-size: 16px;
 }
 
 /* Media */
 
 /* MW-1480px */
 
-@media (min-width: 1200px) and (max-width: 1480px) {
-
+@media (max-width: 1480px) {
+    .wrapper {
+        width: 80vw;
+    }
+    html {
+        font-size: 15px;
+    }
 }
 
 /* MW-1200px */
 
-@media (min-width: 768px) and (max-width: 1200px) {
-    
+@media (max-width: 960px) {
+    .wrapper {
+        width: 85vw;
+    }
+    html {
+        font-size: 14px;
+    }
 }
 
 /* MW-768px */
 
-@media (min-width: 420px) and (max-width: 768px) {
-  body {
-    font-size: 16px;
-  }
+@media (max-width: 768px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 440px) {
+    body {
+        font-size: 16px;
+    }
+    .wrapper {
+        width: 90vw;
+    }
+    html {
+        font-size: 14px;
+    }
 }
 
 /* MW-320px */
 
-@media (min-width: 320px) and (max-width: 420px) {
-  body {
-    font-size: 14px;
-  }
+@media (max-width: 320px) {
+    html {
+        font-size: 14px;
+    }
 }
