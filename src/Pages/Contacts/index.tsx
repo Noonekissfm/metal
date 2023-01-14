@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { YandexMap } from 'src/components/YandexMap';
 
 import { PersonCard } from 'src/Pages/Contacts/PersonCard';
 
@@ -6,6 +7,7 @@ import './style.css';
 
 interface IProps {
     phone: string;
+    mail: string;
     workTime: string;
     company: string;
     adress: string;
@@ -14,18 +16,19 @@ interface IProps {
     };
 }
 
-export const ContactsPage: FC<IProps> = ({ phone, workTime, company, adress, data }) => {
+export const ContactsPage: FC<IProps> = ({ phone, mail, workTime, company, adress, data }) => {
     return (
         <div className="contacts">
             <div className="wrapper">
                 <div className="contacts">
                     <h1 className="contacts_title company">{company}</h1>
-                    <ol>
-                        <li>Телефон: {phone}</li>
-                        {/* <li>E-mail: </li> */}
+                    <ol className='contacts__companyInfo'>
+                        <li>Телефон: <a href={`tel:${phone}`}>{phone}</a></li>
+                        <li>E-mail: <a href={`mailto:${mail}`}>{mail}</a></li>
                         <li>Режим работы офиса: {workTime}</li>
                         <li>Адрес офиса: {adress}</li>
                     </ol>
+                    <YandexMap />
                 </div>
                 <div className="OurTeam">
                     <h1 className='contacts_title'>Наша команда</h1>

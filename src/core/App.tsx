@@ -26,7 +26,7 @@ function App() {
                     <Route path='catalog/:category/:subCategory/:item/:items' element={<CategoryPage data={json}/>}/>
                     <Route path='catalog/:category/:subCategory/:item/:items/:itemsV2' element={<CategoryPage data={json}/>}/>
                     <Route path='catalog/:category/:subCategory/:item/:items/:itemsV2/:itemsV3' element={<CategoryPage data={json}/>}/>
-                    <Route path='contacts' element={<ContactsPage phone={utils.phone} workTime={utils.workTime} company={utils.companyName} adress={utils.adress} data={personalData}/>} />
+                    <Route path='contacts' element={<ContactsPage phone={utils.phone} mail={utils.mail} workTime={utils.workTime} company={utils.companyName} adress={utils.adress} data={personalData}/>} />
                     <Route path='*' element={<NotFoundPage />} />
                 </Route>
 

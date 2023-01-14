@@ -1,7 +1,7 @@
 .contacts {
     display: flex;
     flex-flow: column;
-    margin-top: 50px;
+    margin: 50px 0;
     align-items: center;
 }
 
@@ -18,17 +18,23 @@
     border-bottom: 1px solid #e8e8e8;
 }
 
-.contacts ol {
+.contacts__companyInfo {
     display: flex;
     flex-flow: column;
     list-style: circle;
     margin-top: 20px;
 }
 
-.contacts ol > li {
+.contacts__companyInfo > li {
     cursor: auto;
     font-size: 1.1rem;
     padding: 5px 0;
+}
+
+.contacts__companyInfo a {
+    white-space: nowrap;
+    word-break: keep-all;
+    color: inherit;
 }
 
 .OurTeam {
@@ -94,10 +100,10 @@
     .contacts {
         margin-top: 10px;
     }
-    .contacts ol {
+    .contacts__companyInfo {
         margin-top: 10px;
     }
-    .contacts ol > li {
+    .contacts__companyInfo > li {
         cursor: auto;
         font-size: 1.1rem;
         padding: 2px;
