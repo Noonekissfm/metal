@@ -5,7 +5,10 @@ import { Header } from 'src/components/Header';
 
 import { Logo } from 'src/components/Header/Logo';
 import { Navbar } from 'src/components/Header/Navbar';
-import { Contacts } from 'src/components/Header/Contacts';
+import { Footer } from 'src/components/Footer';
+import { Contacts } from 'src/components/Contacts';
+
+import style from './style.module.css';
 
 
 interface IProps {}
@@ -18,21 +21,8 @@ export const Layout: FC<IProps> = () => {
                 <Contacts phone mail workTime />
             </Header>
 
-            <Outlet />
+            <div className={style.flexGrow}><Outlet /></div>
+            <Footer />
         </>
     );
 };
-// interface IProps {}
-// export const Layout: FC<IProps> = () => {
-//     return (
-//         <>
-//             <Header />
-//                 <Navbar>
-//                     <NavbarListItem name="Каталог" path="/catalog" />
-//                     <NavbarListItem name="Контакты" path="/contacts" />
-//                     <NavbarListItem name="О Компании" path='/'/>
-//                 </Navbar>
-//             <Outlet />
-//         </>
-//     );
-// };

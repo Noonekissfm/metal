@@ -10,6 +10,58 @@
     z-index: -1;
 }
 
+.homepage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.companyName {
+}
+
+.description {
+    width: 80vw;
+}
+
+.companyName {
+    font-size: 3rem;
+}
+
+.description p {
+    font-size: 1rem;
+}
+
+.description p,
+.companyName {
+    margin-top: 20px;
+}
+
+.label {
+    top: 10vh;
+    left: 20vw;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    background-color: #acacac70;
+    border-radius: 10%;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 0 6px 2px #808080;
+}
+
+.logoWrapper {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+}
+
+.logoWrapper svg {
+    width: 100%;
+    height: 100%;
+}
+
+
 /* Media */
 
 /* MW-1480px */

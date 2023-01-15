@@ -7,7 +7,7 @@ import { HomePage } from 'src/Pages/HomePage';
 import { Layout } from 'src/Pages/Layout';
 
 import personalData from '../data/personData.json'
-import { utils } from 'src/data/contacts';
+import { company } from 'src/types/companyInfo';
 import json from '../data/dataV2.json'
 
 import 'src/styles.css'
@@ -26,7 +26,7 @@ function App() {
                     <Route path='catalog/:category/:subCategory/:item/:items' element={<CategoryPage data={json}/>}/>
                     <Route path='catalog/:category/:subCategory/:item/:items/:itemsV2' element={<CategoryPage data={json}/>}/>
                     <Route path='catalog/:category/:subCategory/:item/:items/:itemsV2/:itemsV3' element={<CategoryPage data={json}/>}/>
-                    <Route path='contacts' element={<ContactsPage phone={utils.phone} mail={utils.mail} workTime={utils.workTime} company={utils.companyName} adress={utils.adress} data={personalData}/>} />
+                    <Route path='contacts' element={<ContactsPage phone={company.phone} mail={company.mail} workTime={company.workTime} company={company.name} adress={company.address} data={personalData}/>} />
                     <Route path='*' element={<NotFoundPage />} />
                 </Route>
 
