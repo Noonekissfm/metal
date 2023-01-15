@@ -1,0 +1,35 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1rem;
+
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
+/* Media */
+
+/* MW-1480px */
+
+@media (max-width: 1480px) {
+
+}
+
+/* MW-1200px */
+
+@media (max-width: 1200px) {
+
+}
+
+/* MW-768px */
+
+@media (max-width: 630px) {
+
+}
+
+/* MW-320px */
+
+@media (min-width: 320px) and (max-width: 375px) {
+
+}

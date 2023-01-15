@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
-import './style.css';
-import phone from '../../assets/phone.svg';
-import mail from '../../assets/mail.svg';
+
+import phone from '../../assets/icons/phone.svg';
+import mail from '../../assets/icons/mail.svg';
+import style from './style.module.css';
 
 interface IProps {
     icon?: boolean;
@@ -12,7 +13,7 @@ interface IProps {
 export const Contact: FC<IProps> = ({ type, contact, icon=false }) => {
     const isContactPhone = type === 'phone';
     return (
-        <div className="contact">
+        <div className={style.contact}>
             {icon && (isContactPhone ? <img src={phone} alt={`${type}`} /> : <img src={mail} alt={`${type}`} />)}
             <a href={isContactPhone ? `tel:${contact}` : `mailto:${contact}`}>{contact}</a>
         </div>

@@ -1,18 +1,30 @@
-import React from 'react';
-import { Contacts } from './Contacts';
-import { Logo } from './Logo';
+import React, { FC } from 'react';
 
-import './style.css';
+import style from './style.module.css';
 
-export const Header = () => {
+interface IProps {
+    children: any,
+}
+
+export const Header: FC<IProps> = ({children}) => {
     return (
-        <section className="section_header">
-            <div className="wrapper">
-                <div className="header">
-                    <Logo />
-                    <Contacts phone={true} mail={true} />
-                </div>
+        <section className={style.section}>
+            <div className={style.wrapper}>
+                {children}
             </div>
         </section>
     );
 };
+
+// export const Header = () => {
+//     return (
+//         <section className="section_header">
+//             <div className="wrapper">
+//                 <div className="header">
+//                     <Logo />
+//                     <Contacts phone={true} mail={true} />
+//                 </div>
+//             </div>
+//         </section>
+//     );
+// };

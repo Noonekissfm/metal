@@ -1,0 +1,37 @@
+.banner__wrapper {
+    width: 100vw;
+    display: flex;
+}
+
+.banner__wrapper img {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Media */
+
+/* MW-1480px */
+
+@media (max-width: 1480px) {
+
+}
+
+/* MW-1200px */
+
+@media (max-width: 1200px) {
+
+}
+
+/* MW-768px */
+
+@media (max-width: 630px) {
+
+}
+
+/* MW-320px */
+
+@media (min-width: 320px) and (max-width: 375px) {
+
+}

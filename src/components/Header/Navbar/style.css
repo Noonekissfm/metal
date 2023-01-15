@@ -6,6 +6,7 @@
 
 .navbar ul {
     display: flex;
+    vertical-align: middle;
     list-style: none;
     padding: 0 0 4px 0;
 }

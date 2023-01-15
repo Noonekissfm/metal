@@ -1,0 +1,43 @@
+.section {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #000;
+    box-shadow: 0 0 10px 3px #282828;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: space-around;
+    color: #1f333f;
+}
+
+
+/* Media */
+
+/* MW-1480px */
+
+@media (max-width: 1480px) {
+
+}
+
+/* MW-1200px */
+
+@media (max-width: 1200px) {
+    .wrapper {
+        width: 100%;
+    }
+}
+
+/* MW-768px */
+
+@media (max-width: 630px) {
+
+}
+
+/* MW-320px */
+
+@media (min-width: 320px) and (max-width: 375px) {
+
+}

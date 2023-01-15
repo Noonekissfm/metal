@@ -1,0 +1,10 @@
+.workTime {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+}
+
+.workTime img {
+    height: 1rem;
+    margin: 0 0.5rem;
+}

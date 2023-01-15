@@ -6,7 +6,7 @@ interface IProps {
     title: string;
 }
 export const YandexMap: FC<IProps> = ({ title }) => {
-    const defaultState = { center: [59.888848, 30.482479], zoom: 14 };
+    const defaultState = { center: [59.897262, 30.482542], zoom: 13 };
 
     return (
         <YMaps>

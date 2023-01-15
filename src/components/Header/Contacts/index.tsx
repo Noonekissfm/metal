@@ -1,22 +1,22 @@
 import React, { FC } from 'react';
-import { useWindowDimensions } from 'src/hooks';
 import { utils } from '../../../data/contacts';
 import { Contact } from '../../Contact/Contact';
-import { WorkTime } from '../WorkTime';
-import './style.css'
+import style from './style.module.css'
+import { WorkTime } from './WorkTime';
 
 interface IProps {
-    phone: boolean,
-    mail: boolean,
+    phone?: boolean,
+    mail?: boolean,
+    workTime?: boolean,
 }
 
-export const Contacts: FC<IProps> = ({phone, mail}) => {
+export const Contacts: FC<IProps> = ({phone, mail, workTime}) => {
 
     return (
-        <div className="header_contacts">
+        <div className={style.wrapper}>
             {phone && <Contact icon={true} type='phone' contact={utils.phone}/>}
             {mail && <Contact icon={true} type='mail' contact={utils.mail}/>}
-            <WorkTime />
+            {workTime && <WorkTime />}
         </div>
     );
 };

@@ -1,0 +1,41 @@
+.navbar {
+    height: fit-content;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    height: fit-content;
+}
+
+
+
+
+/* Media */
+
+/* MW-1480px */
+
+@media (max-width: 1480px) {
+
+}
+
+/* MW-1200px */
+
+@media (max-width: 1200px) {
+
+}
+
+/* MW-768px */
+
+@media (max-width: 630px) {
+
+}
+
+/* MW-320px */
+
+@media (min-width: 320px) and (max-width: 375px) {
+
+}

@@ -1,15 +1,16 @@
 import React, { FC } from 'react'
-import './style.css'
-import clock from '../../../assets/clock.svg'
+
+import clock from '../../../../assets/icons/clock.svg'
+import style from './style.module.css';
 
 
 
 interface IProps {
 }
 
-export const WorkTime: FC<IProps> = ({}) => {
+export const WorkTime: FC<IProps> = () => {
     return (
-        <div className='contact'>
+        <div className={style.workTime}>
             <img src={clock} alt={"Режим работы"} />
             <p>ПН-ПТ: 9.00 - 17.00</p>
         </div>
