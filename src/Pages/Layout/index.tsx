@@ -10,7 +10,6 @@ import { Contacts } from 'src/components/Contacts';
 
 import style from './style.module.css';
 
-
 interface IProps {}
 export const Layout: FC<IProps> = () => {
     return (
@@ -18,10 +17,13 @@ export const Layout: FC<IProps> = () => {
             <Header>
                 <Logo />
                 <Navbar />
-                <Contacts phone mail workTime />
+                <div className={style['contacts-wrapper']}><Contacts phone mail workTime /></div>
+                
             </Header>
 
-            <div className={style.flexGrow}><Outlet /></div>
+            <div className={style.flexGrow}>
+                <Outlet />
+            </div>
             <Footer />
         </>
     );

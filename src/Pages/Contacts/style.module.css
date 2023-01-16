@@ -1,0 +1,13 @@
+.contacts-info_wrapper svg {
+    fill: #1f333f;
+    stroke: #1f333f;
+}
+
+.contacts-info_wrapper a {
+    text-decoration: none;
+    border-bottom: 1px solid #1f333f;
+}
+
+.contacts-info_wrapper {
+    margin: 20px 0;
+}

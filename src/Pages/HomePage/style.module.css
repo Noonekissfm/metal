@@ -33,9 +33,8 @@
     font-size: 1.1rem;
 }
 
-.description p,
-.companyName {
-    margin-top: 20px;
+.description p {
+    margin-bottom: 20px;
 }
 
 .label {
@@ -60,6 +59,22 @@
 .logoWrapper svg {
     width: 100%;
     height: 100%;
+}
+
+.short_menu {
+    display: flex;
+    justify-content: center;
+}
+.short_menu a {
+    margin: 0 5px;
+    padding: 3px 14px;
+}
+
+.bottom_section {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
 }
 
 

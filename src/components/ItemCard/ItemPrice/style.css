@@ -5,6 +5,13 @@
     align-items: flex-end;
 }
 
+.ItemPrice__wrapper--primary a,
+.ItemPrice__wrapper--secondary a {
+    text-decoration: none;
+    border-bottom: 1px solid #1f333f;
+    color: #1f333f;
+}
+
 .ItemPrice__wrapper--primary {
     flex-direction: column;
 }

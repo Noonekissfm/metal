@@ -1,9 +1,11 @@
 import { FC } from 'react';
+import { InfoGroup } from 'src/components/Footer/components/InfoGroup';
 import { YandexMap } from 'src/components/YandexMap';
 
 import { PersonCard } from 'src/Pages/Contacts/PersonCard';
 
 import './style.css';
+import style from './style.module.css';
 
 interface IProps {
     phone: string;
@@ -22,12 +24,7 @@ export const ContactsPage: FC<IProps> = ({ phone, mail, workTime, company, adres
             <div className="wrapper">
                 <div className="contacts">
                     <h1 className="contacts_title company">{company}</h1>
-                    <ol className='contacts__companyInfo'>
-                        <li>Телефон: <a href={`tel:${phone}`}>{phone}</a></li>
-                        <li>E-mail: <a href={`mailto:${mail}`}>{mail}</a></li>
-                        <li>Режим работы офиса: {workTime}</li>
-                        <li>Адрес офиса: {adress}</li>
-                    </ol>
+                    <div className={style['contacts-info_wrapper']}><InfoGroup /></div>
                     <YandexMap title={`Офис ${company}`}/>
                 </div>
                 <div className="OurTeam">

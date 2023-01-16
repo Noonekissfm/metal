@@ -12,9 +12,9 @@ export const Navbar: FC<IProps> = () => {
     return (
         <nav className={style.navbar}>
             <ul>
+                <ListItem name='О компании' path='/'/>
                 <ListItem name='Каталог' path='/catalog'/>
                 <ListItem name='Контакты' path='/contacts'/>
-                <ListItem name='О компании' path='/'/>
             </ul>
         </nav>
     );

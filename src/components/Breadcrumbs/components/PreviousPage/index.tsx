@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import './style.css';
+import style from './style.module.css';
 
 interface IProps {
     link: string;
@@ -10,7 +10,7 @@ interface IProps {
 
 export const PreviousPage: FC<IProps> = ({ link, title }) => {
     return (
-        <li className='PreviousPage'>
+        <li className={style.PreviousPage}>
             <Link to={link}>{title}</Link>
         </li>
     );

@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Алюминиевый прокат",
+        "url": "catalog/tcvetnoy-metalloprokat/alyuminiy"
+    },
+    {
+        "title": "Бронза",
+        "url": "catalog/tcvetnoy-metalloprokat/bronza"
+    },
+    {
+        "title": "Латунь",
+        "url": "catalog/tcvetnoy-metalloprokat/latun"
+    },
+    {
+        "title": "Медь",
+        "url": "catalog/tcvetnoy-metalloprokat/med"
+    },
+    {
+        "title": "Свинец",
+        "url": "catalog/tcvetnoy-metalloprokat/svinets"
+    },
+    {
+        "title": "Титан",
+        "url": "catalog/tcvetnoy-metalloprokat/titan"
+    },
+    {
+        "title": "Спецстали",
+        "url": "catalog/specstali"
+    },
+    {
+        "title": "Нержавеющий металлопрокат",
+        "url": "catalog/nerzhaveyuschiy-metalloprokat"
+    }
+]

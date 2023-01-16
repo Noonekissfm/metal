@@ -1,12 +1,18 @@
 .footer {
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     height: fit-content;
     width: 100%;
-    padding: 5px 0;
+    padding: 20px 0;
     background-color: #1f333f;
     border-top: 2px solid #000;
     box-shadow: 0 0 10px 3px #282828;
     color: #fff;
+}
+
+.footer a {
+    text-decoration: none;
+    border-bottom: 1px solid rgb(168, 168, 168);
 }

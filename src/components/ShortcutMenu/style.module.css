@@ -1,0 +1,39 @@
+.ShortcutMenu a{
+    display: block;
+
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: bold;
+    text-decoration: none;
+
+    border-radius: 6px;
+
+
+    color: #1f333f;
+    border: 2px solid #1f333f;
+    background-color: #fff;
+    transition: background-color 0.2s ease;
+}
+
+.ShortcutMenu a:hover {
+    background-color: #1f333f;
+    color: #fff;
+}
+
+/* V2 */
+
+/* .ShortcutMenu a{
+    display: block;
+
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: bold;
+    text-decoration: none;
+
+
+
+    color: #1f333f;
+    border-bottom: 2px solid #1f333f;
+    transition: background-color 0.2s ease;
+} */
+

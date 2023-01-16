@@ -1,19 +1,25 @@
 .breadcrumbs {
+    display: grid;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+    gap: 1rem;
+
     text-align: center;
     justify-content: center;
     list-style: none;
-    display: grid;
-    gap: 1rem;
-    background-color: #e5e5e5;
+
+
+    background-color: #fff;
     max-width: 100%;
     width: fit-content;
     min-height: fit-content;
-    border-radius: 4px;
-    box-shadow: 0 0 4px 1px #cdcdcd;
-    grid-auto-columns: auto;
-    grid-auto-flow: column;
+    
+    border: 0 0 8px 1px #c8c8c8;
+    border-radius: 8px;
+    box-shadow: 0 0 8px 1px #c8c8c8;
+
     margin: 20px 0;
-    padding: 4px 8px;
+    padding: 0.5rem 1rem;
 }
 
 /* Media */
@@ -22,14 +28,14 @@
 
 /* MW-1480px */
 
-@media (max-width: 1480px) {
+/* @media (max-width: 1480px) {
     .breadcrumbs {
         grid-auto-columns: auto;
         grid-auto-flow: column;
         margin: 20px 0;
         padding: 2px 2px;
     }
-}
+} */
 
 /* MW-1200px */
 

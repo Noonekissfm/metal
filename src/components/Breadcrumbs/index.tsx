@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 
-import { CurrentPage } from './components/CurrentPage/CurrentPage';
-import { PreviousPage } from './components/PreviousPage/PreviousPage';
+import { CurrentPage } from './components/CurrentPage';
 
 import { getLinksObject } from './utils';
 
-import './style.css';
+import style from './style.module.css';
+import { PreviousPage } from './components/PreviousPage';
 
 interface IProps {
     keys: string[];
@@ -16,7 +16,7 @@ export const Breadcrumbs: FC<IProps> = ({ keys, titles }) => {
     const links = getLinksObject(keys, titles);
 
     return (
-        <ul className="breadcrumbs">
+        <ul className={style.breadcrumbs}>
             {links.map((item: any, index: number) => {
                 const isLastLink = index === links.length - 1;
                 const key = `${item}-${index}`;

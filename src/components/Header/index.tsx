@@ -15,16 +15,3 @@ export const Header: FC<IProps> = ({children}) => {
         </section>
     );
 };
-
-// export const Header = () => {
-//     return (
-//         <section className="section_header">
-//             <div className="wrapper">
-//                 <div className="header">
-//                     <Logo />
-//                     <Contacts phone={true} mail={true} />
-//                 </div>
-//             </div>
-//         </section>
-//     );
-// };

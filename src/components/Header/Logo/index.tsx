@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { company } from '../../../types/companyInfo';
 
-import logo from "../../../assets/company/cleanest_logo.svg"
+import logo from "../../../assets/company/logo.svg"
 import style from './style.module.css'
 
 interface IProps {
