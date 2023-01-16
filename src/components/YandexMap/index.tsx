@@ -10,15 +10,13 @@ export const YandexMap: FC<IProps> = ({ title }) => {
 
     return (
         <YMaps>
-            <div className="YMWrapper">
-                <Map defaultState={defaultState} height={'35vh'} width={'100%'}>
+            <Map defaultState={defaultState} height={'35vh'} width={'100%'}>
                     <Placemark
                         geometry={[59.888848, 30.482479]}
                         options={{ preset: 'islands#blackStretchyIcon' }}
                         properties={{ iconContent: title }}
                     />
-                </Map>
-            </div>
+            </Map>
         </YMaps>
     );
 };

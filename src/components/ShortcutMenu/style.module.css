@@ -1,4 +1,4 @@
-.ShortcutMenu a{
+/* .ShortcutMenu a{
     display: block;
 
     font-size: 1.2rem;
@@ -18,11 +18,11 @@
 .ShortcutMenu a:hover {
     background-color: #1f333f;
     color: #fff;
-}
+} */
 
 /* V2 */
 
-/* .ShortcutMenu a{
+.ShortcutMenu a{
     display: block;
 
     font-size: 1.2rem;
@@ -33,7 +33,11 @@
 
 
     color: #1f333f;
-    border-bottom: 2px solid #1f333f;
+    border-bottom: 1px solid #1f333f;
     transition: background-color 0.2s ease;
-} */
+}
+
+.ShortcutMenu a:hover {
+    background-color: #e8e8e8;
+}
 

@@ -1,0 +1,9 @@
+.backplate {
+    height: fit-content;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    box-shadow: 0 0 8px 1px #c8c8c8;
+
+
+    padding: 1rem;
+}

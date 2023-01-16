@@ -15,6 +15,9 @@ interface IProps {
 export const Breadcrumbs: FC<IProps> = ({ keys, titles }) => {
     const links = getLinksObject(keys, titles);
 
+    // <Breadcrumbs keys={keys} titles={renderData.menu_path} />
+    // <Breadcrumbs keys={['catalog']} titles={['Каталог продукции']} />}
+
     return (
         <ul className={style.breadcrumbs}>
             {links.map((item: any, index: number) => {

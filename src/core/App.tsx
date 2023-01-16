@@ -11,6 +11,7 @@ import { company } from 'src/types/companyInfo';
 import json from '../data/dataV2.json'
 
 import 'src/styles.css'
+import { CategoryPageV2 } from 'src/Pages/CategoryPageV2';
 
 function App() {
     return (

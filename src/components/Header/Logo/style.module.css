@@ -1,8 +1,10 @@
 .logo {
     height: 3.2vw;
     padding: 0.5rem;
+    width: fit-content;
 }
 
-.logo img {
+.logo svg {
     height: 100%;
+    width: fit-content;
 }

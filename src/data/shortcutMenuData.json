@@ -1,6 +1,14 @@
 [
     {
-        "title": "Алюминиевый прокат",
+        "title": "Черный металлопрокат",
+        "url": "catalog/chernyy-metalloprokat"
+    },
+    {
+        "title": "Нержавеющий металлопрокат",
+        "url": "catalog/nerzhaveyuschiy-metalloprokat"
+    },
+    {
+        "title": "Алюминий",
         "url": "catalog/tcvetnoy-metalloprokat/alyuminiy"
     },
     {
@@ -24,11 +32,7 @@
         "url": "catalog/tcvetnoy-metalloprokat/titan"
     },
     {
-        "title": "Спецстали",
+        "title": "Инструментальные и специальные стали",
         "url": "catalog/specstali"
-    },
-    {
-        "title": "Нержавеющий металлопрокат",
-        "url": "catalog/nerzhaveyuschiy-metalloprokat"
     }
 ]

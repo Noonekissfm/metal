@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Backplate } from 'src/components/Backplate';
 import { InfoGroup } from 'src/components/Footer/components/InfoGroup';
 import { YandexMap } from 'src/components/YandexMap';
 
@@ -18,14 +19,17 @@ interface IProps {
     };
 }
 
-export const ContactsPage: FC<IProps> = ({ phone, mail, workTime, company, adress, data }) => {
+export const ContactsPage: FC<IProps> = ({ company, data }) => {
     return (
         <div className="contacts">
             <div className="wrapper">
                 <div className="contacts">
                     <h1 className="contacts_title company">{company}</h1>
-                    <div className={style['contacts-info_wrapper']}><InfoGroup /></div>
-                    <YandexMap title={`Офис ${company}`}/>
+                    
+                    <div className={style['contacts-info_wrapper']}>
+                        <InfoGroup />
+                    </div>
+                    <Backplate width='80%'component={<YandexMap title={`Офис ${company}`}/>} />
                 </div>
                 <div className="OurTeam">
                     <h1 className='contacts_title'>Наша команда</h1>
