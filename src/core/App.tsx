@@ -6,9 +6,9 @@ import { ContactsPage } from 'src/Pages/Contacts';
 import { HomePage } from 'src/Pages/HomePage';
 import { Layout } from 'src/Pages/Layout';
 
-import personalData from '../data/personData.json'
+import personalData from 'src/data/personData.json'
 import { company } from 'src/types/companyInfo';
-import json from '../data/data.json'
+import json from 'src/data/data.json'
 
 import 'src/styles.css'
 
