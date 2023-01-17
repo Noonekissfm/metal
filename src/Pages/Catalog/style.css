@@ -1,0 +1,12 @@
+.catalog {
+    width: fit-content;
+    margin: 0;
+    box-shadow: 0 0 10px #e7e7e7;
+    border-radius: 4px;
+    padding-left: 0px;
+}
+
+.catalog a {
+    text-decoration: none;
+    color: inherit;
+}
