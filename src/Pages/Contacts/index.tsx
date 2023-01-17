@@ -29,11 +29,14 @@ export const ContactsPage: FC<IProps> = ({ company, data }) => {
                     
                     <div className={style['contacts-info_wrapper']}>
                         <InfoGroup />
-                        <div className={style['address--mobile']}><AddressLink icon/></div>
+                        
                     </div>
-                    <Backplate width='80%'>
-                        <YandexMap title={`Офис ${company}`}/>
-                    </Backplate>
+                    <div className={style['map-wrapper']}>
+                        <Backplate>
+                            <YandexMap title={`Офис ${company}`}/>
+                        </Backplate>
+                    </div>
+                    <div className={style['address--mobile']}><AddressLink icon/></div>
                 </div>
                 <div className="OurTeam">
                     <h1 className='contacts_title'>Наша команда</h1>

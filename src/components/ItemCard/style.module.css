@@ -69,5 +69,6 @@
     .itemCard__head div{
         font-size: 10px;
         text-align: left;
+        align-items: center;
     }
 }

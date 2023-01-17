@@ -16,6 +16,12 @@
     display: none;
 }
 
+.map-wrapper {
+    display: block;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 720px) {
     .address--mobile {
         display: block;

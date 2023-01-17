@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import style from './style.module.css';
 
 interface IProps {
-    data: Menu[]
+    data: Menu[];
 }
 
 interface Menu {
