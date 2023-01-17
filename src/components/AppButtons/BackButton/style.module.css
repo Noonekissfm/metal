@@ -8,6 +8,7 @@
     line-height: 1.5;
     font-weight: bold;
     text-decoration: none;
+    user-select: none;
 
     border-radius: 6px;
 

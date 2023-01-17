@@ -57,6 +57,7 @@
     }
     .wrapper > p, .wrapper > div {
         margin: 3px 0;
+        align-items: center;
     }
 }
 

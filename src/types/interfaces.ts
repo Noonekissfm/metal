@@ -1,6 +1,6 @@
 export interface data {
     [key: string]: {
-        subCategory: {}[] ;
+        subCategory: {}[];
         key: string;
         title: string;
         img_link?: string;
