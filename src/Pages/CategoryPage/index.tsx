@@ -32,8 +32,6 @@ export const CategoryPage: FC<data> = ({data}) => {
         subCategory = renderData.subCategory.length > 0;
         description = renderData.description? getDescription(renderData.description) : null
     }
-
-    
     
     return (
         <>
