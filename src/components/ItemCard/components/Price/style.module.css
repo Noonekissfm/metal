@@ -1,13 +1,18 @@
-.wrapper {
+.wrapper--price {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
 }
-
-.wrapper p {
+.wrapper {
         display: flex;
+        align-items: flex-end;
 }
 
+.wrapper p {
+
+}
+
+.wrapper--price a,
 .wrapper a {
         color: #1f333f;
         text-decoration: none;
@@ -17,11 +22,13 @@
         white-space: nowrap;
 }
 
-.wrapper>div {
+.wrapper > div,
+.wrapper--price > div {
         display: flex;
 }
 
-.wrapper span {
+.wrapper span,
+.wrapper--price span {
         font-weight: bold;
 }
 
@@ -40,16 +47,23 @@
 @media (max-width: 898px) {}
 
 @media (max-width: 720px) {
-        .wrapper {
+        .wrapper,
+        .wrapper--price {
                 align-items: flex-start;
         }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 480px) {
 
         .wrapper p,
         .wrapper a {
-            font-size: 0.9rem;
+            font-size: 1em;
+            text-align: left;
+        }
+        .wrapper > div,
+        .wrapper--price > div {
+                align-items: center;
+                text-align: left;
         }
 }
 

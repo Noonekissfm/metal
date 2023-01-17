@@ -21,13 +21,13 @@ function App() {
             <Routes>
                 <Route path='/' element={<Layout />}>
                     <Route index element={<HomePage />} />
-                    <Route path='catalog' element={<CategoryPage data={json}/>}/>
-                    <Route path='catalog/:category' element={<CategoryPage data={json}/>}/>
-                    <Route path='catalog/:category/:subCategory' element={<CategoryPage data={json}/>}/>
-                    <Route path='catalog/:category/:subCategory/:item' element={<CategoryPage data={json}/>}/>
-                    <Route path='catalog/:category/:subCategory/:item/:items' element={<CategoryPage data={json}/>}/>
-                    <Route path='catalog/:category/:subCategory/:item/:items/:itemsV2' element={<CategoryPage data={json}/>}/>
-                    <Route path='catalog/:category/:subCategory/:item/:items/:itemsV2/:itemsV3' element={<CategoryPage data={json}/>}/>
+                    <Route path='catalog' element={<CategoryPage data={test}/>}/>
+                    <Route path='catalog/:category' element={<CategoryPage data={test}/>}/>
+                    <Route path='catalog/:category/:subCategory' element={<CategoryPage data={test}/>}/>
+                    <Route path='catalog/:category/:subCategory/:item' element={<CategoryPage data={test}/>}/>
+                    <Route path='catalog/:category/:subCategory/:item/:items' element={<CategoryPage data={test}/>}/>
+                    <Route path='catalog/:category/:subCategory/:item/:items/:itemsV2' element={<CategoryPage data={test}/>}/>
+                    <Route path='catalog/:category/:subCategory/:item/:items/:itemsV2/:itemsV3' element={<CategoryPage data={test}/>}/>
                     <Route path='contacts' element={<ContactsPage phone={company.phone} mail={company.mail} workTime={company.workTime} company={company.name} adress={company.address} data={personalData}/>} />
                     <Route path='*' element={<NotFoundPage />} />
                 </Route>

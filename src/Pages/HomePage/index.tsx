@@ -4,7 +4,7 @@ import shortcutMenuData from 'src/data/shortcutMenuData.json'
 import { company } from 'src/types/companyInfo';
 import { ShortcutMenu } from 'src/components/ShortcutMenu';
 import { ReactComponent as Logo } from 'src/assets/company/logo.svg'
-import banner from 'src/assets/company/wall2.jpg';
+import banner from 'src/assets/company/wall1.jpg';
 
 import style from './style.module.css';
 

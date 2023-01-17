@@ -21,6 +21,11 @@
 .description--long {
     overflow: scroll;
     max-height: 40vh;
+    margin-bottom: 10px;
+}
+
+.description--long::-webkit-scrollbar {
+    display: none;
 }
 
 @media (max-width: 600px) {
@@ -37,4 +42,11 @@
         width: 90%;
         text-align: center;
     }
+    .description,
+    .description--long {
+        padding-left: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+
 }

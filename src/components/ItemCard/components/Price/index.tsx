@@ -8,16 +8,16 @@ interface IProps {
 }
 
 export const Price: FC<IProps> = ({ price }) => {
-    
+    const classList = ['wrapper', price? '--price' : ''].join('')
     return (
-        <div className={style.wrapper}>
+        <div className={style[classList]}>
             {!!price
             ?<>
                 <p>Стоимость одной тонны: <span>{`\u00A0${price}\u00A0`}</span>руб.</p>
-                <div>Сделать заказ можно по телефону:{'\u00A0'}<PhoneLink /></div>
+                <div><p>Сделать заказ можно по телефону:{'\u00A0'}</p><PhoneLink /></div>
             </>
             :<>
-                <p>Уточнить стоимость можно по телефону:{'\u00A0'}<PhoneLink /></p>
+                <p>Уточнить стоимость можно по телефону:{'\u00A0'}</p><PhoneLink />
             </>}
         </div>
     );

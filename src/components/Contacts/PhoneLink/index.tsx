@@ -12,9 +12,9 @@ interface IProps {
 
 export const PhoneLink: FC<IProps> = ({icon=false, strokeColor='#000', fillColor='#000'}) => {
     return (
-        <div className={style.wrapper}>  
+        <p>  
             {icon && <Phone stroke={strokeColor} fill={fillColor}/>}
             <a href={`tel:${company.phone}`}>{company.phone}</a>
-        </div>
+        </p>
     )
 }
