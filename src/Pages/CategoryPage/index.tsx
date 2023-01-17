@@ -13,6 +13,7 @@ import { NotFoundPage } from '../NotFoundPage'
 import { sortData } from './utils'
 import style from './style.module.css';
 import { data } from 'src/types/interfaces'
+import { MAX_WORDS_COUNT } from 'src/types/constants'
 
 
 
@@ -32,6 +33,8 @@ export const CategoryPage: FC<data> = ({data}) => {
         subCategory = renderData.subCategory.length > 0;
         description = renderData.description? getDescription(renderData.description) : null
     }
+
+    const isLongDescription = !!description && description.wordsCount >= MAX_WORDS_COUNT
     
     return (
         <>
@@ -44,7 +47,7 @@ export const CategoryPage: FC<data> = ({data}) => {
                 </div>}
                 {isMobile && <BackButton primary/>}
                 {subCategory ? <div className={style['menu_item_wrapper']}>{sortData(renderData.subCategory, 'title').map((item: {title: string, key: string} ) => item.title && <Category categoryKey={item.key} title={item.title} key={item.key} />)}</div> : <ItemCard data={renderData}/>}
-                {description?.description && subCategory && <div className={style.description_section}>{description.description.length > 0 && description.description.map((item: string, index) => <p key={`${item}-${index}`}>{item}</p>)}</div>}
+                {description?.description && subCategory && <div className={style[`description_section${isLongDescription? '--long' : ''}`]}>{description.description.length > 0 && description.description.map((item: string, index) => <p key={`${item}-${index}`}>{item}</p>)}</div>}
             </div>
         </div>
         : <NotFoundPage />}

@@ -6,8 +6,17 @@
 .category {
     margin: 30px 0;
 }
-.description_section {
+.description_section,
+.description_section--long {
     margin-top: 30px;
+}
+
+.description_section--long {
+    overflow-y: scroll;
+    max-height: 40vh;
+}
+.description_section--long::-webkit-scrollbar {
+    display: none;
 }
 
 .menu_item_wrapper {
