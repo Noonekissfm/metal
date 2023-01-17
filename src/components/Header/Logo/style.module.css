@@ -19,6 +19,7 @@
     .logo,
     .logo svg {
         height: 12vw;
+        width: 12vw;
         padding: 0;
     }
 }
