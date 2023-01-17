@@ -1,0 +1,11 @@
+.Footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+    .Footer {
+        flex-direction: column-reverse;
+    }
+}

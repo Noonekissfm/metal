@@ -64,6 +64,9 @@ html {
     html {
         font-size: 13px;
     }
+    .wrapper {
+        width: 90vw;
+    }
 }
 
 @media (max-width: 440px) {

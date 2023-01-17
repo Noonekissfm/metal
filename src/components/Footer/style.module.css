@@ -12,7 +12,26 @@
     color: #fff;
 }
 
+.mobile-size-wrapper {
+    display: none;
+}
+
 .footer a {
     text-decoration: none;
     border-bottom: 1px solid rgb(168, 168, 168);
 }
+
+@media (max-width: 720px) {
+    .footer {
+        font-size: 1.3rem;
+    }
+    .mobile-size-wrapper {
+        display: block;
+    }
+}
+@media (max-width: 440px) {
+    .footer {
+        padding: 10px 0;;
+    }
+}
+

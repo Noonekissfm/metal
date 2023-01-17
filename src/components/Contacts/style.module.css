@@ -34,8 +34,23 @@
 
 /* MW-768px */
 
-@media (max-width: 630px) {
+@media (max-width: 860px) {
+    .wrapper {
+        font-size: 0.8rem;
+    }
+    .wrapper svg {
+        margin: 0 1rem;
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+}
 
+@media (max-width: 720px) {
+    .wrapper {
+        flex-direction: column-reverse;
+        margin: 5px 0;
+        align-items: normal;
+    }
 }
 
 /* MW-320px */

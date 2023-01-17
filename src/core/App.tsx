@@ -8,7 +8,8 @@ import { Layout } from 'src/Pages/Layout';
 
 import personalData from '../data/personData.json'
 import { company } from 'src/types/companyInfo';
-import json from '../data/dataV2.json'
+import json from '../data/data.json'
+import test from '../data/__testData.json'
 
 import 'src/styles.css'
 import { CategoryPageV2 } from 'src/Pages/CategoryPageV2';

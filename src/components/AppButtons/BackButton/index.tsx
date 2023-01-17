@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './style.css';
+
+import style from './style.module.css';
 
 interface IProps {
     title?: string,
@@ -14,10 +15,12 @@ export const BackButton: FC<IProps> = ({title, underlineText, cursorPointer, col
     const navigate = useNavigate();
     const goBack = () => navigate(-1)
 
+    const classList = ['BackButton', primary? '--primary' : ''].join('')
+
     return (
         <>
             <span 
-            className={`BackButton${primary? '--primary' : null}`} 
+            className={style[classList]} 
             onClick={goBack}
             style={{
                 textDecoration: underlineText? 'underline' : 'none',

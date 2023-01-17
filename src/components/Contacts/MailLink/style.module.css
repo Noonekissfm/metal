@@ -2,3 +2,15 @@
     display: flex;
     align-items: center;
 }
+
+@media (max-width: 820px) {
+    .wrapper svg{
+        margin-bottom: 4px;
+    }
+}
+
+@media (max-width: 720px) {
+    .wrapper {
+        margin-bottom: 4px;
+    }
+}

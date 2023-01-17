@@ -8,3 +8,22 @@
     height: 100%;
     width: fit-content;
 }
+
+@media (max-width: 720px) {
+    .logo {
+        height: 10vw;
+    }
+}
+
+@media (max-width: 440px) {
+    .logo,
+    .logo svg {
+        height: 12vw;
+        padding: 0;
+    }
+}
+@media (max-width: 320px) {
+    .logo {
+        display: none;
+    }
+}

@@ -1,0 +1,40 @@
+.wrapper {
+    max-width: 70%;
+}
+.wrapper--noimg {
+    max-width: none;
+    padding: 0 1.5rem
+}
+
+.description_header {
+    margin-bottom: 20px;
+    padding: 0 0 0.8rem 1.5rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.description,
+.description--long {
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.description--long {
+    overflow: scroll;
+    max-height: 40vh;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        max-width: 95%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    .description_header {
+        padding: 0 20px 10px 20px;
+        width: 90%;
+        text-align: center;
+    }
+}

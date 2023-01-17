@@ -8,18 +8,7 @@
     justify-content: center;
     list-style: none;
 
-
-    background-color: #fff;
-    max-width: 100%;
-    width: fit-content;
-    min-height: fit-content;
-    
-    border: 0 0 8px 1px #c8c8c8;
-    border-radius: 8px;
-    box-shadow: 0 0 8px 1px #c8c8c8;
-
-    margin: 20px 0;
-    padding: 0.5rem 1rem;
+    margin: 0 5px;
 }
 
 /* Media */
@@ -40,12 +29,7 @@
 /* MW-1200px */
 
 @media (max-width: 1200px) {
-    .breadcrumbs {
-        grid-auto-columns: auto;
-        grid-auto-flow: column;
-        margin: 25px 0;
-        padding: 4px 8px;
-    }
+
 }
 
 /* MW-768px */

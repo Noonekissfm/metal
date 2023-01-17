@@ -12,8 +12,6 @@ ul {
 }
 
 
-
-
 /* Media */
 
 /* MW-1480px */
@@ -28,14 +26,29 @@ ul {
 
 }
 
-/* MW-768px */
+/* MW-860px */
 
-@media (max-width: 630px) {
+@media (max-width: 860px) {
+    .navbar {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 720px) {
 
 }
 
-/* MW-320px */
 
-@media (min-width: 320px) and (max-width: 375px) {
+@media (max-width: 440px) {
+    .navbar {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
 
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar li {
+        padding: 5px;
+    }
 }

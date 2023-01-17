@@ -18,7 +18,7 @@ export const HomePage: FC<IProps> = () => {
                     <Logo />
                 </div>
             </div>
-            <div className={style['banner__wrapper']}>
+            <div className={style['banner_wrapper']}>
                 <img src={banner} alt="metaloprokat" /> 
             </div>
             <div className={style['bottom_section']}>

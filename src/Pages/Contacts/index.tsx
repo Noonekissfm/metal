@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { Backplate } from 'src/components/Backplate';
+import { AddressLink } from 'src/components/Contacts/AddressLink';
 import { InfoGroup } from 'src/components/Footer/components/InfoGroup';
 import { YandexMap } from 'src/components/YandexMap';
 
@@ -28,8 +29,11 @@ export const ContactsPage: FC<IProps> = ({ company, data }) => {
                     
                     <div className={style['contacts-info_wrapper']}>
                         <InfoGroup />
+                        <div className={style['address--mobile']}><AddressLink icon/></div>
                     </div>
-                    <Backplate width='80%'component={<YandexMap title={`Офис ${company}`}/>} />
+                    <Backplate width='80%'>
+                        <YandexMap title={`Офис ${company}`}/>
+                    </Backplate>
                 </div>
                 <div className="OurTeam">
                     <h1 className='contacts_title'>Наша команда</h1>

@@ -1,9 +1,15 @@
 .backplate {
     height: fit-content;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
-    box-shadow: 0 0 8px 1px #c8c8c8;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px #e2e2e2;
+    background-color: #fff;
 
+    padding: 1em;
+}
 
-    padding: 1rem;
+@media (max-width: 720px) {
+    .backplate {
+        padding: 0.7rem;
+    }  
 }

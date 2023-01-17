@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
-import './style.css';
 import { Link } from 'react-router-dom';
+
+import style from './style.module.css';
 
 interface IProps {
     title: string,
@@ -9,6 +10,6 @@ interface IProps {
 
 export const Category: FC<IProps> = ({ categoryKey, title }) => {
     return (
-        <li className="menu_item"><Link to={`${categoryKey}`}><span>{title}</span></Link></li>
+        <Link to={`${categoryKey}`}>{title}</Link>
     );
 };

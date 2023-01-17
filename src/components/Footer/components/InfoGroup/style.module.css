@@ -19,3 +19,37 @@
 .linkWrapper {
     margin-bottom: 6px;
 }
+
+.mobile-size-wrapper {
+    display: none;
+    align-items: center;
+}
+
+.mobile-size-wrapper svg {
+    fill: white
+}
+
+@media (max-width: 720px) {
+    .wrapper div {
+        justify-content: center;
+    }
+    .wrapper {
+        display: none;
+    }
+    .mobile-size-wrapper {
+        display: block;
+        font-size: 1.3rem;
+    }
+    .mobile-size-wrapper a,
+    .mobile-size-wrapper p{
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 440px) { 
+    .mobile-size-wrapper a,
+    .mobile-size-wrapper p {
+        font-size: 1rem;
+        padding: 4px 0;
+    }
+}

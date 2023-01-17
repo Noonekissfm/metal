@@ -1,29 +1,37 @@
 import React, { FC } from 'react';
-import { getDescriptionData } from '../../utils/utils';
-import { CardFooter } from './CardFooter/CardFooter';
-import { ItemDescription } from './ItemDescription';
-import { ItemImg } from './ItemImg';
-import { ItemPrice } from './ItemPrice/ItemPrice';
-import './style.css';
+import { getDescription } from '../../utils/utils';
+import { Backplate } from '../Backplate';
+import { Description } from './components/Description';
+import { Footer } from './components/Footer';
+import { Image } from './components/Image';
+import { Price } from './components/Price';
+
+import style from './style.module.css';
 
 interface IProps {
-    data: any;
+    data: {
+        title: string;
+        price?: string | undefined;
+        description?: string | undefined;
+        img_link?: string | undefined;
+        img_title?: string | undefined;
+    }
 }
 
 export const ItemCard: FC<IProps> = ({ data }) => {
-    const { title, price, description, img_link, img_title } = data;
-    const renderDescription = !!description ? getDescriptionData(description) : null;
-    const primary = !!img_link && !!renderDescription;
+    const description = !!data.description ? getDescription(data.description) : null;
     return (
-        <div className="item_card">
-            <div className="item_card__head">
-                <p className='item_card__title'>{title}</p>
-                <ItemPrice price={price} primary={primary}/>
+        <div className={style.itemCard}>
+            <div className={style.itemCard__head}>
+                <p>{data.title}</p>
+                <Price price={data.price} />
             </div>
-            <CardFooter primary={primary}>
-                {!!img_link && <ItemImg src={img_link} title={img_title} primary={primary} />}
-                {!!renderDescription && <div className='cardFooter__description'><p>Описание</p><ItemDescription data={renderDescription} primary={primary} /></div>}
-            </CardFooter>
+            <Backplate>
+                <Footer>
+                    <Description title={data.title} data={description} isImage={!!data.img_link}/>
+                    {!!data.img_link && <Image src={data.img_link} title={data.img_title} />}
+                </Footer>
+            </Backplate>
         </div>
     );
 };

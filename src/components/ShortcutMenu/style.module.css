@@ -30,14 +30,23 @@
     font-weight: bold;
     text-decoration: none;
 
-
-
     color: #1f333f;
     border-bottom: 1px solid #1f333f;
     transition: background-color 0.2s ease;
 }
 
+.ShortcutMenu a:last-child {
+    border-bottom: none;
+}
+
 .ShortcutMenu a:hover {
     background-color: #e8e8e8;
+}
+
+@media (max-width: 440px) {
+    .ShortcutMenu {
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 

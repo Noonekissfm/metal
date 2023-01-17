@@ -1,22 +1,22 @@
 import React, { FC, useMemo } from 'react'
 import { BackButton } from 'src/components/AppButtons/BackButton'
+import { Backplate } from 'src/components/Backplate'
 
 import { Breadcrumbs } from 'src/components/Breadcrumbs'
 import { Category } from 'src/components/Category'
 import { ItemCard } from 'src/components/ItemCard'
 
 import { useUrlParams, useWindowDimensions } from 'src/hooks'
-import { getRenderData } from 'src/utils/utils'
+import { getDescription, getRenderData } from 'src/utils/utils'
 import { NotFoundPage } from '../NotFoundPage'
 
-import './style.css'
 import { sortData } from './utils'
+import style from './style.module.css';
+import { data } from 'src/types/interfaces'
 
-interface IProps {
-    data: {},
-}
 
-export const CategoryPage: FC<IProps> = ({data}) => {
+
+export const CategoryPage: FC<data> = ({data}) => {
     const keys = useUrlParams()
 
     const { width } = useWindowDimensions()
@@ -30,17 +30,23 @@ export const CategoryPage: FC<IProps> = ({data}) => {
 
     if(!!renderData) {
         subCategory = renderData.subCategory.length > 0;
-        description = renderData.description? renderData.description.split('.').filter((item: any) => item !== '') : null
+        description = renderData.description? getDescription(renderData.description) : null
     }
+
+    
     
     return (
         <>
-            {!!renderData ? <div className='wrapper'>
-            <div className="category">
-                {keys.length > 0 ? <Breadcrumbs keys={keys} titles={renderData.menu_path} /> : <Breadcrumbs keys={['catalog']} titles={['Каталог продукции']} />}
+            {!!renderData ? <div className={style.wrapper}>
+            <div className={style.category}>
+                {!isMobile && <div className={style['Breadcrumbs__wrapper']}>
+                    <Backplate width='fit-content'>
+                        {keys.length > 0 ? <Breadcrumbs keys={keys} titles={renderData.menu_path} /> : <Breadcrumbs keys={['catalog']} titles={['Каталог продукции']} />}
+                    </Backplate>
+                </div>}
                 {isMobile && <BackButton primary/>}
-                {subCategory ? <div className='menu_item_wrapper'>{sortData(renderData.subCategory, 'title').map((item: any) => <Category categoryKey={item.key} title={item.title} key={item.key} />)}</div> : <ItemCard data={renderData}/>}
-                {description && !!subCategory && <div className='description_section'>{description.length > 0 && description.map((item: any, index: number) => <p key={item + '-' + index}>{item}</p>)}</div>}
+                {subCategory ? <div className={style['menu_item_wrapper']}>{sortData(renderData.subCategory, 'title').map((item: {title: string, key: string} ) => item.title && <Category categoryKey={item.key} title={item.title} key={item.key} />)}</div> : <ItemCard data={renderData}/>}
+                {description?.description && subCategory && <div className={style.description_section}>{description.description.length > 0 && description.description.map((item: string, index) => <p key={`${item}-${index}`}>{item}</p>)}</div>}
             </div>
         </div>
         : <NotFoundPage />}
