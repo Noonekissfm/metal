@@ -67,6 +67,13 @@
     .itemCard__head div{
         font-size: 11px;
         text-align: left;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 376px) {
+
+    .itemCard__head div{
         align-items: center;
     }
 }
