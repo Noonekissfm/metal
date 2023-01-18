@@ -4,7 +4,7 @@ import { getDescriptionData } from 'src/utils/utils';
 import style from './style.module.css';
 
 interface IProps {
-    description: string | undefined;
+    description: string | null;
 }
 
 export const Description: FC<IProps> = ({ description }) => {

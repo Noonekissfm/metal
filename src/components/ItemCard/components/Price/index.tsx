@@ -4,7 +4,7 @@ import { PhoneLink } from 'src/components/Contacts/PhoneLink';
 import style from './style.module.css';
 
 interface IProps {
-    price: string | undefined;
+    price: string | null;
 }
 
 export const Price: FC<IProps> = ({ price }) => {
