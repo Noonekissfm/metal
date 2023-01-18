@@ -17,8 +17,9 @@ export const Layout: FC<IProps> = () => {
             <Header>
                 <Logo />
                 <Navbar />
-                <div className={style['contacts-wrapper']}><Contacts phone mail workTime /></div>
-                
+                <div className={style['contacts-wrapper']}>
+                    <Contacts phone mail workTime />
+                </div>
             </Header>
 
             <div className={style.flexGrow}>

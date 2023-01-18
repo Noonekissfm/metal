@@ -1,0 +1,51 @@
+.OurTeam {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.teammates {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 30px;
+    row-gap: 30px;
+    justify-content: center;
+}
+
+
+
+@media (max-width: 1200px) {
+    .OurTeam {
+        margin-top: 20px;
+    }
+    .teammates {
+        margin-top: 20px;
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media (max-width: 900px) {
+    .OurTeam {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 820px) {
+    .teammates {
+        margin-top: 20px;
+        gap: 20px;
+    }
+    .OurTeam {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .teammates {
+        grid-template-columns: 90%;
+    }
+}

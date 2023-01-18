@@ -11,7 +11,7 @@ interface IProps {
     color?: string,
 }
 
-export const BackButton: FC<IProps> = ({title, underlineText, cursorPointer, color, primary}) => {
+export const BackButton: FC<IProps> = ({title, underlineText, cursorPointer, color, primary=false}) => {
     const navigate = useNavigate();
     const goBack = () => navigate(-1)
 

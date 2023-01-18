@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { getDescription } from '../../utils/utils';
-import { Backplate } from '../Backplate';
+import { getDescriptionData } from '../../utils/utils';
+import { Backplate } from '../AppWrappers/Backplate';
 import { Description } from './components/Description';
 import { Footer } from './components/Footer';
 import { Image } from './components/Image';
@@ -15,11 +15,12 @@ interface IProps {
         description?: string | undefined;
         img_link?: string | undefined;
         img_title?: string | undefined;
+        subCategory?: {}[];
     }
 }
 
 export const ItemCard: FC<IProps> = ({ data }) => {
-    const description = !!data.description ? getDescription(data.description) : null;
+    const description = !!data.description ? getDescriptionData(data.description) : null;
     return (
         <div className={style.itemCard}>
             <div className={style.itemCard__head}>

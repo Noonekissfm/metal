@@ -1,0 +1,14 @@
+@media (max-width: 375px) {
+    .AppTitle {
+        padding-bottom: 10px;
+    }
+}
+
+.AppTitle {
+    display: block;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #e8e8e8;
+}

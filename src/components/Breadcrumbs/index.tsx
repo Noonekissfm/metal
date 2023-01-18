@@ -15,19 +15,15 @@ interface IProps {
 export const Breadcrumbs: FC<IProps> = ({ keys, titles }) => {
     const links = getLinksObject(keys, titles);
 
-    // <Breadcrumbs keys={keys} titles={renderData.menu_path} />
-    // <Breadcrumbs keys={['catalog']} titles={['Каталог продукции']} />}
-
     return (
         <ul className={style.breadcrumbs}>
-            {links.map((item: any, index: number) => {
+            {links.map((item, index: number) => {
                 const isLastLink = index === links.length - 1;
                 const key = `${item}-${index}`;
 
                 if (isLastLink) {
                     return <CurrentPage key={key} title={item.title} />;
                 }
-
                 return <PreviousPage link={item._link} title={item.title} key={key} />;
             })}
         </ul>

@@ -1,24 +1,17 @@
-import React from 'react';
-import { Contacts } from 'src/components/Contacts';
-import { AddressLink } from 'src/components/Contacts/AddressLink';
-import { MailLink } from 'src/components/Contacts/MailLink';
-import { PhoneLink } from 'src/components/Contacts/PhoneLink';
-import { WorkTime } from 'src/components/Contacts/WorkTime';
+import React, { FC } from 'react';
 
 import style from './style.module.css';
 
-export const InfoGroup = () => {
+interface IProps {
+    children: React.ReactNode;
+}
+
+export const InfoGroup: FC<IProps> = ({children}) => {
     return (
-        <>
         <div className={style.wrapper}>
-            <div className={style.linkWrapper}><PhoneLink icon fillColor='#fff' strokeColor='#fff'/></div>
-            <div className={style.linkWrapper}><MailLink icon fillColor='#fff' strokeColor='#fff'/></div>
-            <div className={style.linkWrapper}><WorkTime icon fillColor='#fff' strokeColor='#fff'/></div>
-            <div className={style.linkWrapper}><AddressLink icon fillColor='#fff' strokeColor='#fff'/></div>
+            {children}
         </div>
-        <div className={style['mobile-size-wrapper']}>
-            <Contacts mail phone workTime/>
-        </div>
-        </>
     )
 }
+
+

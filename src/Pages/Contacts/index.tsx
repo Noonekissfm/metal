@@ -1,10 +1,15 @@
 import { FC } from 'react';
-import { Backplate } from 'src/components/Backplate';
+import { AppTitle } from 'src/components/AppTitle';
+import { MobileSize } from 'src/components/AppWrappers/MobileSize';
+import { Backplate } from 'src/components/AppWrappers/Backplate';
+import { Contacts } from 'src/components/Contacts';
 import { AddressLink } from 'src/components/Contacts/AddressLink';
+import { MailLink } from 'src/components/Contacts/MailLink';
+import { PhoneLink } from 'src/components/Contacts/PhoneLink';
+import { WorkTime } from 'src/components/Contacts/WorkTime';
 import { InfoGroup } from 'src/components/Footer/components/InfoGroup';
 import { YandexMap } from 'src/components/YandexMap';
-
-import { PersonCard } from 'src/Pages/Contacts/PersonCard';
+import { Team } from './components/Team';
 
 import './style.css';
 import style from './style.module.css';
@@ -25,11 +30,16 @@ export const ContactsPage: FC<IProps> = ({ company, data }) => {
         <div className="contacts">
             <div className="wrapper">
                 <div className="contacts">
-                    <h1 className="contacts_title company">{company}</h1>
-                    
+                    <AppTitle title='ООО «МЕТ-С»' />
                     <div className={style['contacts-info_wrapper']}>
-                        <InfoGroup />
-                        
+                        <InfoGroup>
+                            <div className={style.linkWrapper}><PhoneLink icon fillColor='#fff' strokeColor='#fff'/></div>
+                            <div className={style.linkWrapper}><MailLink icon fillColor='#fff' strokeColor='#fff'/></div>
+                            <div className={style.linkWrapper}><WorkTime icon fillColor='#fff' strokeColor='#fff'/></div>
+                            <MobileSize>
+                                <div className={style.linkWrapper}><AddressLink icon fillColor='#fff' strokeColor='#fff'/></div>
+                            </MobileSize>
+                        </InfoGroup>
                     </div>
                     <div className={style['map-wrapper']}>
                         <Backplate>
@@ -38,14 +48,7 @@ export const ContactsPage: FC<IProps> = ({ company, data }) => {
                     </div>
                     <div className={style['address--mobile']}><AddressLink icon/></div>
                 </div>
-                <div className="OurTeam">
-                    <h1 className='contacts_title'>Наша команда</h1>
-                    <div className="teammates">
-                        {data.team.map((item: any, index: number) => (
-                            <PersonCard key={`person-${index}`} data={item} />
-                        ))}
-                    </div>
-                </div>
+            <Team data={data} />
             </div>
         </div>
     );
