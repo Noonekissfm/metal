@@ -24,7 +24,7 @@ export const BackButton: FC<IProps> = ({title, underlineText, cursorPointer, col
             onClick={goBack}
             style={{
                 textDecoration: underlineText? 'underline' : 'none',
-                cursor: cursorPointer? 'pointer' : 'atuo',
+                cursor: cursorPointer? 'pointer' : 'auto',
                 color: color? color : 'inherit',
             }}
             >{title? title : 'Назад'}</span>

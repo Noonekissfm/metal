@@ -1,3 +1,16 @@
 .description_section {
-    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.description p{
+    margin-top: 2vh;
+}
+
+.title_wrapper {
+    font-size: 1.5rem;
+    display: block;
+    
+
 }

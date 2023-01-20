@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { company } from 'src/types/companyInfo';
+import company from 'src/data/company.json';
 
 import style from './style.module.css';
 
@@ -12,5 +12,5 @@ export const Copyrights: FC<IProps> = () => {
             <p>Все права защищены.</p>
             <p>&#169; 2022 &ndash; 2023</p>
         </div>
-    )
-}
+    );
+};

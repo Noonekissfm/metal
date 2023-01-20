@@ -1,9 +1,5 @@
 .footer {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: fit-content;
+    margin-top: 3rem;
     width: 100%;
     padding: 20px 0;
     background-color: #1f333f;
@@ -17,9 +13,24 @@
     border-bottom: 1px solid rgb(168, 168, 168);
 }
 
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 720px) {
+    .content {
+        justify-content: space-evenly;
+    }
+}
+
 @media (max-width: 440px) {
     .footer {
         padding: 10px 0;;
+    }
+    .content {
+        justify-content: space-between;
     }
 }
 

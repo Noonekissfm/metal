@@ -1,73 +1,24 @@
-.contacts-info_wrapper svg {
-    fill: #1f333f;
-    stroke: #1f333f;
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
 }
-
-.contacts-info_wrapper a {
-    text-decoration: none;
-    border-bottom: 1px solid #1f333f;
+.map-wrapper {
+    width: 100%;
 }
-
-.contacts-info_wrapper {
-    margin: 20px 0;
-}
-
 .address--mobile {
     display: none;
 }
-
-.map-wrapper {
-    display: block;
-    width: 100%;
+.address--mobile a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid #1f333f;
 }
-
-
-
 @media (max-width: 720px) {
     .address--mobile {
         display: block;
-        margin-top: -4px;
-
-    }
-
-    .address--mobile div>svg {
-        height: 1.2rem;
-        width: 1.2rem;
-    }
-
-    .contacts-info_wrapper svg,
-    .address--mobile div>svg {
-        height: 1.2rem;
-        width: 1.2rem;
-        margin: 0 10px;
-    }
-
-    .address--mobile a {
-        font-weight: 700;
-        font-size: 1.2rem;
-        color: #1f333f;
-    }
-
-    .wrapper {
-        width: 90vw;
-    }
-
-}
-
-@media (max-width: 720px) {
-    .address--mobile div>svg {
-        display: none;
-    }
-
-    .map-wrapper {
-        margin-bottom: 20px;
-    }
-
-
-}
-
-@media (max-width: 440px) {
-    .address--mobile a {
-        font-size: 0.9rem;
+        font-weight: bold;
+        font-size: 1rem;
     }
 }

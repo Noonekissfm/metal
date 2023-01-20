@@ -1,3 +1,7 @@
+/**
+ * Slice an array of menus on certain amount
+ */
+
 export const getColumns = (data: {}[]) => {
     const slicedArr = []
     for(let i = 0; i < data.length; i+=3) {
@@ -6,3 +10,4 @@ export const getColumns = (data: {}[]) => {
     }
     return slicedArr
 }
+

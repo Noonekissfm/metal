@@ -1,6 +1,8 @@
-.content {
+.description {
     display: flex;
     flex-direction: column;
     gap: 3vh;
-    margin-top: 6vh;
+
+    font-size: 1.1rem;
+    padding: 0 10px;
 }

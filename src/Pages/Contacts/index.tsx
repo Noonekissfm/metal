@@ -7,11 +7,11 @@ import { AddressLink } from 'src/components/Contacts/AddressLink';
 import { MailLink } from 'src/components/Contacts/MailLink';
 import { PhoneLink } from 'src/components/Contacts/PhoneLink';
 import { WorkTime } from 'src/components/Contacts/WorkTime';
-import { InfoGroup } from 'src/components/Footer/components/InfoGroup';
 import { YandexMap } from 'src/components/YandexMap';
 import { Team } from './components/Team';
+import { IPersonCard } from './components/Team/PersonCard';
+import { ContentWrapper } from 'src/components/AppWrappers/ContentWrapper';
 
-import './style.css';
 import style from './style.module.css';
 
 interface IProps {
@@ -20,36 +20,32 @@ interface IProps {
     workTime: string;
     company: string;
     adress: string;
-    data: {
-        team: any
-    };
+    data: IPersonCard[];
 }
 
 export const ContactsPage: FC<IProps> = ({ company, data }) => {
     return (
-        <div className="contacts">
-            <div className="wrapper">
-                <div className="contacts">
-                    <AppTitle title='ООО «МЕТ-С»' />
-                    <div className={style['contacts-info_wrapper']}>
-                        <InfoGroup>
-                            <div className={style.linkWrapper}><PhoneLink icon fillColor='#fff' strokeColor='#fff'/></div>
-                            <div className={style.linkWrapper}><MailLink icon fillColor='#fff' strokeColor='#fff'/></div>
-                            <div className={style.linkWrapper}><WorkTime icon fillColor='#fff' strokeColor='#fff'/></div>
-                            <MobileSize>
-                                <div className={style.linkWrapper}><AddressLink icon fillColor='#fff' strokeColor='#fff'/></div>
-                            </MobileSize>
-                        </InfoGroup>
-                    </div>
-                    <div className={style['map-wrapper']}>
-                        <Backplate>
-                            <YandexMap title={`Офис ${company}`}/>
-                        </Backplate>
-                    </div>
-                    <div className={style['address--mobile']}><AddressLink icon/></div>
+        <ContentWrapper>
+            <div className={style.content}>
+                <AppTitle title={company} />
+                <Contacts>
+                    <PhoneLink icon />
+                    <MailLink icon />
+                    <WorkTime icon />
+                    <MobileSize>
+                        <AddressLink icon />
+                    </MobileSize>
+                </Contacts>
+                <div className={style['map-wrapper']}>
+                    <Backplate>
+                        <YandexMap title={`Офис ${company}`} />
+                    </Backplate>
                 </div>
-            <Team data={data} />
+                <div className={style['address--mobile']}>
+                    <AddressLink />
+                </div>
+                <Team data={data} />
             </div>
-        </div>
+        </ContentWrapper>
     );
 };

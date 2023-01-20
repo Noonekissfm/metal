@@ -1,27 +1,28 @@
-.menu_item_wrapper {
-    display: flex;
-    flex-direction: column;
+.short_menu {
+    padding: 0;
+    width: fit-content;
 }
 
-.menu_item_wrapper a {
+.short_menu a{
     display: block;
-    padding: 5px 10px;
+    margin: 0 5px;
+    padding: 3px 14px;
 
     font-size: 1.2rem;
     line-height: 1.5;
     font-weight: bold;
     text-decoration: none;
 
-
-
     color: #1f333f;
     border-bottom: 1px solid #1f333f;
     transition: background-color 0.2s ease;
 }
-.menu_item_wrapper a:last-child {
+
+.short_menu a:last-child {
     border-bottom: none;
 }
 
-.menu_item_wrapper a:hover {
+.short_menu a:hover {
     background-color: #e8e8e8;
 }
+

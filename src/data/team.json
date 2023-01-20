@@ -1,5 +1,4 @@
-{
-    "team": [
+[
     {
         "photo_link": "assets/profile.jpg",
         "phone": "+7(911)754-29-21",
@@ -18,4 +17,4 @@
         "email": null,
         "name": "Андрей Павлович"
     }
-]}
+]

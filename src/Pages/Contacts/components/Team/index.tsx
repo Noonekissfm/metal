@@ -6,20 +6,18 @@ import { IPersonCard, PersonCard } from './PersonCard';
 import style from './style.module.css';
 
 interface IProps {
-    data: {
-        [team: string]: IPersonCard[];
-    };
+    data: IPersonCard[];
 }
 
 export const Team: FC<IProps> = ({ data }) => {
     return (
         <div className={style.OurTeam}>
-            <AppTitle title="Наша команда" />
+            <span className={style.title_wrapper}>
+                <AppTitle title="Наша команда" />
+            </span>
             <div className={style.teammates}>
-                {data.team.map((item, index) => (
-                    <Backplate>
-                        <PersonCard key={`person-${index}`} data={item} />
-                    </Backplate>
+                {data.map((item, index) => (
+                    <PersonCard key={`person-${index}`} data={item} />
                 ))}
             </div>
         </div>

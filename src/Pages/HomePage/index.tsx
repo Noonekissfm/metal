@@ -1,36 +1,32 @@
 import React, { FC } from 'react';
-import shortcutMenuData from 'src/data/shortcutMenuData.json'
+import shortMenuData from 'src/data/shortMenuData.json';
+import company from 'src/data/company.json';
 
-import { company } from 'src/types/companyInfo';
-import { ShortcutMenu } from 'src/components/ShortcutMenu';
-import { ReactComponent as Logo } from 'src/assets/company/logo.svg'
+import { ShortMenu } from 'src/components/ShortMenu';
+import { Banner } from 'src/components/Banner';
 import banner from 'src/assets/company/wall1.jpg';
 
+import { AppTitle } from 'src/components/AppTitle';
+import { Description } from './components/Description';
+import { ContentWrapper } from 'src/components/AppWrappers/ContentWrapper';
+
 import style from './style.module.css';
+import { Label } from './components/Label';
 
 interface IProps {}
 
 export const HomePage: FC<IProps> = () => {
     return (
         <section className={style.homepage}>
-            <div className={style.label}>
-                <div className={style.logoWrapper}>
-                    <Logo />
+            <Label />
+            <Banner image_link={banner} alt="matalloprokat" />
+            <ContentWrapper>
+                <div className={style.content}>
+                    <AppTitle title={company.name} />
+                    <Description text={company.legend} />
+                    <ShortMenu data={shortMenuData} />
                 </div>
-            </div>
-            <div className={style['banner_wrapper']}>
-                <img src={banner} alt="metaloprokat" /> 
-            </div>
-            <div className={style['bottom_section']}>
-                <h1 className={style.companyName}>{company.name}</h1>
-                <div className={style.description}>
-                    <p>Компания Мет-С имеет опыт работы на рынке металлопроката более 5 лет. Мы реализуем заказчику только качественный, сертифицированный металлопрокат по конкурентным ценам и дополнительно оказываем ряд сопутствующих услуг таких как - доставка металла собственным автотранспортом, резка в размер металлопроката газом и лентопильным станком, упаковка, плазменная и газовая резка стальных листов и гибка.</p>
-                    <p>Мы осуществляем комплексные поставки металлопроката и метизов как по Санкт-Петербургу и области, так и по всей территории России.</p>
-                    <p>Купить металлопрокат в компании «Мет-С» и выгодно, и удобно. Покупатель гарантировано получает конкурентные цены и гарантию высокого качества металлопроката. До терминала транспортной компании доставку осуществляем за свой счет. Мощностями компании предоставляются оперативные и качественные сопутствующие услуги, также на всех этапах специалист отдела реализации сопровождает сделку, следит за необходимым документооборотом.</p>
-                </div>
-                <div className={style['short_menu']}><ShortcutMenu data={shortcutMenuData}/></div>
-            </div>
+            </ContentWrapper>
         </section>
-
     );
 };

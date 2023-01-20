@@ -1,81 +1,41 @@
-.personCard {
+.card {
     display: flex;
-    border-radius: 10px;
-    width: fit-content;
-    max-width: 100%;
     align-items: center;
-}
 
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px #e2e2e2;
+    background-color: #fff;
+
+    padding: 0.5em;
+    justify-content: space-around;
+}
 .photo {
     overflow: hidden;
-    height: 100px;
-    margin-right: 15px;
-    
     border-radius: 50%;
-    box-shadow: 0 0 3px 2px #545454;
+    aspect-ratio: 1;
 }
-
-.photo > img {
-    height: 100%;
-    transform: scale(1.5);
-    aspect-ratio: 1/1;
+.photo img {
+    width: 100px;
+    height: 100px;
 }
-
 .info {
-    padding: 10px;
-    margin-right: 10px;
+    padding-right: 1rem;
 }
-
-.info > p:not(:first-child) {
-    margin-top: 3px;
-}
-
-.info > p {
-    font-size: 1.0rem;
-}
-
-.phone,
-.email {
+.info p {
     white-space: nowrap;
 }
 
 /* Media */
 
-/* MW-1920px */
+/* MW-580px */
 
-@media (min-width: 1480px) and (max-width: 1920px) {
+@media (max-width: 580px) {
 
-}
-
-/* MW-1480px */
-
-@media (max-width: 1200px) {
-    
-}
-
-/* MW-1200px */
-
-@media (max-width: 732px) {
-    .teammates {
-        justify-items: center;
-    }
-    .personCard {
-        width: 100%;
-    }
-}
-
-/* MW-768px */
-
-@media (max-width: 440px) {
-
-    .personCard {
+    .card {
         flex-direction: column;
         align-items: center;
-        padding-top: 10px;
-    }
-    .photo {
-        height: 80px;
-        margin: 0;
+        padding: 1rem;
     }
 
     .info {
@@ -87,10 +47,4 @@
         margin-top: 10px;
         border-top: 1px solid #e2e2e2;
     }
-}
-
-/* MW-320px */
-
-@media (max-width: 375px) {
-
 }

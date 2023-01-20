@@ -1,7 +1,6 @@
 .logo {
-    height: 3.2vw;
-    padding: 0.5rem;
-    width: fit-content;
+    height: 5rem;
+    width: 5rem;
 }
 
 .logo svg {
@@ -10,21 +9,14 @@
 }
 
 @media (max-width: 720px) {
-    .logo {
-        height: 10vw;
-    }
+
 }
 
 @media (max-width: 440px) {
-    .logo,
-    .logo svg {
-        height: 12vw;
-        width: 12vw;
-        padding: 0;
-    }
-}
-@media (max-width: 320px) {
     .logo {
         display: none;
     }
+}
+@media (max-width: 320px) {
+
 }

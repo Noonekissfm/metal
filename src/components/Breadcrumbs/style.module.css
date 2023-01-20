@@ -9,28 +9,10 @@
     list-style: none;
 
     margin: 0 5px;
+    padding-left: 0;
 }
 
 /* Media */
-
-/* MW-1920px */
-
-/* MW-1480px */
-
-/* @media (max-width: 1480px) {
-    .breadcrumbs {
-        grid-auto-columns: auto;
-        grid-auto-flow: column;
-        margin: 20px 0;
-        padding: 2px 2px;
-    }
-} */
-
-/* MW-1200px */
-
-@media (max-width: 1200px) {
-
-}
 
 /* MW-768px */
 

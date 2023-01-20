@@ -12,9 +12,9 @@ interface Menu {
     url: string;
 }
 
-export const ShortcutMenu: FC<IProps> = ({data}) => {
+export const ShortMenu: FC<IProps> = ({data}) => {
     return (
-        <ul className={style.ShortcutMenu}>
+        <ul className={style.short_menu}>
             {data.map((item: Menu, index: number) => {
                 const key = `${item.title}-${index}`;
                 return (

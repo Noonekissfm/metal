@@ -1,46 +1,25 @@
 .section {
-    display: flex;
-    justify-content: center;
     border-bottom: 1px solid #000;
     box-shadow: 0 0 10px 3px #606060;
     background-color: #fff;
+    padding: 10px 0;
 }
 
 .wrapper {
     display: flex;
     align-items: center;
-    width: 80%;
-    justify-content: space-around;
+    justify-content: space-between;
     color: #1f333f;
 }
 
-
-
-
-/* Media */
-
-/* MW-1480px */
-
-@media (max-width: 1480px) {
-
-}
-
-/* MW-1200px */
-
-@media (max-width: 1200px) {
+@media (max-width: 440px) {
     .wrapper {
-        width: 95%;
+        justify-content: space-around;
     }
 }
 
-/* MW-768px */
-
-@media (max-width: 860px) {
-
-}
-
-/* MW-320px */
-
-@media (min-width: 320px) and (max-width: 375px) {
-
+@media (max-width: 360px) {
+    .wrapper {
+        justify-content: space-between;
+    }
 }

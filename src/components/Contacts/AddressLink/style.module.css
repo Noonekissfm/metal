@@ -1,4 +1,11 @@
 .wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1.3rem max-content;
+    gap: 0.7rem;
     align-items: center;
+}
+
+.wrapper svg {
+    width: 100%;
+    height: 100%;
 }

@@ -1,0 +1,33 @@
+.header-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    padding: 10px 33px;
+
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.header-wrapper > p {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+@media (max-width: 860px) {
+    .header-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3vh;
+    }   
+}
+@media (max-width: 600px) {
+    .header-wrapper {
+        padding: 0 0 3vh 3vh;
+    }   
+}
+@media (max-width: 600px) {
+    .header-wrapper {
+        padding: 0 0 3vh 0;
+    }   
+}
+
