@@ -1,18 +1,20 @@
-.wrapper,
 .wrapper--header {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.5rem;
     align-items: center;
     font-size: 1rem;
+    align-content: center;
+}
 
+.wrapper {
+    display: grid;
+    grid-auto-rows: 1fr;
+    gap: 1rem;
 }
 
 .wrapper--header {
-    display: flex;
-    gap: 1rem;
     font-weight: bold;
-    width: 50%;
 }
 
 .wrapper a,
@@ -40,6 +42,7 @@
 
 @media (max-width: 1080px) {
     .wrapper--header {
+        max-height: 5.2rem;
         flex-direction: column-reverse;
         align-items: flex-start;
     }
@@ -47,23 +50,16 @@
 }
 
 @media (max-width: 720px) {
+    .wrapper--header {
+        gap: 1rem
+    }
     .wrapper {
-        flex-direction: column-reverse;
-        margin: 5px 0;
-        align-items: normal;
+
     }
     .wrapper p{
-        display: flex;
-        align-items: center;
+
     }
     .wrapper > p, .wrapper > div {
-        margin: 3px 0;
-        align-items: center;
+        
     }
-}
-
-/* MW-320px */
-
-@media (min-width: 320px) and (max-width: 375px) {
-
 }

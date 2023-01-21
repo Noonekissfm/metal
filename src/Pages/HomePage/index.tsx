@@ -1,17 +1,15 @@
 import React, { FC } from 'react';
-import shortMenuData from 'src/data/shortMenuData.json';
-import company from 'src/data/company.json';
-
 import { ShortMenu } from 'src/components/ShortMenu';
 import { Banner } from 'src/components/Banner';
-import banner from 'src/assets/company/wall1.jpg';
-
 import { AppTitle } from 'src/components/AppTitle';
 import { Description } from './components/Description';
 import { ContentWrapper } from 'src/components/AppWrappers/ContentWrapper';
-
-import style from './style.module.css';
 import { Label } from './components/Label';
+
+import shortMenuData from 'src/data/shortMenuData.json';
+import company from 'src/data/company.json';
+import banner from 'src/assets/company/wall1.jpg';
+import style from './style.module.css';
 
 interface IProps {}
 
