@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { BackButton } from 'src/components/AppButtons/BackButton';
+import { BackButton } from 'src/components/BackButton';
 
 import style from './style.module.css';
 

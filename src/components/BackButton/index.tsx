@@ -15,12 +15,10 @@ export const BackButton: FC<IProps> = ({title, underlineText, cursorPointer, col
     const navigate = useNavigate();
     const goBack = () => navigate(-1)
 
-    const classList = ['BackButton', primary? '--primary' : ''].join('')
-
     return (
         <>
             <span 
-            className={style[classList]} 
+            className={primary ? style.wrapper : ''} 
             onClick={goBack}
             style={{
                 textDecoration: underlineText? 'underline' : 'none',

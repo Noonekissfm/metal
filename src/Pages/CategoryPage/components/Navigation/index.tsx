@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { BackButton } from 'src/components/AppButtons/BackButton';
+import { BackButton } from 'src/components/BackButton';
 import { Backplate } from 'src/components/AppWrappers/Backplate';
 import { Breadcrumbs } from 'src/components/Breadcrumbs';
 import { useWindowDimensions } from 'src/hooks';
