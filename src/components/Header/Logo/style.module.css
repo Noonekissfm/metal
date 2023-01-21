@@ -1,11 +1,13 @@
 .logo {
     height: 5rem;
     width: 5rem;
+    max-height: rem;
+    max-width: rem;
 }
 
 .logo svg {
-    height: 100%;
-    width: fit-content;
+    height: 5rem;
+    width: 5rem;
 }
 
 @media (max-width: 720px) {

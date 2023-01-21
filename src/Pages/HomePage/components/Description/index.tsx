@@ -9,7 +9,7 @@ interface IProps {
 export const Description: FC<IProps> = ({text}) => {
     return (
         <div className={style.description}>
-            {text.map(p => <p>{p}</p>)}
+            {text.map(p => <p key={p}>{p}</p>)}
         </div>
     )
 }
