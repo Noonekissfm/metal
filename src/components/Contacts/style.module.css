@@ -1,10 +1,11 @@
 .wrapper--header {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    font-size: 1rem;
     align-content: center;
+    justify-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
 }
 
 .wrapper {
@@ -42,9 +43,10 @@
 
 @media (max-width: 1080px) {
     .wrapper--header {
-        max-height: 5.2rem;
-        flex-direction: column-reverse;
-        align-items: flex-start;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+        justify-items: start;
     }
 
 }
