@@ -25,22 +25,6 @@
     border-bottom: 1px solid #1f333f;
 }
 
-/* Media */
-
-/* MW-1480px */
-
-@media (max-width: 1480px) {
-
-}
-
-/* MW-1200px */
-
-@media (max-width: 1200px) {
-
-}
-
-/* MW-768px */
-
 @media (max-width: 1080px) {
     .wrapper--header {
         display: grid;
@@ -54,14 +38,5 @@
 @media (max-width: 720px) {
     .wrapper--header {
         gap: 1rem
-    }
-    .wrapper {
-
-    }
-    .wrapper p{
-
-    }
-    .wrapper > p, .wrapper > div {
-        
     }
 }
