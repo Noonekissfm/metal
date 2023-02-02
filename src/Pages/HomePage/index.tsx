@@ -10,6 +10,7 @@ import shortMenuData from 'src/data/shortMenuData.json';
 import company from 'src/data/company.json';
 import banner from 'src/assets/company/wall1.jpg';
 import style from './style.module.css';
+import { Slider } from './components/Slider';
 
 interface IProps {}
 
@@ -22,7 +23,10 @@ export const HomePage: FC<IProps> = () => {
                 <div className={style.content}>
                     <AppTitle title={company.name} />
                     <Description text={company.legend} />
-                    <ShortMenu data={shortMenuData} />
+                    <div className={style.page_row}>
+                        <ShortMenu data={shortMenuData} />
+                        <Slider />
+                    </div>
                 </div>
             </ContentWrapper>
         </section>

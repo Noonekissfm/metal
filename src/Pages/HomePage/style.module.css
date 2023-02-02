@@ -10,3 +10,24 @@
     align-items: center;
     gap: 3vh;
 }
+
+.page_row {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.page_row {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media (max-width: 720px) {
+    .page_row {
+        flex-direction: column;
+        gap: 3vh;
+    }
+}

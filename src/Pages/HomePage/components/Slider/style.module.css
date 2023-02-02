@@ -1,0 +1,25 @@
+.slider_wrapper {
+    max-width: 50%;
+    margin-left: 50px;
+}
+
+.slider_slide {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.newsItem_header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f3e8e2;
+    padding: 0 3px 3px 3px;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 720px) {
+    .slider_wrapper {
+        margin-left: 0;
+        max-width: 80%;
+    }
+}
