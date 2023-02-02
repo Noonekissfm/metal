@@ -8,22 +8,18 @@ import SlickSlider from 'react-slick';
 import '../../../../../node_modules/slick-carousel/slick/slick.css';
 import '../../../../../node_modules/slick-carousel/slick/slick-theme.css';
 import './slick-over-write.css';
+import { INews, NewsItem } from './NewsItem';
 
-interface IProps {}
+interface IProps {
+    newsArray: INews[];
+}
 
-export const Slider: FC<IProps> = () => {
+export const Slider: FC<IProps> = ({newsArray}) => {
     return (
         <div className={style.slider_wrapper}>
             <Backplate>
                 <SlickSlider dots className={style.slider_slide}>
-                    <div>
-                        <div className={style.newsItem_header}><h3>Мы открылись!</h3><span>09.01</span></div>
-                        <p>День, когда ООО «МЕТ-С» открылся.</p>
-                    </div>
-                    <div>
-                        <div className={style.newsItem_header}><h3>Новые поставки</h3><span>02.02</span></div>
-                        <p>Осуществляем поставки медных и свинцовых листов размером 1000х2000мм российского производства.</p>
-                    </div>
+                    {newsArray.map(news => <NewsItem key={news._id} title={news.title} body={news.body} date={news.date}/>)}
                 </SlickSlider>
             </Backplate>
         </div>

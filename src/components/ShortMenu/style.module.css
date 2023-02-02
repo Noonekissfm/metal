@@ -18,10 +18,6 @@
     transition: background-color 0.2s ease;
 }
 
-.short_menu a:last-child {
-    border-bottom: none;
-}
-
 .short_menu a:hover {
     background-color: #e8e8e8;
 }
