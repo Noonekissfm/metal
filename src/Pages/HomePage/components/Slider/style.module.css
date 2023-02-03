@@ -1,6 +1,12 @@
 .slider_wrapper {
-    max-width: 50%;
+    max-width: 35%;
     margin-left: 50px;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px #e2e2e2;
+    background-color: #fff;
+
+    padding: 1rem 1.5rem;
 }
 
 .slider_slide {
@@ -12,6 +18,7 @@
 @media (max-width: 720px) {
     .slider_wrapper {
         margin-left: 0;
-        max-width: 80%;
+        max-width: 100%;
+        padding: 0.5rem 0.75rem;
     }
 }

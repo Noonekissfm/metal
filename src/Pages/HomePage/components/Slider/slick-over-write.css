@@ -1,9 +1,20 @@
 .slick-next {
-    right: -45px;
+    right: -65px;
 }
 .slick-prev {
-    left: -45px;
+    left: -65px;
 }
 .slick-arrow::before {
     color: #1f333f;
+}
+
+
+@media (max-width: 960px) {
+    .slick-next::before,
+    .slick-prev::before {
+        content: ''
+    }
+    .slick-arrow {
+        display: none !important;
+    }
 }
