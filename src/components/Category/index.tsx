@@ -7,7 +7,10 @@ interface IProps {
 }
 
 export const Category: FC<IProps> = ({ categoryKey, title }) => {
+    const clickHandler = () => {
+        window.scrollTo({top: 0})
+    }
     return (
-        <Link to={`${categoryKey}`}>{title}</Link>
+        <Link to={`${categoryKey}`} onClick={clickHandler}>{title}</Link>
     );
 };
