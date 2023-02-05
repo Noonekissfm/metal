@@ -8,13 +8,13 @@
     text-decoration: none;
     user-select: none;
     border-radius: 6px;
-    color: #1f333f;
-    border: 2px solid #1f333f;
+    color: var(--color-brand);
+    border: 2px solid var(--color-brand);
     background-color: #fff;
 }
 
 .wrapper:active {
     color: #fff;
     border: 2px solid #fff;
-    background-color: #1f333f;
+    background-color: var(--color-brand);
 }

@@ -7,9 +7,9 @@
 
 .not-found a, .not-found span {
     text-decoration: none;
-    border-bottom: 1px solid #1f333f;
+    border-bottom: 1px solid var(--color-brand);
     font-weight: bold;
-    color: #1f333f;
+    color: var(--color-brand);
     cursor: pointer;
 }
 

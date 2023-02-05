@@ -1,22 +1,32 @@
 .wrapper {
     min-height: 100%;
+    padding-bottom: 10px;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #f3e8e2;
-    padding: 0 3px 8px 3px;
+    padding: 0 6px 8px 6px;
     margin-bottom: 5px;
 }
 
 
 .title {
+    color: var(--color-brand);
+}
 
+.body p {
+    color: var(--color-brand);
 }
 
 .body {
     margin-top: 10px;
     font-weight: 500;
-    min-height: 200px;
+    min-height: 15rem;
+    overflow: scroll;
+}
+
+.body::-webkit-scrollbar {
+    display: none;
 }

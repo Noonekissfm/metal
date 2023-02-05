@@ -5,7 +5,11 @@
     left: -65px;
 }
 .slick-arrow::before {
-    color: #1f333f;
+    color: var(--color-brand);
+}
+
+.slick-dots {
+    bottom: -15px;
 }
 
 

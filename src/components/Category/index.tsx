@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import style from './style.module.css';
-
 interface IProps {
     title: string,
     categoryKey: string,

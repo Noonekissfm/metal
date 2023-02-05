@@ -15,14 +15,14 @@
     display: flex;
     width: 100%;
     min-height: fit-content;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 @media (max-width: 720px) {
     .page_row {
         flex-direction: column;
         gap: 3vh;
-        width: 50%;
+        width: 60%;
         min-width: 306px;
     }
 }
