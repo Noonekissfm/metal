@@ -25,6 +25,8 @@
     font-weight: 500;
     min-height: 15rem;
     overflow: scroll;
+    font-size: 1.2rem;
+    text-align: justify;
 }
 
 .body::-webkit-scrollbar {
