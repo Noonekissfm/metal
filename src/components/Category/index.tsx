@@ -1,15 +1,16 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import style from './style.module.css';
-
 interface IProps {
     title: string,
     categoryKey: string,
 }
 
 export const Category: FC<IProps> = ({ categoryKey, title }) => {
+    const clickHandler = () => {
+        window.scrollTo({top: 0})
+    }
     return (
-        <Link to={`${categoryKey}`}>{title}</Link>
+        <Link to={`${categoryKey}`} onClick={clickHandler}>{title}</Link>
     );
 };

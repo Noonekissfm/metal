@@ -17,7 +17,7 @@
     width: 100%;
     bottom: -0.7vw;
     height: 2px;
-    background-color: #1f333f;
+    background-color: var(--color-brand);
 }
 
 

@@ -10,3 +10,19 @@
     align-items: center;
     gap: 3vh;
 }
+
+.page_row {
+    display: flex;
+    width: 100%;
+    min-height: fit-content;
+    justify-content: space-between;
+}
+
+@media (max-width: 720px) {
+    .page_row {
+        flex-direction: column;
+        gap: 3vh;
+        width: 60%;
+        min-width: 306px;
+    }
+}

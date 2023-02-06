@@ -7,9 +7,11 @@ import { ContentWrapper } from 'src/components/AppWrappers/ContentWrapper';
 import { Label } from './components/Label';
 
 import shortMenuData from 'src/data/shortMenuData.json';
+import newsData from 'src/data/newsData.json'
 import company from 'src/data/company.json';
 import banner from 'src/assets/company/wall1.jpg';
 import style from './style.module.css';
+import { Slider } from './components/Slider';
 
 interface IProps {}
 
@@ -22,7 +24,10 @@ export const HomePage: FC<IProps> = () => {
                 <div className={style.content}>
                     <AppTitle title={company.name} />
                     <Description text={company.legend} />
-                    <ShortMenu data={shortMenuData} />
+                    <div className={style.page_row}>
+                        <ShortMenu data={shortMenuData} />
+                        <Slider newsArray={newsData}/>
+                    </div>
                 </div>
             </ContentWrapper>
         </section>

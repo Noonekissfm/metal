@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #1f333f;
+    color: var(--color-brand);
 }
 
 @media (max-width: 440px) {

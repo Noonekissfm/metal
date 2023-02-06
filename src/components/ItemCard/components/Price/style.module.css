@@ -11,10 +11,10 @@
 
 .wrapper--price a,
 .wrapper a {
-        color: #1f333f;
+        color: var(--color-brand);
         text-decoration: none;
         padding-bottom: 1px;
-        border-bottom: 1px solid #1f333f;
+        border-bottom: 1px solid var(--color-brand);
         font-weight: bold;
         white-space: nowrap;
 }

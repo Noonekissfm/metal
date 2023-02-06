@@ -1,6 +1,7 @@
 .wrapper {
     max-width: 70%;
 }
+
 .wrapper--noimg {
     max-width: none;
     width: 100%;
@@ -17,6 +18,8 @@
 .description--long {
     padding-left: 1.5rem;
     padding-bottom: 1rem;
+    text-align: justify;
+    text-indent: 1em;
 }
 
 .description--long {
@@ -38,11 +41,13 @@
         align-items: center;
         margin-bottom: 1rem;
     }
+
     .description_header {
         padding: 0 20px 10px 20px;
         width: 90%;
         text-align: center;
     }
+
     .description,
     .description--long {
         padding-left: 0px;

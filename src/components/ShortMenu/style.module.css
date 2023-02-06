@@ -13,13 +13,9 @@
     font-weight: bold;
     text-decoration: none;
 
-    color: #1f333f;
-    border-bottom: 1px solid #1f333f;
+    color: var(--color-brand);
+    border-bottom: 1px solid var(--color-brand);
     transition: background-color 0.2s ease;
-}
-
-.short_menu a:last-child {
-    border-bottom: none;
 }
 
 .short_menu a:hover {

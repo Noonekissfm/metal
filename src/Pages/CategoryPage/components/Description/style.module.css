@@ -4,13 +4,13 @@
     gap: 3vh;
 }
 
-.description p{
+.description p {
     margin-top: 2vh;
+    text-align: justify;
+    text-indent: 1em;
 }
 
 .title_wrapper {
     font-size: 1.5rem;
     display: block;
-    
-
 }
