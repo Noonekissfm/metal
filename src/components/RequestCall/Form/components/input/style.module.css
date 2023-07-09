@@ -1,0 +1,11 @@
+.form-input {
+  border: none;
+  padding: 8px;
+  outline: none;
+  border-bottom: 1px solid var(--color-copper);
+  transition: border-color .3s linear;
+}
+
+.form-input:focus {
+  border-color: var(--color-brand);
+}

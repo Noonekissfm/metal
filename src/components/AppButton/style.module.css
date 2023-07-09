@@ -1,0 +1,21 @@
+.button {
+  padding: 8px;
+  background-color: var(--color-brand);
+  border: 1px solid var(--color-brand);
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button:active {
+  background-color: white;
+  color: var(--color-brand);
+  border: 1px solid var(--color-brand);
+}
+
+.button--block {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}

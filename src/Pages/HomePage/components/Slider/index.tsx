@@ -9,22 +9,22 @@ import { INews, NewsItem } from './NewsItem';
 import { AppTitle } from 'src/components/AppTitle';
 
 interface IProps {
-    newsArray: INews[];
+	newsArray: INews[];
 }
 
 export const Slider: FC<IProps> = ({ newsArray }) => {
 
 
-    return (
-        <div className={style.component_wrapper}>
-            <span><AppTitle title="Новости компании" borderless /></span>
-            <div className={style.slider_wrapper}>
-                <SlickSlider dots className={style.slider_slide} >
-                    {newsArray.map((news) => (
-                        <NewsItem key={news._id} body={news.body} />
-                    ))}
-                </SlickSlider>
-            </div>
-        </div>
-    );
+	return (
+		<div className={style.component_wrapper}>
+			<span><AppTitle title="Новости компании" borderless /></span>
+			<div className={style.slider_wrapper}>
+				<SlickSlider dots className={style.slider_slide} >
+					{newsArray.map((news) => (
+						<NewsItem key={news._id} body={news.body} />
+					))}
+				</SlickSlider>
+			</div>
+		</div>
+	);
 };

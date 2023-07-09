@@ -1,0 +1,66 @@
+.stickyPhone {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+
+  right: 5vw;
+  bottom: 5vh;
+
+  padding: 8px;
+  border-radius: 50%;
+
+  background-color: white;
+  box-shadow: 0 0 8px 4px #00000050;
+
+  animation: rotate 6s infinite;
+}
+
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  22% {
+    transform: rotate(-10deg);
+  }
+  24% {
+    transform: rotate(10deg);
+  }
+  26% {
+    transform: rotate(-10deg);
+  }
+  28% {
+    transform: rotate(10deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+
+}
+
+.phone {
+  fill: var(--color-brand);
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+@media (max-width: 960px) {
+  .stickyPhone {
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+  }
+
+  .phone {
+    width: 30px;
+    height: 30px;
+  }
+}
