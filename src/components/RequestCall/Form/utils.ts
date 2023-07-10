@@ -6,7 +6,7 @@ interface iData {
 }
 
 export const postData = (data: iData) => {
-  const url = 'http://84.201.132.123:8080/v1/api/request_call'
+  const url = 'https://met-c.ru/api/v1/request_call'
   return fetch(url, {
     method: 'POST',
     mode: 'no-cors',
