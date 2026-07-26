@@ -36,6 +36,9 @@ const Probe: React.FC = () => {
             <li data-testid="own">{String(getEffectivePrice({ price: 200000, category: 'c2' }))}</li>
             <li data-testid="inherited">{String(getEffectivePrice({ price: null, category: 'c2' }))}</li>
             <li data-testid="none">{String(getEffectivePrice({ price: null, category: 'c3' }))}</li>
+            {/* PocketBase присылает пустое число как 0, а не как null. */}
+            <li data-testid="zero">{String(getEffectivePrice({ price: 0, category: 'c2' }))}</li>
+            <li data-testid="zero-none">{String(getEffectivePrice({ price: 0, category: 'c3' }))}</li>
         </ul>
     );
 };
@@ -73,5 +76,16 @@ describe('каталог', () => {
         await waitFor(() => expect(screen.getByTestId('own')).toHaveTextContent('196000'));
         expect(screen.getByTestId('inherited')).toHaveTextContent('98000');
         expect(screen.getByTestId('none')).toHaveTextContent('null');
+    });
+
+    it('пустая цена из PocketBase приходит нулём — товар не должен стоить 0', async () => {
+        render(
+            <CatalogProvider>
+                <Probe />
+            </CatalogProvider>,
+        );
+
+        await waitFor(() => expect(screen.getByTestId('zero')).toHaveTextContent('98000'));
+        expect(screen.getByTestId('zero-none')).toHaveTextContent('null');
     });
 });

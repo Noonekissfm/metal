@@ -160,7 +160,10 @@ export const CatalogProvider: FC<IProps> = ({ children }) => {
         (product: Pick<Product, 'price' | 'category'>) => {
             let price = product.price;
 
-            if (price === null || price === undefined) {
+            // PocketBase отдаёт незаполненное число как 0, а не как null,
+            // поэтому пустой ценой считаем любое «ложное» значение —
+            // иначе товар без своей цены показывался бы за 0 рублей.
+            if (!price) {
                 let node = byId.get(product.category);
                 const seen = new Set<string>();
 
@@ -177,7 +180,7 @@ export const CatalogProvider: FC<IProps> = ({ children }) => {
             }
 
             return applyDiscount(
-                price ?? null,
+                price || null,
                 data?.settings.discount_percent ?? DEFAULT_DISCOUNT_PERCENT,
             );
         },
