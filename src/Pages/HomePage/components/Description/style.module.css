@@ -1,10 +1,13 @@
 .description {
     display: flex;
     flex-direction: column;
-    gap: 3vh;
-    text-align: left;
-    text-indent: 1em;
+    gap: var(--sp-4);
+    /* Строка длиннее ~70 знаков читается заметно хуже. Раньше абзацы
+     * шли во всю ширину экрана, с выключкой по формату и красной строкой. */
+    max-width: 68ch;
+    margin-top: var(--sp-5);
 
-    font-size: 1.1rem;
-    padding: 0 10px;
+    font-size: var(--fs-lg);
+    line-height: var(--lh-base);
+    text-align: left;
 }

@@ -1,28 +1,13 @@
-.homepage {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 .content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 3vh;
+    gap: var(--sp-8);
+    padding: var(--sp-7) 0;
 }
 
-.page_row {
-    display: flex;
-    width: 100%;
-    min-height: fit-content;
-    justify-content: space-between;
-}
-
-@media (max-width: 900px) {
-    .page_row {
-        flex-direction: column;
-        gap: 3vh;
-        width: 60%;
-        min-width: 306px;
+@media (max-width: 640px) {
+    .content {
+        gap: var(--sp-7);
+        padding: var(--sp-6) 0;
     }
 }

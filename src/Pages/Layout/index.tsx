@@ -6,6 +6,8 @@ import { Footer } from 'src/components/Footer';
 import { RequestCallButton } from 'src/components/RequestCall/Button';
 import { RequestCallForm } from 'src/components/RequestCall/Form';
 
+import { LayoutContext } from './outletContext';
+
 import style from './style.module.css';
 
 export const Layout: FC = () => {
@@ -16,7 +18,7 @@ export const Layout: FC = () => {
             <Header onRequestCall={() => setShowModal(true)} />
 
             <div className={style.flexGrow}>
-                <Outlet />
+                <Outlet context={{ onRequestCall: () => setShowModal(true) } as LayoutContext} />
             </div>
 
             {/* Кнопка не размонтируется на время окна: иначе фокусу некуда

@@ -3,26 +3,27 @@ import { Link } from 'react-router-dom';
 
 import style from './style.module.css';
 
-interface IProps {
-    data: Menu[];
-}
-
 interface Menu {
     title: string;
     url: string;
 }
 
-export const ShortMenu: FC<IProps> = ({data}) => {
+interface IProps {
+    data: Menu[];
+}
+
+export const ShortMenu: FC<IProps> = ({ data }) => {
     return (
+        // Раньше <Link> лежали прямо в <ul> без <li> — недопустимая разметка,
+        // которую стили обходили селектором по потомку.
         <ul className={style.short_menu}>
-            {data.map((item: Menu, index: number) => {
-                const key = `${item.title}-${index}`;
-                return (
-                    <Link key={key} to={item.url}>
+            {data.map((item) => (
+                <li key={item.url}>
+                    <Link className={style.link} to={`/${item.url.replace(/^\//, '')}`}>
                         {item.title}
                     </Link>
-                );
-            })}
+                </li>
+            ))}
         </ul>
     );
 };
