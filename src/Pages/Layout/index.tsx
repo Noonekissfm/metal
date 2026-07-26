@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { Header } from 'src/components/Header';
 import { Logo } from 'src/components/Header/Logo';
 import { Navbar } from 'src/components/Header/Navbar';
+import { SearchBar } from 'src/components/Header/SearchBar';
 import { Footer } from 'src/components/Footer';
 import { Contacts } from 'src/components/Contacts';
 import { PhoneLink } from 'src/components/Contacts/PhoneLink';
@@ -26,6 +27,7 @@ export const Layout: FC<IProps> = () => {
 			<Header>
 				<Logo />
 				<Navbar />
+				<SearchBar />
 				<Contacts header>
 					<PhoneLink icon />
 					<MailLink icon />
