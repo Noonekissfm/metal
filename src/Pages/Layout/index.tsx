@@ -40,8 +40,11 @@ export const Layout: FC<IProps> = () => {
 				<Outlet />
 			</div>
 
+			{/* Кнопка не размонтируется на время окна: иначе фокусу некуда
+			  * возвращаться после закрытия — элемента уже нет в документе.
+			  * Окно перекрывает её по z-index. */}
+			<RequestCallButton onClick={() => setShowModal(true)} />
 			{showModal && <RequestCallForm closeModal={handleCloseModal} />}
-			{!showModal && <RequestCallButton onClick={() => setShowModal(true)} />}
 			<Footer />
 		</>
 	);

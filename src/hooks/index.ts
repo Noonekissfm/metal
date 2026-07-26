@@ -1,3 +1,4 @@
 export { useUrlParams } from './useUrlParams';
-export { useWindowDimensions } from './useWindowDimensions';
 export { useDebouncedValue } from './useDebouncedValue';
+export { useBodyScrollLock } from './useBodyScrollLock';
+export { useFocusTrap } from './useFocusTrap';

@@ -8,16 +8,9 @@
     justify-content: center;
     list-style: none;
 
-    margin: 0 5px;
+    margin: 0 var(--sp-1);
     padding-left: 0;
 }
 
-/* Media */
-
-/* MW-768px */
-
-@media (max-width: 640px) {
-    .breadcrumbs {
-        display: none;
-    }
-}
+/* Скрытием на телефоне управляет обёртка в CategoryPage/Navigation —
+ * там же, где решается, показать вместо крошек кнопку «Назад». */

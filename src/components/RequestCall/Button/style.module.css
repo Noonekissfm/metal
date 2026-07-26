@@ -1,5 +1,7 @@
 .stickyPhone {
   position: fixed;
+  /* Ниже подсказок поиска (20) и модальных окон (30). */
+  z-index: 10;
   display: grid;
   place-items: center;
   width: 60px;

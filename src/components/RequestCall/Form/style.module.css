@@ -1,5 +1,7 @@
 .backdrop {
   position: fixed;
+  /* Выше кнопки звонка (10) и подсказок поиска (20). */
+  z-index: 30;
   top: 0;
   left: 0;
   width: 100%;
