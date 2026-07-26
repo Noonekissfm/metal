@@ -1,16 +1,21 @@
 .description_section {
     display: flex;
     flex-direction: column;
-    gap: 3vh;
+    margin-top: var(--sp-6);
 }
 
-.description p {
-    margin-top: 2vh;
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-4);
+    /* Описания категорий длинные, во всю ширину монитора их не прочесть. */
+    max-width: 68ch;
+    margin-top: var(--sp-4);
+
+    line-height: var(--lh-base);
     text-align: left;
-    text-indent: 1em;
 }
 
 .title_wrapper {
-    font-size: 1.5rem;
     display: block;
 }

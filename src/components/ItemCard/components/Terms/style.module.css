@@ -1,0 +1,23 @@
+.terms {
+    display: grid;
+    gap: var(--sp-2);
+    margin: 0;
+    padding-top: var(--sp-4);
+    border-top: 1px solid var(--c-border);
+    font-size: var(--fs-sm);
+}
+
+.row {
+    display: flex;
+    gap: var(--sp-3);
+}
+
+.label {
+    flex: 0 0 auto;
+    color: var(--c-text-muted);
+}
+
+.value {
+    margin: 0;
+    font-weight: 600;
+}

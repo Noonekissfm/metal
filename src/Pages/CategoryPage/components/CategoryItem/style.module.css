@@ -1,27 +1,87 @@
-.menu_item_wrapper {
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.row {
     display: flex;
-    flex-direction: column;
-}
+    align-items: center;
+    gap: var(--sp-4);
 
-.menu_item_wrapper a {
-    display: block;
-    padding: 5px 10px;
+    /* 44px — минимальная площадь нажатия на телефоне. */
+    min-height: 44px;
+    padding: var(--sp-3) var(--sp-5);
 
-    font-size: 1.2rem;
-    line-height: 1.5;
-    font-weight: bold;
+    font-size: var(--fs-base);
+    font-weight: 600;
     text-decoration: none;
+    color: var(--c-brand);
 
-
-
-    color: var(--color-brand);
-    border-bottom: 1px solid var(--color-brand);
-    transition: background-color 0.2s ease;
+    border-bottom: 1px solid var(--c-border);
+    transition: background-color var(--transition);
 }
-.menu_item_wrapper a:last-child {
+
+.list > li:last-child .row {
     border-bottom: none;
 }
 
-.menu_item_wrapper a:hover {
-    background-color: #e8e8e8;
+.row:hover {
+    background-color: var(--c-bg);
+}
+
+.rowTitle {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+/* Стрелка вправо: строка ведёт вглубь каталога. */
+.row::after {
+    content: '›';
+    flex: 0 0 auto;
+    font-size: var(--fs-xl);
+    line-height: 1;
+    color: var(--c-border-strong);
+}
+
+.row:hover::after {
+    color: var(--c-accent-strong);
+}
+
+/* --- Группировка по первой букве для длинных списков ------------------ */
+
+.group + .group {
+    margin-top: var(--sp-5);
+}
+
+.groupTitle {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    padding: var(--sp-2) var(--sp-5);
+    margin-bottom: var(--sp-2);
+
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--c-text-muted);
+
+    background-color: var(--c-bg);
+    border-bottom: 1px solid var(--c-border);
+}
+
+@media (max-width: 640px) {
+    .row {
+        padding: var(--sp-3) var(--sp-4);
+    }
+
+    .groupTitle {
+        padding: var(--sp-2) var(--sp-4);
+    }
 }

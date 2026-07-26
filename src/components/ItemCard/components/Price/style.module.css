@@ -1,50 +1,84 @@
-.wrapper--price {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
 .wrapper {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    gap: var(--sp-3);
 }
 
-.wrapper--price a,
-.wrapper a {
+.label {
+    font-size: var(--fs-sm);
+    color: var(--c-text-muted);
+}
+
+/* Цена — главный элемент карточки. */
+.amount {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    line-height: var(--lh-tight);
     color: var(--c-brand);
-    text-decoration: none;
-    padding-bottom: 1px;
-    border-bottom: 1px solid var(--c-brand);
+}
+
+.currency {
+    font-size: var(--fs-lg);
     font-weight: 600;
+    color: var(--c-text-muted);
+}
+
+/* --- Цена по запросу -------------------------------------------------- */
+
+.onRequest {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    line-height: var(--lh-tight);
+    color: var(--c-brand);
+}
+
+.hint {
+    font-size: var(--fs-sm);
+    color: var(--c-text-muted);
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--sp-3);
+}
+
+.callPrimary,
+.callSecondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* 44px — минимальная площадь нажатия на телефоне. */
+    min-height: 44px;
+    padding: var(--sp-2) var(--sp-5);
+
+    font: inherit;
+    font-size: var(--fs-base);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition);
+}
+
+.callPrimary {
+    color: var(--c-surface);
+    background-color: var(--c-brand);
+    border: 1px solid var(--c-brand);
     white-space: nowrap;
 }
 
-.wrapper > div,
-.wrapper--price > div {
-    display: flex;
+.callPrimary:hover {
+    background-color: var(--c-brand-hover);
 }
 
-.wrapper span,
-.wrapper--price span {
-    font-weight: 700;
+.callSecondary {
+    color: var(--c-brand);
+    background: none;
+    border: 1px solid var(--c-border-strong);
 }
 
-.order {
-    font-size: var(--fs-base);
-}
-
-@media (max-width: 900px) {
-    .wrapper--price {
-        align-items: flex-start;
-        gap: var(--sp-1);
-    }
-}
-
-/* Две ступени по 400px и 360px сведены в одну: разница между 0.9rem
- * и 0.8rem на 40 пикселях ширины никому не видна. */
-@media (max-width: 640px) {
-    .order,
-    .wrapper--price {
-        font-size: var(--fs-sm);
-    }
+.callSecondary:hover {
+    background-color: var(--c-bg);
 }

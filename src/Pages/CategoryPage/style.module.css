@@ -1,20 +1,28 @@
 .content {
     display: flex;
     flex-direction: column;
-    gap: 3vh;
-    margin-top: 6vh;
+    gap: var(--sp-5);
+    padding: var(--sp-6) 0 var(--sp-8);
 }
+
 .message {
-    font-size: 1.1rem;
+    font-size: var(--fs-lg);
 }
 
 .retry {
     align-self: flex-start;
+    padding: var(--sp-2) var(--sp-4);
+
+    font: inherit;
+    font-weight: 600;
+    color: var(--c-brand);
+
     background: none;
-    border: 1px solid var(--color-brand);
-    border-radius: 4px;
-    padding: 8px 16px;
-    color: var(--color-brand);
+    border: 1px solid var(--c-brand);
+    border-radius: var(--radius-sm);
     cursor: pointer;
-    font-weight: bold;
+}
+
+.retry:hover {
+    background-color: var(--c-bg);
 }
