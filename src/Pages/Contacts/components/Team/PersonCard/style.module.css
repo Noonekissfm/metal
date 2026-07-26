@@ -1,50 +1,39 @@
 .card {
     display: flex;
     align-items: center;
+    gap: var(--sp-4);
 
-    border: 1px solid #e1e1e1;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 2px #e2e2e2;
-    background-color: #fff;
+    padding: var(--sp-4);
 
-    padding: 0.5em;
-    justify-content: space-around;
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
 }
+
 .photo {
+    flex: 0 0 auto;
     overflow: hidden;
     border-radius: 50%;
     aspect-ratio: 1;
 }
+
 .photo img {
-    width: 100px;
-    height: 100px;
+    display: block;
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
 }
+
 .info {
-    padding-right: 1rem;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-1);
+    font-size: var(--fs-sm);
 }
-.info p {
-    white-space: nowrap;
-}
 
-/* Media */
-
-/* MW-580px */
-
-@media (max-width: 640px) {
-
-    .card {
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-    }
-
-    .info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-right: 0;
-        padding: 5px;
-        margin-top: 10px;
-        border-top: 1px solid #e2e2e2;
-    }
+.name {
+    font-weight: 600;
+    font-size: var(--fs-base);
 }

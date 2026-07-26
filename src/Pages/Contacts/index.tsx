@@ -1,16 +1,17 @@
 import { FC } from 'react';
+
 import { AppTitle } from 'src/components/AppTitle';
-import { MobileSize } from 'src/components/AppWrappers/MobileSize';
 import { Backplate } from 'src/components/AppWrappers/Backplate';
+import { ContentWrapper } from 'src/components/AppWrappers/ContentWrapper';
 import { Contacts } from 'src/components/Contacts';
 import { AddressLink } from 'src/components/Contacts/AddressLink';
 import { MailLink } from 'src/components/Contacts/MailLink';
 import { PhoneLink } from 'src/components/Contacts/PhoneLink';
 import { WorkTime } from 'src/components/Contacts/WorkTime';
 import { YandexMap } from 'src/components/YandexMap';
+
 import { Team } from './components/Team';
 import { IPersonCard } from './components/Team/PersonCard';
-import { ContentWrapper } from 'src/components/AppWrappers/ContentWrapper';
 
 import style from './style.module.css';
 
@@ -28,22 +29,23 @@ export const ContactsPage: FC<IProps> = ({ company, data }) => {
         <ContentWrapper>
             <div className={style.content}>
                 <AppTitle title={company} level={1} />
-                <Contacts>
-                    <PhoneLink icon />
-                    <MailLink icon />
-                    <WorkTime icon />
-                    <MobileSize>
+
+                {/* Адрес раньше выводился дважды: в списке контактов через
+                  * обёртку MobileSize, прятавшую его на телефоне, и ещё раз
+                  * отдельной строкой под картой. */}
+                <Backplate>
+                    <Contacts>
+                        <PhoneLink icon />
+                        <MailLink icon />
+                        <WorkTime icon />
                         <AddressLink icon />
-                    </MobileSize>
-                </Contacts>
-                <div className={style['map-wrapper']}>
-                    <Backplate>
-                        <YandexMap title={`Офис ${company}`} />
-                    </Backplate>
-                </div>
-                <div className={style['address--mobile']}>
-                    <AddressLink />
-                </div>
+                    </Contacts>
+                </Backplate>
+
+                <Backplate>
+                    <YandexMap title={`Офис ${company}`} />
+                </Backplate>
+
                 <Team data={data} />
             </div>
         </ContentWrapper>

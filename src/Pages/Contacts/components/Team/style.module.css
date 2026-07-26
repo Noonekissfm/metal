@@ -1,27 +1,17 @@
 .OurTeam {
     display: flex;
-    width: 100%;
     flex-direction: column;
-    gap: 3vh;
-    align-items: center;
+    gap: var(--sp-4);
+    width: 100%;
 }
 
 .teammates {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--sp-4);
 }
 
 .title_wrapper {
     display: block;
     width: 100%;
-    font-size: 2rem;
-}
-
-@media (max-width: 640px) {
-    .teammates {
-        width: max-content;
-        flex-direction: column;
-    }
 }

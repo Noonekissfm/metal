@@ -18,6 +18,9 @@ export const CartPage: FC = () => {
     const { changes, removed } = usePriceCheck();
     const [showCheckout, setShowCheckout] = useState(false);
     const [isDone, setIsDone] = useState(false);
+    // Удаление подтверждается на месте: строку легко снести случайно,
+    // а восстановить её нечем.
+    const [confirmKey, setConfirmKey] = useState<string | null>(null);
 
     if (isDone) {
         return (
@@ -101,13 +104,46 @@ export const CartPage: FC = () => {
                                     <p className={style.sum}>
                                         {formatPrice(lineTotal(item.unitPrice, item.qty))} руб.
                                     </p>
-                                    <button
-                                        className={style.remove}
-                                        type="button"
-                                        onClick={() => removeItem(item.key)}
-                                    >
-                                        Удалить
-                                    </button>
+                                    {confirmKey === item.key ? (
+                                        <span className={style.confirm}>
+                                            <button
+                                                className={style.confirmYes}
+                                                type="button"
+                                                onClick={() => {
+                                                    removeItem(item.key);
+                                                    setConfirmKey(null);
+                                                }}
+                                            >
+                                                Удалить
+                                            </button>
+                                            <button
+                                                className={style.confirmNo}
+                                                type="button"
+                                                onClick={() => setConfirmKey(null)}
+                                            >
+                                                Отмена
+                                            </button>
+                                        </span>
+                                    ) : (
+                                        <button
+                                            className={style.remove}
+                                            type="button"
+                                            aria-label={`Удалить: ${item.title}`}
+                                            onClick={() => setConfirmKey(item.key)}
+                                        >
+                                            <svg
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth="1.8"
+                                                strokeLinecap="round"
+                                                aria-hidden="true"
+                                            >
+                                                <path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" />
+                                            </svg>
+                                            Удалить
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         </Backplate>
