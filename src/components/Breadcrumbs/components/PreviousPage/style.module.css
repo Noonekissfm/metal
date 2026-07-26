@@ -1,47 +1,24 @@
 .PreviousPage {
-    position: relative;
     display: flex;
     align-items: center;
-    margin: 0 auto;
-    width: fit-content;
-    padding-bottom: 3px;
-    font-size: 0.9rem;
+    gap: var(--sp-4);
+    font-size: var(--fs-sm);
 }
 
 .PreviousPage > a {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    text-decoration: none;
-    border-bottom: 1px solid #c3c3c3;
-}
-
-.PreviousPage::after {
-    content: '';
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    width: 23px;
-    transform: rotate(289deg);
-    height: 1px;
-    background-color: #6c6c6c;
-}
-
-.PreviousPage a {
     color: inherit;
     text-decoration: none;
+    border-bottom: 1px solid var(--c-border-strong);
 }
 
-/* Media */
+.PreviousPage > a:hover {
+    border-bottom-color: var(--c-brand);
+}
 
-/* MW-1920px */
-    
-/* MW-1480px */
-
-/* MW-1200px */
-
-@media (max-width: 1280px) {
-    .PreviousPage::after {
-        display: none;
-    }
+/* Разделитель. Раньше это была повёрнутая на 289° полоска в 1px,
+ * поставленная абсолютно на right: -20px, — и её всё равно прятали
+ * на всех экранах уже ниже 1280px. */
+.PreviousPage::after {
+    content: '/';
+    color: var(--c-text-muted);
 }

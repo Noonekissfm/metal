@@ -1,17 +1,146 @@
-.section {
+.header {
+    background-color: var(--c-surface);
     border-bottom: 1px solid var(--c-border);
     box-shadow: var(--shadow-sm);
-    background-color: var(--c-surface);
+}
+
+/* --- Верхняя строка -------------------------------------------------- */
+
+.utilityRow {
+    background-color: var(--c-bg);
+    border-bottom: 1px solid var(--c-border);
+    font-size: var(--fs-xs);
+    color: var(--c-text-muted);
+}
+
+.utilityInner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--sp-6);
+    padding: var(--sp-2) 0;
+}
+
+.utilityInner a {
+    color: inherit;
+}
+
+/* --- Основная строка -------------------------------------------------- */
+
+.mainRow {
+    color: var(--c-brand);
+}
+
+.mainInner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--sp-4);
     padding: var(--sp-3) 0;
 }
 
-/* Два блока ниже переключали justify-content на space-around и обратно
- * на space-between — итог тот же, что и без них. Раскладку header'а
- * переписываем целиком отдельно. */
-.wrapper {
+.logoSlot {
+    order: 1;
+    flex: 0 0 auto;
+}
+
+.navSlot {
+    order: 2;
+}
+
+.searchSlot {
+    order: 3;
+    flex: 1 1 200px;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.phoneSlot {
+    order: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.phone {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    line-height: var(--lh-tight);
+    color: var(--c-brand);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.callLink {
+    padding: 0;
+    font: inherit;
+    font-size: var(--fs-xs);
+    color: var(--c-accent-strong);
+    background: none;
+    border: none;
+    border-bottom: 1px dashed currentColor;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.callLink:hover {
+    color: var(--c-brand);
+}
+
+/* Иконка «позвонить» — замена крупному номеру на телефоне. */
+.phoneIcon {
+    order: 5;
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: var(--sp-3);
+    box-sizing: border-box;
+    color: var(--c-brand);
+}
+
+.phoneIcon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.cartSlot {
+    order: 6;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: var(--sp-4);
-    color: var(--c-brand);
+}
+
+.burgerSlot {
+    order: 7;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .utilityRow {
+        display: none;
+    }
+
+    .navSlot,
+    .phoneSlot {
+        display: none;
+    }
+
+    .phoneIcon {
+        display: block;
+    }
+
+    /* Поиск переносится на свою строку во всю ширину: в одну строку с
+     * логотипом, телефоном, корзиной и бургером он не помещается. */
+    .searchSlot {
+        order: 10;
+        flex: 1 0 100%;
+    }
+
+    /* Логотип виден на всех ширинах. Раньше он просто пропадал ниже 440px —
+     * на телефоне у сайта не было ни названия, ни знака. */
+    .logoSlot {
+        margin-right: auto;
+    }
 }
