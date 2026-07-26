@@ -1,0 +1,28 @@
+.wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.label {
+    font-size: 0.95rem;
+}
+
+.input {
+    width: 6em;
+    padding: 6px 8px;
+    border: 1px solid var(--color-copper);
+    border-radius: 4px;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s linear;
+}
+
+.input:focus {
+    border-color: var(--color-brand);
+}
+
+.unit {
+    font-weight: bold;
+}

@@ -1,0 +1,41 @@
+.link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-brand);
+    padding: 4px;
+}
+
+.icon {
+    width: 28px;
+    height: 28px;
+}
+
+.badge {
+    position: absolute;
+    top: -2px;
+    right: -6px;
+
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+    background-color: var(--color-brand);
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+@media (max-width: 440px) {
+    .icon {
+        width: 24px;
+        height: 24px;
+    }
+}

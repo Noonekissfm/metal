@@ -1,0 +1,70 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+.modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    gap: 20px;
+
+    transform: translate(-50%, -50%);
+
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+
+    /* Длинный заказ не должен вылезать за экран. */
+    max-height: 90vh;
+    overflow-y: auto;
+    width: min(420px, 90vw);
+    box-sizing: border-box;
+}
+
+.summary {
+    font-size: 0.95rem;
+}
+
+.summary span {
+    font-weight: bold;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: #a33;
+    font-size: 0.95rem;
+}
+
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+@media (max-width: 768px) {
+    .modal {
+        padding: 16px;
+    }
+}

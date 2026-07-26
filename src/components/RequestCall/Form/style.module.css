@@ -22,6 +22,19 @@
   border-radius: 8px;
 }
 
+.error {
+  color: #a33;
+  font-size: 0.95rem;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
 .form {
   display: flex;
   flex-direction: column;

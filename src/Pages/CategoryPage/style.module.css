@@ -4,3 +4,17 @@
     gap: 3vh;
     margin-top: 6vh;
 }
+.message {
+    font-size: 1.1rem;
+}
+
+.retry {
+    align-self: flex-start;
+    background: none;
+    border: 1px solid var(--color-brand);
+    border-radius: 4px;
+    padding: 8px 16px;
+    color: var(--color-brand);
+    cursor: pointer;
+    font-weight: bold;
+}

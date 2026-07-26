@@ -5,14 +5,17 @@ import style from './style.module.css';
 
 interface IProps {
     title: string;
-    price: string | null;
+    /** Цена уже посчитана в каталоге: своя или от категории, со скидкой. */
+    unitPrice: number | null;
+    itemKey: string;
+    menuPath: string[];
 }
 
-export const Header: FC<IProps> = ({title, price}) => {
+export const Header: FC<IProps> = ({title, unitPrice, itemKey, menuPath}) => {
     return (
         <div className={style['header-wrapper']}>
                 <p>{title}</p>
-                <Price price={price} />
+                <Price unitPrice={unitPrice} itemKey={itemKey} title={title} menuPath={menuPath} />
         </div>
     )
 }

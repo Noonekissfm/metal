@@ -17,7 +17,8 @@ export const PersonCard: FC<IProps> = ({ data }) => {
     return (
         <div className={style.card}>
             <div className={style.photo}>
-                <img src={require(`src/${photo_link}`)} alt={name} />
+                {/* Не require(`src/...`): webpack тянул бы в сборку весь src. */}
+                <img src={`/${photo_link}`} alt={name} />
             </div>
             <div className={style.info}>
                 <p className={style.name}>{name}</p>

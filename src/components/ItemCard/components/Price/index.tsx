@@ -1,34 +1,44 @@
 import React, { FC } from 'react';
 
 import { PhoneLink } from 'src/components/Contacts/PhoneLink';
+import { AddToCart } from 'src/components/Cart/AddToCart';
+import { formatPrice } from 'src/utils/price';
 
 import style from './style.module.css';
 
 interface IProps {
-    price: string | null;
+    /** Цена тонны со скидкой; null — цена по запросу. */
+    unitPrice: number | null;
+    itemKey: string;
+    title: string;
+    menuPath: string[];
 }
 
-export const Price: FC<IProps> = ({ price }) => {
-    const classList = ['wrapper', price ? '--price' : ''].join('')
-
-    let discounted_price = null;
-    if (price) {
-        discounted_price = ((parseInt(price) * 0.98).toFixed(2)).toString();
-    }
+export const Price: FC<IProps> = ({ unitPrice, itemKey, title, menuPath }) => {
+    const classList = ['wrapper', unitPrice !== null ? '--price' : ''].join('');
 
     return (
         <div className={style[classList]}>
-            {!!price
-                ? <>
-                    <p>Стоимость одной тонны: <span>&nbsp;{discounted_price}&nbsp;</span>руб.</p>
+            {unitPrice !== null ? (
+                <>
+                    <p>
+                        Стоимость одной тонны: <span>&nbsp;{formatPrice(unitPrice)}&nbsp;</span>руб.
+                    </p>
                     <div className={style.order}>
-                        <p>Сделать заказ можно по телефону: &nbsp;</p>
-                        <PhoneLink />
+                        <AddToCart
+                            itemKey={itemKey}
+                            title={title}
+                            menuPath={menuPath}
+                            unitPrice={unitPrice}
+                        />
                     </div>
                 </>
-                : <>
-                    <p>Уточнить стоимость можно по телефону: &nbsp;</p><PhoneLink />
-                </>}
+            ) : (
+                <>
+                    <p>Уточнить стоимость можно по телефону: &nbsp;</p>
+                    <PhoneLink />
+                </>
+            )}
         </div>
     );
 };

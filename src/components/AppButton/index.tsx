@@ -7,9 +7,10 @@ interface IProps {
   buttonWidth: string
   onClick?: () => void
   type?: 'button' | 'submit' | 'reset'
+  disabled?: boolean
 }
 
-export const AppButton: FC<IProps> = ({ title, onClick, buttonWidth , type}) => {
+export const AppButton: FC<IProps> = ({ title, onClick, buttonWidth , type, disabled = false}) => {
   const handleClick = (e: MouseEvent) => {
     onClick && onClick()
   }
@@ -17,9 +18,14 @@ export const AppButton: FC<IProps> = ({ title, onClick, buttonWidth , type}) => 
   const classes = [
     style.button,
     style[`button--${buttonWidth}`]
-  ].join(' ')
+  ].filter(Boolean).join(' ')
 
   return (
-    <button onClick={onClick && handleClick} type={type ? type : 'button'} className={classes}>{title}</button>
+    <button
+      onClick={onClick && handleClick}
+      type={type ? type : 'button'}
+      disabled={disabled}
+      className={classes}
+    >{title}</button>
   )
 }

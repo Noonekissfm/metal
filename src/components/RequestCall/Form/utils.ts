@@ -1,18 +1,20 @@
+import { postRequestCall } from 'src/api/order';
+
 interface iData {
   name: FormDataEntryValue | null
   phone: FormDataEntryValue | null
   email: FormDataEntryValue | null
   message: FormDataEntryValue | null
+  company?: FormDataEntryValue | null
 }
 
-export const postData = (data: iData) => {
-  const url = 'https://met-c.ru/api/v1/request_call'
-  return fetch(url, {
-    method: 'POST',
-    mode: 'no-cors',
-    body: JSON.stringify(data)
-  })
-}
+export const postData = (data: iData) => postRequestCall({
+  name: String(data.name || ''),
+  phone: String(data.phone || ''),
+  email: String(data.email || ''),
+  message: String(data.message || ''),
+  company: String(data.company || ''),
+})
 
 export const getFormData = (e: React.FormEvent) => {
   const target = e.target

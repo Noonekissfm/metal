@@ -12,6 +12,7 @@ import { MailLink } from 'src/components/Contacts/MailLink';
 import style from './style.module.css';
 import { RequestCallButton } from 'src/components/RequestCall/Button';
 import { RequestCallForm } from 'src/components/RequestCall/Form';
+import { CartButton } from 'src/components/Cart/CartButton';
 
 interface IProps { }
 export const Layout: FC<IProps> = () => {
@@ -32,6 +33,7 @@ export const Layout: FC<IProps> = () => {
 						<WorkTime icon />
 					</Contacts>
 				</div>
+				<CartButton />
 			</Header>
 
 			<div className={style.flexGrow}>
