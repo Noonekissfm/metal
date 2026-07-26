@@ -19,7 +19,7 @@
     font-size: 2rem;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 640px) {
     .teammates {
         width: max-content;
         flex-direction: column;

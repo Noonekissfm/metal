@@ -1,20 +1,16 @@
+/* Было четыре ступени в процентах (70/75/85/90), из-за чего на широком
+ * мониторе строка текста растягивалась почти на весь экран. Обычный
+ * контейнер с максимальной шириной и боковыми отступами делает то же
+ * самое без единой точки перелома. */
 .wrapper {
-    width: 70%;
+    width: 100%;
+    max-width: 1280px;
     margin: 0 auto;
+    padding: 0 var(--sp-5);
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 640px) {
     .wrapper {
-        width: 75%;
-    }
-}
-@media (max-width: 1300px) {
-    .wrapper {
-        width: 85%;
-    }
-}
-@media (max-width: 440px) {
-    .wrapper {
-        width: 90%;
+        padding: 0 var(--sp-4);
     }
 }

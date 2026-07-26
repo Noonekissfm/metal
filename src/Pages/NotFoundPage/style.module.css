@@ -5,37 +5,27 @@
     margin-top: 19rem;
 }
 
-.not-found a, .not-found span {
+.not-found a,
+.not-found button {
     text-decoration: none;
-    border-bottom: 1px solid var(--color-brand);
-    font-weight: bold;
-    color: var(--color-brand);
+    border-bottom: 1px solid var(--c-brand);
+    font-weight: 600;
+    color: var(--c-brand);
     cursor: pointer;
 }
 
-
-
-@media (max-width: 960px) {
-
-}
-
-
-@media (max-width: 440px) {
+/* Было два блока (max-width: 440px) подряд, второй перебивал первый —
+ * от первого работал только margin-top. */
+@media (max-width: 640px) {
     .not-found {
         margin-top: 10rem;
     }
+
     .not-found h1 {
-        font-size: 1.5rem;
+        font-size: var(--fs-xl);
     }
+
     .not-found p {
-        font-size: 1.2rem;
-    }
-}
-@media (max-width: 440px) {
-    .not-found h1 {
-        font-size: 1.2rem;
-    }
-    .not-found p {
-        font-size: 0.9rem;
+        font-size: var(--fs-base);
     }
 }

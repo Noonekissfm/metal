@@ -25,7 +25,7 @@
     align-items: center;
     height: 100%;
 }
-@media (max-width: 720px) {
+@media (max-width: 900px) {
     .component_wrapper {
         width: unset;
         gap: 2vh;

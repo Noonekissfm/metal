@@ -35,25 +35,13 @@
 /* Media */
 
 /* MW-1920px */
-
-@media (max-width: 1920px) {
-
-}
     
 /* MW-1480px */
 
-@media (max-width: 1480px) {
-
-}
-
 /* MW-1200px */
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
     .PreviousPage::after {
         display: none;
     }
-}
-
-@media (max-width: 960px) {
-
 }

@@ -13,7 +13,7 @@
 }
 
 
-@media (max-width: 960px) {
+@media (max-width: 900px) {
     .slick-next::before,
     .slick-prev::before {
         content: ''

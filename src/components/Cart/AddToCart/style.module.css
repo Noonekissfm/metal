@@ -13,7 +13,7 @@
     white-space: nowrap;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 640px) {
     .wrapper {
         gap: 8px;
     }

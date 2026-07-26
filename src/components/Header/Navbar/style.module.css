@@ -11,20 +11,10 @@
 
 /* MW-860px */
 
-@media (max-width: 860px) {
-
-}
-@media (max-width: 720px) {
-
-}
-@media (max-width: 600px) {
+@media (max-width: 640px) {
     .navbar {
         flex-direction: column;
         gap: 1rem;
         width: fit-content;
     }
-}
-
-@media (max-width: 440px) {
-
 }

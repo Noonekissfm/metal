@@ -3,7 +3,6 @@
     align-items: center;
     padding: 0px 6px 3px 6px;
 
-
     font-weight: bold;
     font-size: 0.9rem;
 
@@ -18,19 +17,11 @@
 
 /* MW-1920px */
 
-@media (max-width: 1920px) {
-    
-}
-
 /* MW-1480px */
-
-@media (max-width: 1480px) {
-    
-}
 
 /* MW-1200px */
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
     .CurrentPage {
         padding: 4px 5px;
     }
@@ -38,12 +29,4 @@
 
 /* MW-768px */
 
-@media (max-width: 768px) {
-    
-}
-
 /* MW-320px */
-
-@media (max-width: 375px) {
-    
-}

@@ -10,15 +10,8 @@
     width: 5rem;
 }
 
-@media (max-width: 720px) {
-
-}
-
-@media (max-width: 440px) {
+@media (max-width: 640px) {
     .logo {
         display: none;
     }
-}
-@media (max-width: 320px) {
-
 }

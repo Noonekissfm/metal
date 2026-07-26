@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { AppTitle } from 'src/components/AppTitle';
-import { Backplate } from 'src/components/AppWrappers/Backplate';
 import { IPersonCard, PersonCard } from './PersonCard';
 
 import style from './style.module.css';

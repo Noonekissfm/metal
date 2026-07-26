@@ -19,13 +19,13 @@
     justify-content: space-between;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 900px) {
     .content {
         justify-content: space-evenly;
     }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 640px) {
     .footer {
         padding: 10px 0;;
     }

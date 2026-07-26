@@ -13,7 +13,8 @@ interface IProps {
 
 export const Navigation: FC<IProps> = ({ keys, titles }) => {
     const { width } = useWindowDimensions();
-    const isMobile = +width <= 767;
+    // Тот же порог, на котором крошки скрываются в Breadcrumbs/style.module.css.
+    const isMobile = width <= 640;
     return (
         <>
             {!isMobile && !!titles?.length &&

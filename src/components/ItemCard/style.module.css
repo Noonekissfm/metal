@@ -8,7 +8,7 @@
 
 /* MW-1200px */
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
     .wrapper p{
         font-size: 2rem;
     }

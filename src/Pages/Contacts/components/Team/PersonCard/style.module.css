@@ -30,7 +30,7 @@
 
 /* MW-580px */
 
-@media (max-width: 580px) {
+@media (max-width: 640px) {
 
     .card {
         flex-direction: column;

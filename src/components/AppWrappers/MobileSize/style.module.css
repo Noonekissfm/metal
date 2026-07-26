@@ -1,4 +1,4 @@
-@media (max-width: 720px) {
+@media (max-width: 900px) {
     .mobile-size-wrapper {
         display: none;
         /* font-size: 1.3rem; */
@@ -8,7 +8,7 @@
         /* font-size: 1.2rem; */
     }
 }
-@media (max-width: 440px) { 
+@media (max-width: 640px) { 
     .mobile-size-wrapper a,
     .mobile-size-wrapper p {
         /* font-size: 1rem; */

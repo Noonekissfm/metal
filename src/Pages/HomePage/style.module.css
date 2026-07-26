@@ -18,7 +18,7 @@
     justify-content: space-between;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 900px) {
     .page_row {
         flex-direction: column;
         gap: 3vh;
