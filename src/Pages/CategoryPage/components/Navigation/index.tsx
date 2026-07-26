@@ -16,7 +16,7 @@ export const Navigation: FC<IProps> = ({ keys, titles }) => {
     const isMobile = +width <= 767;
     return (
         <>
-            {!isMobile && titles?.length && 
+            {!isMobile && !!titles?.length &&
                 <div className={style['Breadcrumbs__wrapper']}>
                     <Backplate width="fit-content">
                         <Breadcrumbs keys={keys} titles={titles} />

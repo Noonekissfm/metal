@@ -27,7 +27,7 @@ export const ContactsPage: FC<IProps> = ({ company, data }) => {
     return (
         <ContentWrapper>
             <div className={style.content}>
-                <AppTitle title={company} />
+                <AppTitle title={company} level={1} />
                 <Contacts>
                     <PhoneLink icon />
                     <MailLink icon />

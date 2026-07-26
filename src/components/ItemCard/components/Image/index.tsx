@@ -16,7 +16,17 @@ export const Image: FC<IProps> = ({ src, title }) => {
 
     return (
         <div className={style.wrapper}>
-            <img src={src} alt={title || ''} loading="lazy" onError={() => setIsBroken(true)} />
+            {/* Картинки старого каталога все 228×228; для загруженных в CMS
+              * это тоже квадрат, поэтому размер задаёт aspect-ratio в стилях. */}
+            <img
+                src={src}
+                alt={title || ''}
+                width={228}
+                height={228}
+                loading="lazy"
+                decoding="async"
+                onError={() => setIsBroken(true)}
+            />
         </div>
     );
 };

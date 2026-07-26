@@ -37,7 +37,10 @@ const buildTree = (categories: Category[]): { root: CategoryNode | null; byKey: 
 
     byId.forEach((node) => {
         node.children.sort(
-            (a, b) => a.sort_order - b.sort_order || a.title.localeCompare(b.title, 'ru'),
+            // numeric: true — иначе «100мм» встаёт перед «10мм».
+            (a, b) =>
+                a.sort_order - b.sort_order ||
+                a.title.localeCompare(b.title, 'ru', { numeric: true }),
         );
     });
 

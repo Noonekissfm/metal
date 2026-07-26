@@ -22,7 +22,7 @@ export const HomePage: FC<IProps> = () => {
             <Banner image_link={banner} alt="matalloprokat" />
             <ContentWrapper>
                 <div className={style.content}>
-                    <AppTitle title={company.name} />
+                    <AppTitle title={company.name} level={1} />
                     <Description text={company.legend} />
                     <div className={style.page_row}>
                         <ShortMenu data={shortMenuData} />

@@ -85,6 +85,14 @@ code {
         monospace;
 }
 
+/* До этого во всём проекте не было ни одного состояния фокуса, то есть
+ * с клавиатуры было не видно, где ты находишься. Одно правило закрывает
+ * ссылки, кнопки и поля сразу. */
+:focus-visible {
+    outline: 2px solid var(--c-focus);
+    outline-offset: 2px;
+}
+
 .wrapper {
     width: 70vw;
     margin: 0 auto;

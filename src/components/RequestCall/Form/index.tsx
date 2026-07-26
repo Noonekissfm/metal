@@ -1,5 +1,4 @@
 import { FC, useEffect, useState } from 'react';
-// import DatePicker from 'react-datepicker'
 
 import style from './style.module.css';
 import { AppTitle } from 'src/components/AppTitle';
@@ -77,7 +76,6 @@ export const RequestCallForm: FC<IProps> = ({ closeModal }) => {
                 aria-hidden="true"
               />
             </div>
-            {/* <DatePicker /> */}
             {error && <p className={style.error}>{error}</p>}
             <AppButton
               buttonWidth='block'

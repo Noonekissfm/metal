@@ -4,28 +4,30 @@ import { useNavigate } from 'react-router-dom';
 import style from './style.module.css';
 
 interface IProps {
-    title?: string,
-    primary?: boolean,
-    cursorPointer?: boolean,
-    underlineText?: boolean,
-    color?: string,
+    title?: string;
+    primary?: boolean;
+    underlineText?: boolean;
+    color?: string;
 }
 
-export const BackButton: FC<IProps> = ({title, underlineText, cursorPointer, color, primary=false}) => {
+export const BackButton: FC<IProps> = ({ title, underlineText, color, primary = false }) => {
     const navigate = useNavigate();
-    const goBack = () => navigate(-1)
+    const goBack = () => navigate(-1);
 
+    // Раньше это был <span onClick>: с клавиатуры на него было не попасть,
+    // и курсор оставался текстовым, потому что вызывающая сторона не
+    // передавала отдельный флаг cursorPointer.
     return (
-        <>
-            <span 
-            className={primary ? style.wrapper : ''} 
+        <button
+            type="button"
+            className={primary ? style.wrapper : style.plain}
             onClick={goBack}
             style={{
-                textDecoration: underlineText? 'underline' : 'none',
-                cursor: cursorPointer? 'pointer' : 'auto',
-                color: color? color : 'inherit',
+                textDecoration: underlineText ? 'underline' : 'none',
+                color: color || 'inherit',
             }}
-            >{title? title : 'Назад'}</span>
-        </>
-    )
-}
+        >
+            {title || 'Назад'}
+        </button>
+    );
+};

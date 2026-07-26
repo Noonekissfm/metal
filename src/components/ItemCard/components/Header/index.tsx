@@ -14,7 +14,7 @@ interface IProps {
 export const Header: FC<IProps> = ({title, unitPrice, itemKey, menuPath}) => {
     return (
         <div className={style['header-wrapper']}>
-                <p>{title}</p>
+                <h1 className={style.title}>{title}</h1>
                 <Price unitPrice={unitPrice} itemKey={itemKey} title={title} menuPath={menuPath} />
         </div>
     )

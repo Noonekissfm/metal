@@ -23,7 +23,7 @@ export const CartPage: FC = () => {
         return (
             <ContentWrapper>
                 <div className={style.content}>
-                    <AppTitle title="Заявка отправлена" />
+                    <AppTitle title="Заявка отправлена" level={1} />
                     <p className={style.empty}>
                         Мы получили ваш заказ и перезвоним в ближайшее время.
                     </p>
@@ -39,7 +39,7 @@ export const CartPage: FC = () => {
         return (
             <ContentWrapper>
                 <div className={style.content}>
-                    <AppTitle title="Корзина" />
+                    <AppTitle title="Корзина" level={1} />
                     <p className={style.empty}>Корзина пуста.</p>
                     <Link className={style.link} to="/catalog">
                         Перейти в каталог
@@ -52,7 +52,7 @@ export const CartPage: FC = () => {
     return (
         <ContentWrapper>
             <div className={style.content}>
-                <AppTitle title="Корзина" />
+                <AppTitle title="Корзина" level={1} />
 
                 {changes.length > 0 && (
                     <div className={style.notice}>

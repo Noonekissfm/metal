@@ -1,26 +1,43 @@
 .stickyPhone {
   position: fixed;
+  display: grid;
+  place-items: center;
   width: 60px;
   height: 60px;
 
-  right: 5vw;
-  bottom: 5vh;
+  right: var(--sp-5);
+  bottom: var(--sp-5);
 
-  padding: 8px;
+  padding: var(--sp-2);
+  border: none;
   border-radius: 50%;
+  cursor: pointer;
 
-  background-color: white;
-  box-shadow: 0 0 8px 4px #00000050;
-
-  animation: rotate 6s infinite;
+  background-color: var(--c-surface);
+  box-shadow: var(--shadow-md);
+  transition: background-color var(--transition);
 }
 
+.stickyPhone:hover {
+  background-color: var(--c-bg);
+}
 
+.phone {
+  fill: var(--c-brand);
+  width: 100%;
+  height: 100%;
+}
+
+/* Кнопка висит на экране постоянно, поэтому дёргается три раза и
+ * останавливается — и только если пользователь не просил убрать анимацию. */
+@media (prefers-reduced-motion: no-preference) {
+  .stickyPhone {
+    animation: rotate 6s ease-in-out 3;
+  }
+}
 
 @keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
+  0%,
   20% {
     transform: rotate(0deg);
   }
@@ -36,31 +53,16 @@
   28% {
     transform: rotate(10deg);
   }
-  30% {
+  30%,
+  100% {
     transform: rotate(0deg);
   }
-
 }
 
-.phone {
-  fill: var(--color-brand);
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  left: 50%;
-}
-
-@media (max-width: 960px) {
+@media (max-width: 900px) {
   .stickyPhone {
-    width: 40px;
-    height: 40px;
-    padding: 4px;
-  }
-
-  .phone {
-    width: 30px;
-    height: 30px;
+    width: 48px;
+    height: 48px;
+    padding: var(--sp-1);
   }
 }

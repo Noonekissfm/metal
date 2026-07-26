@@ -26,13 +26,11 @@ export const Layout: FC<IProps> = () => {
 			<Header>
 				<Logo />
 				<Navbar />
-				<div className={style['contacts-wrapper']}>
-					<Contacts header>
-						<PhoneLink icon />
-						<MailLink icon />
-						<WorkTime icon />
-					</Contacts>
-				</div>
+				<Contacts header>
+					<PhoneLink icon />
+					<MailLink icon />
+					<WorkTime icon />
+				</Contacts>
 				<CartButton />
 			</Header>
 
@@ -41,7 +39,7 @@ export const Layout: FC<IProps> = () => {
 			</div>
 
 			{showModal && <RequestCallForm closeModal={handleCloseModal} />}
-			{!showModal && <RequestCallButton onClick={() => setShowModal(!showModal)} />}
+			{!showModal && <RequestCallButton onClick={() => setShowModal(true)} />}
 			<Footer />
 		</>
 	);
