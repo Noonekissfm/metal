@@ -9,6 +9,7 @@ import { MailLink } from 'src/components/Contacts/MailLink';
 import { PhoneLink } from 'src/components/Contacts/PhoneLink';
 import { WorkTime } from 'src/components/Contacts/WorkTime';
 import { YandexMap } from 'src/components/YandexMap';
+import { usePageMeta } from 'src/hooks';
 
 import { Team } from './components/Team';
 import { IPersonCard } from './components/Team/PersonCard';
@@ -25,6 +26,11 @@ interface IProps {
 }
 
 export const ContactsPage: FC<IProps> = ({ company, data }) => {
+    usePageMeta({
+        title: 'Контакты',
+        description: `Адрес, телефон и часы работы ${company}: Санкт-Петербург, пер. Челиева, 17.`,
+    });
+
     return (
         <ContentWrapper>
             <div className={style.content}>

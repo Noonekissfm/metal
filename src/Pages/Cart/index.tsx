@@ -9,6 +9,7 @@ import { QtyInput } from 'src/components/Cart/QtyInput';
 import { CheckoutForm } from 'src/components/Cart/CheckoutForm';
 import { useCart } from 'src/context/CartContext';
 import { formatPrice, lineTotal } from 'src/utils/price';
+import { usePageMeta } from 'src/hooks';
 import { usePriceCheck } from './usePriceCheck';
 
 import style from './style.module.css';
@@ -21,6 +22,8 @@ export const CartPage: FC = () => {
     // Удаление подтверждается на месте: строку легко снести случайно,
     // а восстановить её нечем.
     const [confirmKey, setConfirmKey] = useState<string | null>(null);
+
+    usePageMeta({ title: 'Корзина' });
 
     if (isDone) {
         return (

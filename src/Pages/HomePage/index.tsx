@@ -4,6 +4,7 @@ import { ShortMenu } from 'src/components/ShortMenu';
 import { AppTitle } from 'src/components/AppTitle';
 import { ContentWrapper } from 'src/components/AppWrappers/ContentWrapper';
 
+import { usePageMeta } from 'src/hooks';
 import { useLayoutContext } from 'src/Pages/Layout/outletContext';
 
 import { Description } from './components/Description';
@@ -18,6 +19,9 @@ import style from './style.module.css';
 
 export const HomePage: FC = () => {
     const { onRequestCall } = useLayoutContext();
+
+    // У главной заголовок без приставки — она и так про компанию целиком.
+    usePageMeta({});
 
     return (
         <>

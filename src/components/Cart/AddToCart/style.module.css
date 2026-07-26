@@ -6,9 +6,9 @@
 }
 
 .link {
-    color: var(--color-brand);
+    color: var(--c-brand);
     text-decoration: none;
-    border-bottom: 1px solid var(--color-brand);
+    border-bottom: 1px solid var(--c-brand);
     font-weight: bold;
     white-space: nowrap;
 }

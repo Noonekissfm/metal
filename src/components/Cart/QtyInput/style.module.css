@@ -12,7 +12,7 @@
 .input {
     width: 6em;
     padding: 6px 8px;
-    border: 1px solid var(--color-copper);
+    border: 1px solid var(--c-accent);
     border-radius: 4px;
     outline: none;
     font-size: 1rem;
@@ -20,7 +20,7 @@
 }
 
 .input:focus {
-    border-color: var(--color-brand);
+    border-color: var(--c-brand);
 }
 
 .unit {

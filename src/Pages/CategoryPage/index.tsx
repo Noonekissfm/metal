@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 
-import { useUrlParams } from 'src/hooks';
+import { usePageMeta, useUrlParams } from 'src/hooks';
 import { useCatalog } from 'src/context/CatalogContext';
 
-import { NotFoundPage } from '../NotFoundPage';
+import { NotFoundPage, NOT_FOUND_TITLE } from '../NotFoundPage';
 import { Navigation } from './components/Navigation';
 import { CategoryItem } from './components/CategoryItem';
 import { useCategoryContent } from './useCategoryContent';
@@ -17,6 +17,23 @@ export const CategoryPage: FC = () => {
     const keys = useUrlParams();
     const catalog = useCatalog();
     const { status, node, products, product, description } = useCategoryContent(keys);
+
+    // Заголовок страницы — название товара или категории, а описание —
+    // путь до неё: на всё это раньше был один <title> из index.html.
+    // Несуществующий адрес каталога рисует NotFoundPage внутри этой
+    // страницы, и заголовок должен совпадать с тем, что ставит она сама:
+    // эффект родителя выполняется последним и иначе перебил бы её.
+    const metaTitle =
+        status === 'not-found' ? NOT_FOUND_TITLE : product?.title || node?.title;
+    // Последний элемент menu_path — сама страница, в описании она уже есть.
+    const metaPath = (product?.menu_path || node?.menu_path || []).slice(0, -1).join(' / ');
+
+    usePageMeta({
+        title: metaTitle,
+        description: metaTitle
+            ? `${metaTitle}. ${metaPath ? `${metaPath}. ` : ''}Купить в Санкт-Петербурге со склада ООО «МЕТ-С».`
+            : undefined,
+    });
 
     if (status === 'not-found') {
         return <NotFoundPage />;

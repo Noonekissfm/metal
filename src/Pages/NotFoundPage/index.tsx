@@ -2,10 +2,15 @@ import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 
 import { ContentWrapper } from 'src/components/AppWrappers/ContentWrapper';
+import { usePageMeta } from 'src/hooks';
 
 import style from './style.module.css';
 
+export const NOT_FOUND_TITLE = 'Страница не найдена';
+
 export const NotFoundPage: FC = () => {
+    usePageMeta({ title: NOT_FOUND_TITLE });
+
     return (
         <ContentWrapper>
             <div className={style['not-found']}>
