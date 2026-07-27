@@ -80,6 +80,51 @@ export const fetchProductByKey = async (key: string): Promise<Product | null> =>
     return payload.items[0] || null;
 };
 
+/** Минимальная длина запроса: по одной букве найдётся половина каталога. */
+export const SEARCH_MIN_LENGTH = 2;
+const SEARCH_LIMIT = 20;
+
+/** LIKE в SQLite не различает регистр только для латиницы, поэтому для
+ *  кириллицы варианты приходится перечислять руками. Проверено на боевых
+ *  данных: «труба» находит 218 товаров, «Труба» — 2213, «ТРУБА» — ни одного.
+ *  Слово как введено нужно отдельно: в названиях есть «ГОСТ» капслоком. */
+export const searchWordVariants = (word: string): string[] => {
+    const lower = word.toLocaleLowerCase('ru');
+    const capitalized = lower.charAt(0).toLocaleUpperCase('ru') + lower.slice(1);
+
+    return Array.from(new Set([word, lower, capitalized]));
+};
+
+/** Фильтр PocketBase: каждое слово запроса должно найтись в названии,
+ *  в любом порядке. Одной подстрокой искать нельзя — названия выглядят как
+ *  «Труба нержавеющая AISI201 квадратная 40х40х1,5х6000мм», и «труба 40»
+ *  подряд в них не встречается ни разу. */
+export const buildSearchFilter = (words: string[]): string =>
+    words
+        .map((word) => `(${searchWordVariants(word).map((v) => `title~"${v}"`).join(' || ')})`)
+        .join(' && ');
+
+/** Поиск товаров по названию. Отдаёт одну страницу, не весь каталог. */
+export const searchProducts = async (query: string): Promise<Product[]> => {
+    const term = query.trim();
+
+    // Как в fetchProductByKey: кавычки и слэши в фильтр не пускаем.
+    if (term.length < SEARCH_MIN_LENGTH || /["\\]/.test(term)) return [];
+
+    const words = term.split(/\s+/).filter(Boolean);
+
+    if (!words.length) return [];
+
+    const payload = await request<PbList<Product>>('/api/collections/products/records', {
+        fields: PRODUCT_FIELDS,
+        filter: buildSearchFilter(words),
+        sort: 'title',
+        perPage: String(SEARCH_LIMIT),
+    });
+
+    return payload.items;
+};
+
 export const fetchSettings = async (): Promise<Settings> => {
     const payload = await request<PbList<Settings>>('/api/collections/settings/records', {
         perPage: '1',

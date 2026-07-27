@@ -1,56 +1,84 @@
-.wrapper--price {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-}
-
 .wrapper {
-        display: flex;
-        align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
 }
 
-.wrapper--price a,
-.wrapper a {
-        color: var(--color-brand);
-        text-decoration: none;
-        padding-bottom: 1px;
-        border-bottom: 1px solid var(--color-brand);
-        font-weight: bold;
-        white-space: nowrap;
+.label {
+    font-size: var(--fs-sm);
+    color: var(--c-text-muted);
 }
 
-.wrapper>div,
-.wrapper--price>div {
-        display: flex;
+/* Цена — главный элемент карточки. */
+.amount {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    line-height: var(--lh-tight);
+    color: var(--c-brand);
 }
 
-.wrapper span,
-.wrapper--price span {
-        font-weight: bold;
+.currency {
+    font-size: var(--fs-lg);
+    font-weight: 600;
+    color: var(--c-text-muted);
 }
 
-.order {
-        font-size: 1rem;
+/* --- Цена по запросу -------------------------------------------------- */
+
+.onRequest {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    line-height: var(--lh-tight);
+    color: var(--c-brand);
 }
 
-
-/* Media */
-
-
-@media (max-width: 860px) {
-        .wrapper--price {
-                align-items: flex-start;
-                gap: 1vh;
-        }
+.hint {
+    font-size: var(--fs-sm);
+    color: var(--c-text-muted);
 }
-@media (max-width: 400px) {
-        .order,
-        .wrapper--price {
-                font-size: 0.9rem;
-        }
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--sp-3);
 }
-@media (max-width: 360px) {
-        .order {
-                font-size: 0.8rem;
-        }
+
+.callPrimary,
+.callSecondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* 44px — минимальная площадь нажатия на телефоне. */
+    min-height: 44px;
+    padding: var(--sp-2) var(--sp-5);
+
+    font: inherit;
+    font-size: var(--fs-base);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition);
+}
+
+.callPrimary {
+    color: var(--c-surface);
+    background-color: var(--c-brand);
+    border: 1px solid var(--c-brand);
+    white-space: nowrap;
+}
+
+.callPrimary:hover {
+    background-color: var(--c-brand-hover);
+}
+
+.callSecondary {
+    color: var(--c-brand);
+    background: none;
+    border: 1px solid var(--c-border-strong);
+}
+
+.callSecondary:hover {
+    background-color: var(--c-bg);
 }

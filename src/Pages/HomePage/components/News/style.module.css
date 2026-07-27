@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-4);
+    color: var(--c-brand);
+}
+
+.list {
+    display: grid;
+    gap: var(--sp-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card {
+    padding: var(--sp-5);
+
+    font-size: var(--fs-base);
+    line-height: var(--lh-base);
+    color: var(--c-text);
+
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-left: 3px solid var(--c-accent-strong);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}

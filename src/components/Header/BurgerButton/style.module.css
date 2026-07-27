@@ -1,0 +1,44 @@
+.burger {
+    display: none;
+
+    /* 44×44 — минимальная площадь нажатия на телефоне. */
+    width: 44px;
+    height: 44px;
+    padding: var(--sp-2);
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    height: 2px;
+    border-radius: 1px;
+    background-color: var(--c-brand);
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+/* Открытая кнопка — крестик: верхняя и нижняя полоски складываются в X,
+ * средняя исчезает. */
+.burgerOpen .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.burgerOpen .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burgerOpen .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+    .burger {
+        display: flex;
+    }
+}

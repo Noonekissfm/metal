@@ -1,6 +1,83 @@
+/* Единственный источник значений для всех 52 модулей стилей. Пользовательские
+ * свойства глобальны и наследуются как обычно, поэтому CSS Modules ничего для
+ * этого настраивать не нужно. */
 :root {
-    --color-brand: #1f333f;
-    --color-copper: #e5cdc1;
+    /* Фирменные цвета — те же, что были, плюс состояния наведения и нажатия. */
+    --c-brand: #1f333f;
+    --c-brand-hover: #2b4553;
+    --c-brand-active: #16252e;
+    --c-accent: #e5cdc1;
+    /* Медь, затемнённая до читаемого контраста на белом. */
+    --c-accent-strong: #b8865f;
+
+    /* Нейтральные */
+    --c-bg: #f6f7f8;
+    --c-surface: #ffffff;
+    --c-border: #e3e6e8;
+    --c-border-strong: #c9ced2;
+    --c-text: #1f333f;
+    --c-text-muted: #5d6b74;
+    --c-danger: #b3261e;
+    --c-focus: #4a7fa5;
+
+    /* Отступы — заменяют vh/vw, которыми они заданы в старых модулях. */
+    --sp-1: 4px;
+    --sp-2: 8px;
+    --sp-3: 12px;
+    --sp-4: 16px;
+    --sp-5: 24px;
+    --sp-6: 32px;
+    --sp-7: 48px;
+    --sp-8: 64px;
+
+    /* Размеры текста */
+    --fs-xs: 0.8125rem;
+    --fs-sm: 0.875rem;
+    --fs-base: 1rem;
+    --fs-lg: 1.125rem;
+    --fs-xl: 1.375rem;
+    --fs-2xl: 1.75rem;
+    --fs-3xl: 2.5rem;
+    --lh-tight: 1.25;
+    --lh-base: 1.55;
+
+    /* Форма элементов. Старые тени — серые ореолы без направления
+     * (0 0 10px 3px #606060), эти дают нормальную глубину. */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --shadow-sm: 0 1px 2px rgba(31, 51, 63, 0.06), 0 1px 3px rgba(31, 51, 63, 0.08);
+    --shadow-md: 0 2px 8px rgba(31, 51, 63, 0.08), 0 8px 24px rgba(31, 51, 63, 0.06);
+    --transition: 160ms ease;
+}
+
+/* Точки перелома. В медиавыражениях пользовательские свойства не работают,
+ * поэтому это соглашение, а не переменные — новые правила пишем только на
+ * этих трёх границах:
+ *   640px  — телефон
+ *   900px  — планшет, header в две строки
+ *   1280px — десктоп
+ */
+
+@font-face {
+    font-family: 'Golos Text';
+    font-style: normal;
+    /* Переменный шрифт: один файл на все начертания от 400 до 700. */
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('./assets/fonts/golos-text-cyrillic.woff2') format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('./assets/fonts/golos-text-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+        U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 * {
@@ -10,18 +87,28 @@
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
+    font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        'Roboto', 'Helvetica Neue', sans-serif;
+    font-size: var(--fs-base);
+    line-height: var(--lh-base);
+    color: var(--c-text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #f8f8f8;
+    background-color: var(--c-bg);
     min-height: 100vh;
 }
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
+}
+
+/* До этого во всём проекте не было ни одного состояния фокуса, то есть
+ * с клавиатуры было не видно, где ты находишься. Одно правило закрывает
+ * ссылки, кнопки и поля сразу. */
+:focus-visible {
+    outline: 2px solid var(--c-focus);
+    outline-offset: 2px;
 }
 
 .wrapper {
@@ -35,62 +122,29 @@ code {
     min-height: 100vh;
 }
 
+/* Было наоборот: с 16px на широком экране шрифт уезжал до 13px на узком,
+ * а на 440px почему-то возвращался к 14px — то есть текст был тем мельче,
+ * чем меньше экран. Теперь корень зафиксирован, а иерархию задаёт шкала
+ * --fs-*, в которой размеры выражены в rem. */
 html {
     font-size: 16px;
 }
 
-/* Media */
-
-/* MW-1480px */
-
-@media (max-width: 1480px) {
+@media (max-width: 1280px) {
     .wrapper {
         width: 80vw;
     }
-    html {
-        font-size: 15px;
-    }
 }
 
-/* MW-1200px */
-
-@media (max-width: 960px) {
+@media (max-width: 900px) {
     .wrapper {
         width: 85vw;
     }
-    html {
-        font-size: 14px;
-    }
 }
 
-/* MW-768px */
-
-@media (max-width: 768px) {
-    html {
-        font-size: 13px;
-    }
+@media (max-width: 640px) {
     .wrapper {
         width: 90vw;
-    }
-}
-
-@media (max-width: 440px) {
-    body {
-        font-size: 16px;
-    }
-    .wrapper {
-        width: 90vw;
-    }
-    html {
-        font-size: 14px;
-    }
-}
-
-/* MW-320px */
-
-@media (max-width: 320px) {
-    html {
-        font-size: 14px;
     }
 }
 

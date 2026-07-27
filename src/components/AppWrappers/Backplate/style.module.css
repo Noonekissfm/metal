@@ -1,15 +1,15 @@
 .backplate {
     height: fit-content;
-    border: 1px solid #e1e1e1;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 2px #e2e2e2;
-    background-color: #fff;
+    padding: var(--sp-4);
 
-    padding: 1em;
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
 }
 
-@media (max-width: 720px) {
+@media (max-width: 900px) {
     .backplate {
-        padding: 0.7rem;
-    }  
+        padding: var(--sp-3);
+    }
 }

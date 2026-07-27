@@ -1,15 +1,50 @@
-.itemCard {
- display: flex;
- flex-direction: column;
- gap: 3vh;
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-6);
 }
 
-/* Media */
+.main {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-7);
 
-/* MW-1200px */
+    padding: var(--sp-6);
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
 
-@media (max-width: 1200px) {
-    .wrapper p{
-        font-size: 2rem;
+.media {
+    flex: 0 0 auto;
+}
+
+.details {
+    flex: 1 1 auto;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-5);
+}
+
+.title {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    line-height: var(--lh-tight);
+    color: var(--c-brand);
+}
+
+@media (max-width: 640px) {
+    .main {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--sp-5);
+        padding: var(--sp-4);
+    }
+
+    .media {
+        align-self: center;
     }
 }

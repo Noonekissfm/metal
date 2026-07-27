@@ -1,16 +1,23 @@
 .description_section {
     display: flex;
     flex-direction: column;
-    gap: 3vh;
+    margin-top: var(--sp-6);
 }
 
-.description p {
-    margin-top: 2vh;
-    text-align: justify;
-    text-indent: 1em;
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-4);
+    /* Описания категорий длинные, во всю ширину монитора их не прочесть. */
+    max-width: 68ch;
+    /* Колонка уже контейнера, а заголовок над ней — по центру: без
+     * автоотступов текст прижимался влево, и справа зияло пустое поле. */
+    margin: var(--sp-4) auto 0;
+
+    line-height: var(--lh-base);
+    text-align: left;
 }
 
 .title_wrapper {
-    font-size: 1.5rem;
     display: block;
 }

@@ -1,48 +1,33 @@
 import React, { FC, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Header } from 'src/components/Header';
-import { Logo } from 'src/components/Header/Logo';
-import { Navbar } from 'src/components/Header/Navbar';
-import { Footer } from 'src/components/Footer';
-import { Contacts } from 'src/components/Contacts';
-import { PhoneLink } from 'src/components/Contacts/PhoneLink';
-import { WorkTime } from 'src/components/Contacts/WorkTime';
-import { MailLink } from 'src/components/Contacts/MailLink';
 
-import style from './style.module.css';
+import { Header } from 'src/components/Header';
+import { Footer } from 'src/components/Footer';
 import { RequestCallButton } from 'src/components/RequestCall/Button';
 import { RequestCallForm } from 'src/components/RequestCall/Form';
-import { CartButton } from 'src/components/Cart/CartButton';
 
-interface IProps { }
-export const Layout: FC<IProps> = () => {
-	const [showModal, setShowModal] = useState<boolean>(false)
+import { LayoutContext } from './outletContext';
 
-	const handleCloseModal = () => {
-		setShowModal(false)
-	}
-	return (
-		<>
-			<Header>
-				<Logo />
-				<Navbar />
-				<div className={style['contacts-wrapper']}>
-					<Contacts header>
-						<PhoneLink icon />
-						<MailLink icon />
-						<WorkTime icon />
-					</Contacts>
-				</div>
-				<CartButton />
-			</Header>
+import style from './style.module.css';
 
-			<div className={style.flexGrow}>
-				<Outlet />
-			</div>
+export const Layout: FC = () => {
+    const [showModal, setShowModal] = useState(false);
 
-			{showModal && <RequestCallForm closeModal={handleCloseModal} />}
-			{!showModal && <RequestCallButton onClick={() => setShowModal(!showModal)} />}
-			<Footer />
-		</>
-	);
+    return (
+        <>
+            <Header onRequestCall={() => setShowModal(true)} />
+
+            <div className={style.flexGrow}>
+                <Outlet context={{ onRequestCall: () => setShowModal(true) } as LayoutContext} />
+            </div>
+
+            {/* Кнопка не размонтируется на время окна: иначе фокусу некуда
+              * возвращаться после закрытия — элемента уже нет в документе.
+              * Окно перекрывает её по z-index. */}
+            <RequestCallButton onClick={() => setShowModal(true)} />
+            {showModal && <RequestCallForm closeModal={() => setShowModal(false)} />}
+
+            <Footer />
+        </>
+    );
 };

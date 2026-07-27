@@ -2,7 +2,7 @@
     position: relative;
     display: inline-flex;
     align-items: center;
-    color: var(--color-brand);
+    color: var(--c-brand);
     padding: 4px;
 }
 
@@ -26,14 +26,14 @@
     justify-content: center;
 
     border-radius: 9px;
-    background-color: var(--color-brand);
+    background-color: var(--c-brand);
     color: #fff;
     font-size: 11px;
     font-weight: bold;
     line-height: 1;
 }
 
-@media (max-width: 440px) {
+@media (max-width: 640px) {
     .icon {
         width: 24px;
         height: 24px;

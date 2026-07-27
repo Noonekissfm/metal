@@ -17,27 +17,18 @@
     width: 100%;
     bottom: -0.7vw;
     height: 2px;
-    background-color: var(--color-brand);
+    background-color: var(--c-brand);
 }
-
 
 /* Media */
 
 /* MW-1480px */
 
-@media (max-width: 1480px) {
-
-}
-
 /* MW-1200px */
-
-@media (max-width: 960px) {
-
-}
 
 /* MW-768px */
 
-@media (max-width: 820px) {
+@media (max-width: 900px) {
     .ListItem a.active::after {
         height: 1px;
     }
@@ -45,7 +36,3 @@
 }
 
 /* MW-320px */
-
-@media (min-width: 320px) and (max-width: 375px) {
-
-}

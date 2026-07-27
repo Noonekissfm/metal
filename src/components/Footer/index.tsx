@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { ContentWrapper } from 'src/components/AppWrappers/ContentWrapper';
-import { MobileSize } from 'src/components/AppWrappers/MobileSize';
 import { Contacts } from 'src/components/Contacts';
 import { AddressLink } from 'src/components/Contacts/AddressLink';
 import { MailLink } from 'src/components/Contacts/MailLink';
@@ -22,9 +21,7 @@ export const Footer: FC<IProps> = () => {
                         <PhoneLink icon fillColor='#fff' />
                         <MailLink icon fillColor='#fff' />
                         <WorkTime icon fillColor='#fff' />
-                        <MobileSize>
-                            <AddressLink icon fillColor='#fff' />
-                        </MobileSize>
+                        <AddressLink icon fillColor='#fff' />
                     </Contacts>
                     <Copyrights />
                 </div>

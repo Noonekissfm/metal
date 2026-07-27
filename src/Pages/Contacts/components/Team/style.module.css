@@ -1,27 +1,20 @@
 .OurTeam {
     display: flex;
-    width: 100%;
     flex-direction: column;
-    gap: 3vh;
-    align-items: center;
+    gap: var(--sp-4);
+    width: 100%;
 }
 
+/* auto-fit, а не auto-fill: сотрудников трое, а колонок на широком экране
+ * помещается четыре — пустой трек оставлял карточки прижатыми влево, с дырой
+ * справа. auto-fit схлопывает лишние колонки, и ряд занимает всю ширину. */
 .teammates {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--sp-4);
 }
 
 .title_wrapper {
     display: block;
     width: 100%;
-    font-size: 2rem;
-}
-
-@media (max-width: 550px) {
-    .teammates {
-        width: max-content;
-        flex-direction: column;
-    }
 }

@@ -1,0 +1,80 @@
+.backdrop {
+    position: fixed;
+    inset: 0;
+    /* Выше кнопки звонка (10) и подсказок поиска (20). */
+    z-index: 30;
+    background-color: rgba(31, 51, 63, 0.45);
+}
+
+.panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    width: min(320px, 85vw);
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-6);
+    padding: var(--sp-7) var(--sp-5) var(--sp-5);
+
+    background-color: var(--c-surface);
+    box-shadow: var(--shadow-md);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .panel {
+        animation: slideIn var(--transition);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.contacts {
+    display: grid;
+    gap: var(--sp-4);
+    padding-top: var(--sp-5);
+    border-top: 1px solid var(--c-border);
+    font-size: var(--fs-sm);
+}
+
+.contacts a {
+    color: inherit;
+}
+
+/* Контакты свёрстаны колонкой max-content, поэтому длинный адрес не
+ * переносится и уезжает за край панели. Здесь ему это разрешено. */
+.contacts > div {
+    grid-template-columns: 1.3rem minmax(0, 1fr);
+}
+
+.contacts a,
+.contacts p {
+    overflow-wrap: anywhere;
+}
+
+.callButton {
+    padding: var(--sp-3);
+    font: inherit;
+    font-size: var(--fs-base);
+    font-weight: 600;
+    color: var(--c-surface);
+    background-color: var(--c-brand);
+    border: 1px solid var(--c-brand);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+.callButton:hover {
+    background-color: var(--c-brand-hover);
+}

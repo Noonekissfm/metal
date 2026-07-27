@@ -19,7 +19,7 @@ export const Breadcrumbs: FC<IProps> = ({ keys, titles }) => {
         <ul className={style.breadcrumbs}>
             {links.map((item, index: number) => {
                 const isLastLink = index === links.length - 1;
-                const key = `${item}-${index}`;
+                const key = `${item.key}-${index}`;
 
                 if (isLastLink) {
                     return <CurrentPage key={key} title={item.title} />;

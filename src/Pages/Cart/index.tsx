@@ -9,6 +9,7 @@ import { QtyInput } from 'src/components/Cart/QtyInput';
 import { CheckoutForm } from 'src/components/Cart/CheckoutForm';
 import { useCart } from 'src/context/CartContext';
 import { formatPrice, lineTotal } from 'src/utils/price';
+import { usePageMeta } from 'src/hooks';
 import { usePriceCheck } from './usePriceCheck';
 
 import style from './style.module.css';
@@ -18,12 +19,17 @@ export const CartPage: FC = () => {
     const { changes, removed } = usePriceCheck();
     const [showCheckout, setShowCheckout] = useState(false);
     const [isDone, setIsDone] = useState(false);
+    // Удаление подтверждается на месте: строку легко снести случайно,
+    // а восстановить её нечем.
+    const [confirmKey, setConfirmKey] = useState<string | null>(null);
+
+    usePageMeta({ title: 'Корзина' });
 
     if (isDone) {
         return (
             <ContentWrapper>
                 <div className={style.content}>
-                    <AppTitle title="Заявка отправлена" />
+                    <AppTitle title="Заявка отправлена" level={1} />
                     <p className={style.empty}>
                         Мы получили ваш заказ и перезвоним в ближайшее время.
                     </p>
@@ -39,7 +45,7 @@ export const CartPage: FC = () => {
         return (
             <ContentWrapper>
                 <div className={style.content}>
-                    <AppTitle title="Корзина" />
+                    <AppTitle title="Корзина" level={1} />
                     <p className={style.empty}>Корзина пуста.</p>
                     <Link className={style.link} to="/catalog">
                         Перейти в каталог
@@ -52,7 +58,7 @@ export const CartPage: FC = () => {
     return (
         <ContentWrapper>
             <div className={style.content}>
-                <AppTitle title="Корзина" />
+                <AppTitle title="Корзина" level={1} />
 
                 {changes.length > 0 && (
                     <div className={style.notice}>
@@ -101,13 +107,46 @@ export const CartPage: FC = () => {
                                     <p className={style.sum}>
                                         {formatPrice(lineTotal(item.unitPrice, item.qty))} руб.
                                     </p>
-                                    <button
-                                        className={style.remove}
-                                        type="button"
-                                        onClick={() => removeItem(item.key)}
-                                    >
-                                        Удалить
-                                    </button>
+                                    {confirmKey === item.key ? (
+                                        <span className={style.confirm}>
+                                            <button
+                                                className={style.confirmYes}
+                                                type="button"
+                                                onClick={() => {
+                                                    removeItem(item.key);
+                                                    setConfirmKey(null);
+                                                }}
+                                            >
+                                                Удалить
+                                            </button>
+                                            <button
+                                                className={style.confirmNo}
+                                                type="button"
+                                                onClick={() => setConfirmKey(null)}
+                                            >
+                                                Отмена
+                                            </button>
+                                        </span>
+                                    ) : (
+                                        <button
+                                            className={style.remove}
+                                            type="button"
+                                            aria-label={`Удалить: ${item.title}`}
+                                            onClick={() => setConfirmKey(item.key)}
+                                        >
+                                            <svg
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth="1.8"
+                                                strokeLinecap="round"
+                                                aria-hidden="true"
+                                            >
+                                                <path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" />
+                                            </svg>
+                                            Удалить
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         </Backplate>

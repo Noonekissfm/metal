@@ -1,58 +1,36 @@
 .wrapper {
-    max-width: 70%;
+    padding: var(--sp-6);
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
 }
 
-.wrapper--noimg {
-    max-width: none;
-    width: 100%;
-    padding: 0 1.5rem
+.header {
+    padding-bottom: var(--sp-3);
+    margin-bottom: var(--sp-4);
+
+    font-size: var(--fs-lg);
+    font-weight: 600;
+    color: var(--c-brand);
+
+    border-bottom: 1px solid var(--c-border);
 }
 
-.description_header {
-    margin-bottom: 20px;
-    padding: 0 0 0.8rem 1.5rem;
-    border-bottom: 1px solid #e8e8e8;
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
+    /* Раньше длинное описание запирали в overflow: scroll с max-height 40vh
+     * и спрятанным скроллбаром — областью прокрутки без единого признака,
+     * что она прокручивается. */
+    max-width: 68ch;
+
+    line-height: var(--lh-base);
 }
 
-.description,
-.description--long {
-    padding-left: 1.5rem;
-    padding-bottom: 1rem;
-    text-align: justify;
-    text-indent: 1em;
-}
-
-.description--long {
-    overflow: scroll;
-    max-height: 40vh;
-    margin-bottom: 10px;
-}
-
-.description--long::-webkit-scrollbar {
-    display: none;
-}
-
-@media (max-width: 600px) {
+@media (max-width: 640px) {
     .wrapper {
-        max-width: 95%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 1rem;
+        padding: var(--sp-4);
     }
-
-    .description_header {
-        padding: 0 20px 10px 20px;
-        width: 90%;
-        text-align: center;
-    }
-
-    .description,
-    .description--long {
-        padding-left: 0px;
-        padding-bottom: 0px;
-        margin-bottom: 0px;
-    }
-
 }

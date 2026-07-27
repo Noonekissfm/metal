@@ -1,10 +1,11 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useRef, useState } from 'react';
 
 import { AppButton } from 'src/components/AppButton';
 import { AppTitle } from 'src/components/AppTitle';
 import { FormInput } from 'src/components/RequestCall/Form/components/input/input';
 import { postOrder } from 'src/api/order';
 import { useCart } from 'src/context/CartContext';
+import { useBodyScrollLock, useFocusTrap } from 'src/hooks';
 import { formatPrice } from 'src/utils/price';
 
 import style from './style.module.css';
@@ -18,13 +19,10 @@ export const CheckoutForm: FC<IProps> = ({ closeModal, onSuccess }) => {
     const { items, total, clear } = useCart();
     const [isSending, setIsSending] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const modalRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        document.body.style.overflow = 'hidden';
-        return () => {
-            document.body.style.overflow = 'unset';
-        };
-    }, []);
+    useBodyScrollLock();
+    useFocusTrap(modalRef, closeModal);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -58,7 +56,14 @@ export const CheckoutForm: FC<IProps> = ({ closeModal, onSuccess }) => {
 
     return (
         <div className={style.backdrop} onClick={closeModal}>
-            <div className={style.modal} onClick={(e) => e.stopPropagation()}>
+            <div
+                className={style.modal}
+                onClick={(e) => e.stopPropagation()}
+                ref={modalRef}
+                role="dialog"
+                aria-modal="true"
+                aria-label="Оформление заказа"
+            >
                 <AppTitle title="Оформление заказа" />
 
                 <p className={style.summary}>

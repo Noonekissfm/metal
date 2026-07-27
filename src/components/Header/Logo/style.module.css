@@ -1,24 +1,19 @@
 .logo {
-    height: 5rem;
-    width: 5rem;
-    max-height: rem;
-    max-width: rem;
+    display: block;
+    height: 4rem;
+    width: 4rem;
 }
 
 .logo svg {
-    height: 5rem;
-    width: 5rem;
+    height: 100%;
+    width: 100%;
 }
 
-@media (max-width: 720px) {
-
-}
-
-@media (max-width: 440px) {
+/* Раньше здесь было display: none на узком экране — на телефоне у сайта
+ * не оставалось ни названия, ни знака. Теперь логотип просто меньше. */
+@media (max-width: 900px) {
     .logo {
-        display: none;
+        height: 2.75rem;
+        width: 2.75rem;
     }
-}
-@media (max-width: 320px) {
-
 }

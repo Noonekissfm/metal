@@ -5,7 +5,7 @@
     font-weight: bold;
 }
 
-@media (max-width: 440px) { 
+@media (max-width: 640px) { 
         .wrapper p {
             font-size: 0.9rem;
         }

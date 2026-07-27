@@ -1,0 +1,128 @@
+.wrapper {
+    position: relative;
+    flex: 1 1 220px;
+    min-width: 0;
+    max-width: 340px;
+}
+
+.input {
+    width: 100%;
+    padding: var(--sp-2) var(--sp-3);
+    font: inherit;
+    font-size: var(--fs-sm);
+    color: var(--c-text);
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-border-strong);
+    border-radius: var(--radius-sm);
+    transition: border-color var(--transition);
+}
+
+.input::placeholder {
+    color: var(--c-text-muted);
+}
+
+.input:hover {
+    border-color: var(--c-brand);
+}
+
+.panel {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + var(--sp-1));
+    left: 0;
+    /* Названия длинные, поэтому список шире самого поля. */
+    width: max(100%, 420px);
+    max-width: 90vw;
+
+    max-height: 60vh;
+    overflow-y: auto;
+    margin: 0;
+    padding: var(--sp-2) 0;
+    list-style: none;
+
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.group + .group {
+    margin-top: var(--sp-2);
+    border-top: 1px solid var(--c-border);
+    padding-top: var(--sp-2);
+}
+
+.groupTitle {
+    padding: var(--sp-1) var(--sp-3);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--c-text-muted);
+}
+
+.groupList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.option {
+    display: grid;
+    gap: 2px;
+    width: 100%;
+    /* 44px — минимальная площадь нажатия на телефоне. */
+    min-height: 44px;
+    padding: var(--sp-2) var(--sp-3);
+    font: inherit;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.option:hover,
+.optionActive {
+    background-color: var(--c-bg);
+}
+
+/* Названия бывают в 60 символов, поэтому обрезаем на второй строке —
+ * иначе одна подсказка занимает пол-экрана. */
+.optionTitle {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--c-text);
+}
+
+/* Без пути двадцать строк «Труба 40х40» ничем не отличаются друг от друга. */
+.optionContext {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-size: var(--fs-xs);
+    color: var(--c-text-muted);
+}
+
+.optionPrice {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--c-accent-strong);
+}
+
+.hint {
+    padding: var(--sp-2) var(--sp-3);
+    font-size: var(--fs-sm);
+    color: var(--c-text-muted);
+}
+
+@media (max-width: 900px) {
+    .wrapper {
+        max-width: none;
+    }
+}

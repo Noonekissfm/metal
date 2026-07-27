@@ -1,24 +1,45 @@
+/* Девять ссылок — главный вход в каталог с первой страницы. Раньше это
+ * был обычный список с подчёркиваниями. */
 .short_menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: var(--sp-4);
+
+    width: 100%;
+    margin: 0;
     padding: 0;
-    width: fit-content;
+    list-style: none;
 }
 
-.short_menu a{
-    display: block;
-    margin: 0 5px;
-    padding: 3px 14px;
+.link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    min-height: 72px;
+    box-sizing: border-box;
+    padding: var(--sp-4) var(--sp-5);
 
-    font-size: 1.2rem;
-    line-height: 1.5;
-    font-weight: bold;
+    font-size: var(--fs-base);
+    font-weight: 600;
     text-decoration: none;
+    color: var(--c-brand);
 
-    color: var(--color-brand);
-    border-bottom: 1px solid var(--color-brand);
-    transition: background-color 0.2s ease;
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: border-color var(--transition), box-shadow var(--transition);
 }
 
-.short_menu a:hover {
-    background-color: #e8e8e8;
+.link:hover {
+    border-color: var(--c-brand);
+    box-shadow: var(--shadow-md);
 }
 
+/* Стрелка вправо: показывает, что карточка ведёт вглубь каталога. */
+.link::after {
+    content: '→';
+    margin-left: auto;
+    padding-left: var(--sp-3);
+    color: var(--c-accent-strong);
+}

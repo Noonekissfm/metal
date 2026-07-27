@@ -1,14 +1,14 @@
 .content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px 0 40px;
+    gap: var(--sp-5);
+    padding: var(--sp-6) 0 var(--sp-8);
 }
 
 .lines {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: var(--sp-3);
 }
 
 .line {
@@ -16,51 +16,96 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: var(--sp-4);
 }
 
 .info {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: var(--sp-1);
     min-width: 0;
 }
 
 .title {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .path {
-    font-size: 0.85rem;
-    color: #6b6b6b;
+    font-size: var(--fs-xs);
+    color: var(--c-text-muted);
 }
 
 .unitPrice {
-    font-size: 0.95rem;
+    font-size: var(--fs-sm);
+    color: var(--c-text-muted);
 }
 
 .controls {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: var(--sp-4);
 }
 
 .sum {
-    font-weight: bold;
+    font-weight: 700;
     white-space: nowrap;
     min-width: 8em;
     text-align: right;
 }
 
 .remove {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+
+    padding: var(--sp-2);
+    font: inherit;
+    font-size: var(--fs-sm);
+    color: var(--c-danger);
+
     background: none;
     border: none;
-    padding: 0;
-    color: #a33;
+    border-radius: var(--radius-sm);
     cursor: pointer;
-    font-size: 0.9rem;
-    text-decoration: underline;
+}
+
+.remove svg {
+    width: 16px;
+    height: 16px;
+}
+
+.remove:hover {
+    background-color: var(--c-bg);
+}
+
+.confirm {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    font-size: var(--fs-sm);
+}
+
+.confirmYes,
+.confirmNo {
+    padding: var(--sp-2) var(--sp-3);
+    font: inherit;
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+.confirmYes {
+    color: var(--c-surface);
+    background-color: var(--c-danger);
+    border: 1px solid var(--c-danger);
+}
+
+.confirmNo {
+    color: var(--c-text);
+    background: none;
+    border: 1px solid var(--c-border-strong);
 }
 
 .footer {
@@ -68,30 +113,46 @@
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: var(--sp-5);
 }
 
 .total {
-    font-size: 1.2rem;
+    font-size: var(--fs-lg);
 }
 
 .total span {
-    font-weight: bold;
+    font-weight: 700;
+    font-size: var(--fs-xl);
 }
 
 .empty {
-    font-size: 1.1rem;
+    font-size: var(--fs-lg);
 }
 
 .link {
-    color: var(--color-brand);
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom: 1px solid var(--color-brand);
     align-self: flex-start;
+    color: var(--c-brand);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--c-brand);
 }
 
-@media (max-width: 720px) {
+.notice {
+    padding: var(--sp-3) var(--sp-4);
+
+    font-size: var(--fs-sm);
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-left: 3px solid var(--c-accent-strong);
+    border-radius: var(--radius-sm);
+}
+
+.notice ul {
+    margin: var(--sp-2) 0 0;
+    padding-left: var(--sp-5);
+}
+
+@media (max-width: 900px) {
     .line {
         flex-direction: column;
         align-items: stretch;
@@ -105,21 +166,18 @@
         min-width: auto;
     }
 
+    /* Итог и кнопка заказа не должны уезжать под список. */
     .footer {
+        position: sticky;
+        bottom: 0;
+        z-index: 5;
+
         justify-content: space-between;
+        margin: 0 calc(-1 * var(--sp-4));
+        padding: var(--sp-3) var(--sp-4);
+
+        background-color: var(--c-surface);
+        border-top: 1px solid var(--c-border);
+        box-shadow: var(--shadow-md);
     }
-}
-
-.notice {
-    border: 1px solid var(--color-copper);
-    border-left: 4px solid var(--color-brand);
-    border-radius: 4px;
-    background-color: #fff;
-    padding: 12px 16px;
-    font-size: 0.95rem;
-}
-
-.notice ul {
-    margin: 8px 0 0;
-    padding-left: 20px;
 }

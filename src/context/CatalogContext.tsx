@@ -37,7 +37,10 @@ const buildTree = (categories: Category[]): { root: CategoryNode | null; byKey: 
 
     byId.forEach((node) => {
         node.children.sort(
-            (a, b) => a.sort_order - b.sort_order || a.title.localeCompare(b.title, 'ru'),
+            // numeric: true — иначе «100мм» встаёт перед «10мм».
+            (a, b) =>
+                a.sort_order - b.sort_order ||
+                a.title.localeCompare(b.title, 'ru', { numeric: true }),
         );
     });
 
@@ -75,6 +78,8 @@ interface ICatalogContext {
     /** Категория по цепочке ключей из адреса; null — такого адреса нет. */
     getNodeByKeys: (keys: string[]) => CategoryNode | null;
     getCategoryByKey: (key: string) => CategoryNode | null;
+    /** Цепочка ключей от корня каталога до категории — из неё собирается адрес. */
+    getPathKeys: (categoryId: string) => string[];
     /** Цена товара со скидкой: своя, иначе от ближайшей категории сверху. */
     getEffectivePrice: (product: Pick<Product, 'price' | 'category'>) => number | null;
     reload: () => void;
@@ -156,6 +161,24 @@ export const CatalogProvider: FC<IProps> = ({ children }) => {
         [tree],
     );
 
+    const getPathKeys = useCallback(
+        (categoryId: string) => {
+            const keys: string[] = [];
+            let node = byId.get(categoryId);
+            // Защита от цикла — такая же, как в getEffectivePrice ниже.
+            const seen = new Set<string>();
+
+            while (node && !seen.has(node.id)) {
+                seen.add(node.id);
+                keys.unshift(node.key);
+                node = node.parent ? byId.get(node.parent) : undefined;
+            }
+
+            return keys;
+        },
+        [byId],
+    );
+
     const getEffectivePrice = useCallback(
         (product: Pick<Product, 'price' | 'category'>) => {
             let price = product.price;
@@ -195,10 +218,20 @@ export const CatalogProvider: FC<IProps> = ({ children }) => {
             settings: data?.settings || { discount_percent: DEFAULT_DISCOUNT_PERCENT },
             getNodeByKeys,
             getCategoryByKey,
+            getPathKeys,
             getEffectivePrice,
             reload: () => setAttempt((current) => current + 1),
         }),
-        [isLoading, error, tree, data, getNodeByKeys, getCategoryByKey, getEffectivePrice],
+        [
+            isLoading,
+            error,
+            tree,
+            data,
+            getNodeByKeys,
+            getCategoryByKey,
+            getPathKeys,
+            getEffectivePrice,
+        ],
     );
 
     return <CatalogContext.Provider value={value}>{children}</CatalogContext.Provider>;

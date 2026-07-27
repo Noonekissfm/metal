@@ -15,7 +15,7 @@ export const Description: FC<IProps> = ({ description, title }) => {
         <>
             {descriptionData && 
             <div className={style.description_section}>
-                <span className={style.title_wrapper}><AppTitle title={title} /></span>
+                <span className={style.title_wrapper}><AppTitle title={title} level={1} /></span>
                 <div className={style.description}>
                     {descriptionData.description.length > 0 &&
                         descriptionData.description.map((item, index) => <p key={`${item}-${index}`}>{item}</p>)}
