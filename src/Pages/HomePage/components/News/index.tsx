@@ -1,21 +1,18 @@
 import React, { FC } from 'react';
 
 import { AppTitle } from 'src/components/AppTitle';
+import { NewsItem } from 'src/models/catalog';
 
 import style from './style.module.css';
 
-export interface INews {
-    _id: number;
-    body: string;
-}
-
 interface IProps {
-    news: INews[];
+    news: NewsItem[];
 }
 
 /** Раньше здесь была карусель с точками — на одну-единственную новость
  *  из newsData.json. Теперь просто список карточек: при одной новости
- *  это одна карточка, при трёх — три. */
+ *  это одна карточка, при трёх — три. Тексты правят сотрудники
+ *  в админке, коллекция news. */
 export const News: FC<IProps> = ({ news }) => {
     if (!news.length) return null;
 
@@ -24,7 +21,7 @@ export const News: FC<IProps> = ({ news }) => {
             <AppTitle title="Новости компании" borderless />
             <ul className={style.list}>
                 {news.map((item) => (
-                    <li key={item._id} className={style.card}>
+                    <li key={item.id} className={style.card}>
                         {item.body}
                     </li>
                 ))}

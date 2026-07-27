@@ -1,4 +1,4 @@
-import { Category, Product, Settings } from 'src/models/catalog';
+import { Category, NewsItem, Product, Settings } from 'src/models/catalog';
 import { DEFAULT_DISCOUNT_PERCENT } from 'src/utils/price';
 
 export const PB_BASE = (process.env.REACT_APP_PB_URL || 'https://met-c.ru/pb').replace(/\/$/, '');
@@ -120,6 +120,18 @@ export const searchProducts = async (query: string): Promise<Product[]> => {
         filter: buildSearchFilter(words),
         sort: 'title',
         perPage: String(SEARCH_LIMIT),
+    });
+
+    return payload.items;
+};
+
+/** Новости с главной. Их единицы, поэтому берём одной страницей:
+ *  сначала по sort_order, при равном — свежие сверху. */
+export const fetchNews = async (): Promise<NewsItem[]> => {
+    const payload = await request<PbList<NewsItem>>('/api/collections/news/records', {
+        fields: 'id,body',
+        sort: 'sort_order,-created',
+        perPage: '20',
     });
 
     return payload.items;

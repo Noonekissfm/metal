@@ -1,9 +1,11 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import { ShortMenu } from 'src/components/ShortMenu';
 import { AppTitle } from 'src/components/AppTitle';
 import { ContentWrapper } from 'src/components/AppWrappers/ContentWrapper';
 
+import { fetchNews } from 'src/api/catalog';
+import { NewsItem } from 'src/models/catalog';
 import { usePageMeta } from 'src/hooks';
 import { useLayoutContext } from 'src/Pages/Layout/outletContext';
 
@@ -12,16 +14,32 @@ import { Hero } from './components/Hero';
 import { News } from './components/News';
 
 import shortMenuData from 'src/data/shortMenuData.json';
-import newsData from 'src/data/newsData.json';
 import company from 'src/data/company.json';
 
 import style from './style.module.css';
 
 export const HomePage: FC = () => {
     const { onRequestCall } = useLayoutContext();
+    const [news, setNews] = useState<NewsItem[]>([]);
 
     // У главной заголовок без приставки — она и так про компанию целиком.
     usePageMeta({});
+
+    // Новости живут в PocketBase. Если они не загрузились, блок просто
+    // не показывается — остальная главная от этого не зависит.
+    useEffect(() => {
+        let cancelled = false;
+
+        fetchNews()
+            .then((items) => {
+                if (!cancelled) setNews(items);
+            })
+            .catch(() => undefined);
+
+        return () => {
+            cancelled = true;
+        };
+    }, []);
 
     return (
         <>
@@ -35,7 +53,7 @@ export const HomePage: FC = () => {
                         <ShortMenu data={shortMenuData} />
                     </section>
 
-                    <News news={newsData} />
+                    <News news={news} />
 
                     <section>
                         <AppTitle title={company.name} />
