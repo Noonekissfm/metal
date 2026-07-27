@@ -5,9 +5,12 @@
     width: 100%;
 }
 
+/* auto-fit, а не auto-fill: сотрудников трое, а колонок на широком экране
+ * помещается четыре — пустой трек оставлял карточки прижатыми влево, с дырой
+ * справа. auto-fit схлопывает лишние колонки, и ряд занимает всю ширину. */
 .teammates {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: var(--sp-4);
 }
 

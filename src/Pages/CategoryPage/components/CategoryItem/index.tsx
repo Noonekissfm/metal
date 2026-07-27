@@ -22,30 +22,49 @@ interface Group {
     rows: Row[];
 }
 
+/** В названиях из CMS попадаются латинские двойники кириллицы («Cталь 40Х13»
+ *  начинается с латинской C). Визуально это та же буква, поэтому и группа
+ *  должна быть та же — иначе один товар отрезает от списка «С» кусок
+ *  и над ним появляется заголовок-буква на ровном месте. */
+const LOOKALIKES: Record<string, string> = {
+    A: 'А', B: 'В', C: 'С', E: 'Е', H: 'Н', K: 'К', M: 'М',
+    O: 'О', P: 'Р', T: 'Т', X: 'Х', Y: 'У',
+};
+
 /** Первый знак названия: буква, «0–9» для цифр, «#» для всего прочего. */
 const groupLetter = (title: string): string => {
     const first = title.trim().charAt(0);
 
     if (!first) return '#';
     if (/\d/.test(first)) return '0–9';
-    if (/\p{L}/u.test(first)) return first.toLocaleUpperCase('ru');
+
+    if (/\p{L}/u.test(first)) {
+        const upper = first.toLocaleUpperCase('ru');
+
+        return LOOKALIKES[upper] || upper;
+    }
 
     return '#';
 };
 
-const groupRows = (rows: Row[]): Group[] =>
-    rows.reduce<Group[]>((groups, row) => {
+/** Группы собираются по букве, а не по подряд идущим строкам: порядок из CMS
+ *  местами сбит, и одна и та же буква иначе повторяется несколько раз. */
+const groupRows = (rows: Row[]): Group[] => {
+    const byLetter = new Map<string, Group>();
+
+    rows.forEach((row) => {
         const letter = groupLetter(row.title);
-        const last = groups[groups.length - 1];
+        const group = byLetter.get(letter);
 
-        if (last && last.letter === letter) {
-            last.rows.push(row);
+        if (group) {
+            group.rows.push(row);
         } else {
-            groups.push({ letter, rows: [row] });
+            byLetter.set(letter, { letter, rows: [row] });
         }
+    });
 
-        return groups;
-    }, []);
+    return Array.from(byLetter.values());
+};
 
 interface IProps {
     node: CategoryNode | null;
