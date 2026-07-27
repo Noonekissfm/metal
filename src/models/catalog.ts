@@ -34,6 +34,11 @@ export interface Product {
     sort_order: number;
 }
 
+export interface NewsItem {
+    id: string;
+    body: string;
+}
+
 export interface Settings {
     discount_percent: number;
 }

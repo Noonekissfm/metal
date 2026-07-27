@@ -11,11 +11,12 @@
     gap: var(--sp-3);
 }
 
+/* Цена с количеством всегда на отдельной строке: иначе строка прыгает
+ * туда-сюда в зависимости от длины пути товара. */
 .line {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
     gap: var(--sp-4);
 }
 
@@ -43,6 +44,7 @@
 .controls {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: var(--sp-4);
 }
@@ -50,8 +52,7 @@
 .sum {
     font-weight: 700;
     white-space: nowrap;
-    min-width: 8em;
-    text-align: right;
+    margin-left: auto;
 }
 
 .remove {
@@ -153,19 +154,6 @@
 }
 
 @media (max-width: 900px) {
-    .line {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .controls {
-        justify-content: space-between;
-    }
-
-    .sum {
-        min-width: auto;
-    }
-
     /* Итог и кнопка заказа не должны уезжать под список. */
     .footer {
         position: sticky;
