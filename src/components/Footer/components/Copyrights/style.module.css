@@ -5,8 +5,14 @@
     font-weight: bold;
 }
 
-@media (max-width: 640px) { 
-        .wrapper p {
-            font-size: 0.9rem;
-        }
+@media (max-width: 640px) {
+    /* Копирайт переносится на свою строку — растягиваем его,
+     * иначе text-align центрирует текст внутри узкого блока у левого края. */
+    .wrapper {
+        width: 100%;
+    }
+
+    .wrapper p {
+        font-size: 0.9rem;
+    }
 }

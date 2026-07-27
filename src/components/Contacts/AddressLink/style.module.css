@@ -1,8 +1,14 @@
 .wrapper {
     display: grid;
-    grid-template-columns: 1.3rem max-content;
+    /* Адрес длинный: на узких экранах колонка должна сжиматься и переносить
+     * текст, а не вылезать за пределы экрана. */
+    grid-template-columns: 1.3rem minmax(0, max-content);
     gap: 0.7rem;
     align-items: center;
+}
+
+.wrapper a {
+    overflow-wrap: break-word;
 }
 
 .wrapper svg {
